@@ -1,0 +1,125 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+/************************************MAIN NAV************************************/
+
+.header {
+   @include width-100-percent-at-standard-padding;
+   @include standard-padding-left;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: $silver;
+    height: 169px; //80px mobile 25.0vw
+        margin-bottom: 16px;
+        @include tablet {
+            flex-direction: row;
+            align-items: left;
+            height: 5.0rem;
+            margin: 0;
+        }
+        &__logo {
+            height: 3rem; //48px
+            width: 50%;
+            align-self: center;
+            @include tablet {
+                height: 1.5rem;
+                width: 16%; //124px
+                margin-right: 169px; //169
+            }
+            @include desktop {
+                height: 2rem;
+                margin-right: 509px;
+            }
+        }
+
+        &__input {
+            background-image: url("../../assets/Icons/Icon-search.svg");
+            background-repeat: no-repeat;
+            background-size: 1.5rem 1.5rem;
+            background-position-y: center;
+            background-position-x: 1rem;
+            padding-left: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.25rem; //4px
+            border: solid 1px $mercury;
+            background-color: $alabaster;
+            width: 244px;
+            &:active {
+                border-color: $brainflix-blue;
+            }
+            &:hover {
+                border-color: $brainflix-blue;
+            }
+    
+            @include tablet {
+             width: 180px;
+            height: 2.5rem;
+            }
+            @include desktop {
+            min-width: 180px;
+            max-width: 15%;
+      
+         }
+      
+            
+         
+        }
+        &__partition-button-photo {
+           width:288px;
+          height:3rem;
+            display:flex;
+            align-self: center;
+    
+            @include tablet {
+                width: 25%;
+                margin: 0 0 0 0;
+            }
+    
+            @include desktop {
+                width: 20%;
+                justify-content: flex-end;
+            }
+        }
+        &__button {
+            background-image: url("../../assets/Icons/Icon-upload.svg");
+            background-size: 1rem 1rem;
+           background-position-y: center;
+           background-position-x: 25%;
+           background-repeat: no-repeat;
+           @include button;
+            background-color: $brainflix-blue;
+            border: 0;
+            border-radius: 0.25rem; //4px
+            color: $white;
+            width: 80vw;
+
+            &:hover {
+                background-color: $brainflix-dark-blue-hover;
+            }
+
+            @include tablet {
+                background-position-x: 1rem;
+                padding:0 0 0  1.5rem;
+                height: 2.5rem;
+            }
+
+            @include desktop {
+                height: 3rem;
+                width: 60%;
+            }
+        }
+    
+        &__photo {
+            width: 3rem;
+            border-radius: 50%;
+            height: 100%;
+            align-self:left;
+            margin: 0 0 0 1rem;
+        }
+  
+    
+}

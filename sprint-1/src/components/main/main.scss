@@ -1,0 +1,21 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+
+
+.main {
+    &__design {
+        @include desktop {
+            display: flex;
+        }
+    }
+        &__partition {
+            @include desktop {
+                @include mockup-column-small-right;
+                min-width: 816px; //712+80px padding left 24px margin right
+              max-width: 63.75vw;
+            }
+        }
+    
+}

@@ -1,0 +1,1127 @@
+/***************************************PADDING**************************************************/
+
+@mixin standard-padding-left-right {
+    padding: 0 5.0vw 0 5.0vw; //16px right 16px left
+    @include tablet {
+        padding: 0 3.1vw 0 3.1vw; //24px right 24px left
+    }
+    @include desktop {
+        padding: 0 6.3vw 0 6.3vw; //80px right 80px left 
+    }
+}
+
+@mixin standard-padding-left {
+    padding: 0 0 0 5.0vw; //16px right 16px left 
+    @include tablet {
+        padding: 0 0 0 3.1vw; //24px right 24px left 
+    }
+    @include desktop {
+        padding: 0 0 0 6.3vw; //80px right 80px left 
+    }
+}
+
+/**********************************WIDTH 100% - PADDING**********************************************/
+
+@mixin width-100-percent-at-standard-padding {
+    width: calc(100% - 10.0%); //5.0*2
+    @include tablet {
+        width: calc(100% - 6.2%); //3.1*2
+    }
+    @include desktop {
+        width: calc(100% - 12.6%); //6.3*2
+    }
+}
+
+@mixin width-100-percent-minus-standard-padding-left {
+    width: calc(100% - 5.0%); //5.0*2
+    @include tablet {
+        width: calc(100% - 3.1%); //3.1*2
+    }
+    @include desktop {
+        width: calc(100% - 12.6%); //6.3*2
+    }
+}
+
+@mixin width-100-percent-minus-standard-padding-right {
+    width: calc(100% - 5.0%); //5.0*2
+    @include tablet {
+        width: calc(100% - 3.1%); //3.1*2
+    }
+    @include desktop {
+        width: calc(100% - 12.6%); //6.3*2
+    }
+}
+/**********************************************MOCKUP COLUMNS****************************************************************/
+/***LEFT*******/
+@mixin mockup-column-small-left{
+    margin: 0 0 0 3.1vw;  //24px
+    @include tablet {
+   margin: 0 0 0 3.1vw;  //24px
+    }
+    @include desktop {
+        margin: 0 0 0 3.1vw;  //24px
+    }
+}
+
+@mixin mockup-column-horizontal{
+    margin: 0 0 0 16.9vw;  //54px 16.9 vw
+    @include tablet {
+        margin: 0 0 0 13.0vw;  //100px 13.0vw 
+         }
+    @include desktop {
+        margin: 0 0 0 5.3vw; //68px  5.3cw
+    }
+}
+/***HORIZONTAL*******/
+@mixin mockup-column-small-horizontal{
+    margin: 0 3.1vw 0 3.1vw;  //24px 24px
+    @include tablet {
+        margin: 0 3.1vw 0 3.1vw;  //24px 24px
+    }
+    @include desktop {
+        margin: 0 3.1vw 0 3.1vw;  //24px 24px
+    }
+}
+
+@mixin mockup-column-large-horizontal{
+    margin: 0 16.9vw;  //54px 16.9 vw
+    @include tablet {
+        margin: 0 13.0vw;  //100px 13.0vw 
+         }
+    @include desktop {
+        margin: 0 5.3vw; //68px  5.3cw
+    }
+}
+/***RIGHT*******/
+@mixin mockup-column-small-right{
+    margin: 0 3.1vw 0 0;  //24px 24px
+    @include tablet {
+        margin: 0 3.1vw 0 0;  //24px 24px
+    }
+    @include desktop {
+        margin: 0 3.1vw 0 0;  //24px 24px
+    }
+}
+@mixin mockup-column-large-right{
+    margin: 0 16.9vw 0 0;  //54px 16.9 vw
+    @include tablet {
+        margin: 0 13.0vw 0 0;  //100px 13.0vw 
+         }
+    @include desktop {
+        margin: 0 5.3vw 0 0; //68px  5.3cw
+    }
+}
+/*************/
+@mixin mockup-column-outside-left {
+    margin: 0 0 0 5.0vw; //16px right 16px left 
+    @include tablet {
+        margin: 0 0 0 3.1vw; //24px right 24px left 
+    }
+    @include desktop {
+        margin: 0 0 0 6.3vw; //80px right 80px left 
+    }
+}
+@mixin mockup-column-outside-horizontal{
+ margin: 0 5.0vw 0 5.0vw; //16px right 16px left
+    @include tablet {
+        margin: 0 3.1vw 0 3.1vw; //24px right 24px left  
+    }
+    @include desktop {
+        margin: 0 6.3vw 0 6.3vw; //80px right 80px left 
+    }
+}
+@mixin mockup-column-outside-right{
+    margin: 0 5.0vw 0 0; //16px right 16px left
+    @include tablet {
+        margin: 0 3.1vw 0 0; //24px right 24px left  
+    }
+    @include desktop {
+        margin: 0 6.3vw 0 0; //80px right 80px left 
+    }
+}
+
+/**********************************************DIVIDERS******************************************************/
+
+@mixin logo-brainflix {
+    img {
+        width: 120px; //120px
+        height: 24px; //24px 
+        margin-left: 1rem;
+        @include tablet {
+            margin-left: 2rem;
+            width: 120px; //120px
+            height: 24px; //24px  
+        }
+        @include desktop {
+            margin-left: 5rem;
+        }
+    }
+}
+
+@mixin divider {
+    background: $silver;
+    width: 100%;
+    height: 1px;
+}
+@mixin divider-form{
+    background: $silver;
+    width: 100%;
+    height: 1px;
+    margin: 16px 0 16px 0;
+}
+
+@mixin button {
+    background-color: $brainflix-blue;
+    @include h4-paragraphs-and-comments-white-demi;
+    &:hover {
+        background: $brainflix-dark-blue-hover;
+    }
+    &:focus {
+        outline: none;
+    }
+  width: 226px; //226px
+    min-height: 10.0vw; //32px 
+    max-height: 15.0vw; //48px 
+    border-radius: 4px; //round the corners 
+    border-color: $brainflix-blue;
+    @include tablet {
+        min-width: unset; //remove responsive button 
+        max-width: unset;
+        min-height: unset;
+        max-height: unset;
+        padding: 0;
+        width: 160px; //160px 
+        height: 3.0rem; //48px 
+    }
+
+}
+/*************************************SIZE INCREMENTS******************************************************/
+
+
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 0
+@mixin increment-0-left{
+    margin: 0 0 0 1.3vw;  //4px
+    @include tablet {
+        margin: 0 0 0 0.5vw;  //4px
+         }
+    @include desktop {
+        margin: 0 0 0 0.3vw; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 1
+@mixin increment-1-left{
+    margin: 0 0 0 2.5vw;  //8px
+    @include tablet {
+        margin: 0 0 0 1.0vw;  //8px
+         }
+    @include desktop {
+        margin: 0 0 0 0.6vw; //8px
+    }
+}
+//{input: 16, rem: "1.0", mobileVW: "5.0", tabletVW: "2.1", desktopVW: "1.3"} 16px increment 2
+@mixin increment-2-left{
+    margin: 0 0 0 5.0vw; //16px
+    @include tablet {
+        margin: 0 0 0 2.1vw; //16px
+    }
+    @include desktop {
+        margin:  0 0 01.3vw; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-left{
+    margin: 0 0 0 6.3vw;  //20px
+    @include tablet {
+   margin: 0 0 0 2.6vw;  //20px
+    }
+    @include desktop {
+        margin: 0 0 0 1.6vw;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 3
+@mixin increment-3-left{
+    margin: 0 0 0 7.5vw;  //24px
+    @include tablet {
+   margin: 0 0 0 3.1vw;  //24px
+    }
+    @include desktop {
+        margin: 0 0 0 1.9vw;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 4
+@mixin increment-4-left{
+    margin: 0 0 0 10.0vw;  //
+    @include tablet {
+   margin: 0 0 0 4.2vw;  //
+    }
+    @include desktop {
+        margin: 0 0 0 2.5vw;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 5
+@mixin increment-5-left{
+    margin: 0 0 0 12.5vw;  //40px
+    @include tablet {
+   margin: 0 0 0 5.2vw;  //40px
+    }
+    @include desktop {
+        margin: 0 0 0 3.1vw;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 6
+@mixin increment-6-left{
+    margin: 0 0 0 15.0vw;  //
+    @include tablet {
+   margin: 0 0 0 6.3vw;  //
+    }
+    @include desktop {
+        margin: 0 0 0 3.8vw;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 7
+@mixin increment-7-left{
+    margin: 0 0 0 17.5vw;  //
+    @include tablet {
+   margin: 0 0 0 7.3vw;  //
+    }
+    @include desktop {
+        margin: 0 0 0 4.4vw;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 8
+@mixin increment-8-left{
+    margin: 0 0 0 20.0vw;  //
+    @include tablet {
+   margin: 0 0 0 8.3vw;  //
+    }
+    @include desktop {
+        margin: 0 0 0 5.0vw;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-left{
+    margin: 0 0 0 22.5vw;  //20px
+    @include tablet {
+   margin: 0 0 0 9.4vw;  //20px
+    }
+    @include desktop {
+        margin: 0 0 0 5.6vw;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-left{
+    margin: 0 0 0 25.0vw;  //
+    @include tablet {
+   margin: 0 0 0 10.4vw;  //
+    }
+    @include desktop {
+        margin: 0 0 0 6.3vw;  //
+    }
+}
+/*******************************************************INCREMENT HEIGHT******************************************/
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 1
+@mixin increment-0-height{
+    height: 1.3vw;  //4px
+    @include tablet {
+        height:  0.5vw;  //4px
+         }
+    @include desktop {
+        height:  0.3vw; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 2
+@mixin increment-1-height{
+    height:  2.5vw;  //8px
+    @include tablet {
+        height:  1.0vw;  //8px
+         }
+    @include desktop {
+        height:  0.6vw; //8px
+    }
+}
+//{input: 16, rem: "1.0", mobileVW: "5.0", tabletVW: "2.1", desktopVW: "1.3"} 16px increment 3
+@mixin increment-2-height{
+    height: 5.0vw; //16px
+    @include tablet {
+        height: 2.1vw; //16px
+    }
+    @include desktop {
+        height: 1.3vw; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-height{
+    height:  6.3vw;  //20px
+    @include tablet {
+   height:  2.6vw;  //20px
+    }
+    @include desktop {
+        height:  1.6vw;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 4
+@mixin increment-3-height{
+    height:  7.5vw;  //24px
+    @include tablet {
+   height:  3.1vw;  //24px
+    }
+    @include desktop {
+        height:  1.9vw;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 4
+@mixin increment-4-height{
+    height:  10.0vw;  //
+    @include tablet {
+   height:  4.2vw;  //
+    }
+    @include desktop {
+        height:  2.5vw;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 6
+@mixin increment-5-height{
+    height:  12.5vw;  //40px
+    @include tablet {
+   height:  5.2vw;  //40px
+    }
+    @include desktop {
+        height:  3.1vw;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 7
+@mixin increment-6-height{
+    height:  15.0vw;  //
+    @include tablet {
+   height:  6.3vw;  //
+    }
+    @include desktop {
+        height:  3.8vw;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 8
+@mixin increment-7-height{
+    height:  17.5vw;  //
+    @include tablet {
+   height:  4.4vw;  //
+    }
+    @include desktop {
+        height:  7.3vw;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 9
+@mixin increment-8-height{
+    height:  20.0vw;  //
+    @include tablet {
+   height:  8.3vw;  //
+    }
+    @include desktop {
+        height:  5.0vw;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-height{
+    height:  22.5vw;  //20px
+    @include tablet {
+   height:  9.4vw;  //20px
+    }
+    @include desktop {
+        height:  5.6vw;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-height{
+    height:  25.0vw;  //
+    @include tablet {
+   height:  10.4vw;  //
+    }
+    @include desktop {
+        height:  6.3vw;  //
+    }
+}
+/*******************************************************INCREMENT WIDTH******************************************/
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 1
+@mixin increment-0-width{
+    width:  1.3vw;  //4px
+    @include tablet {
+        width:  0.5vw;  //4px
+         }
+    @include desktop {
+        width:  0.3vw; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 2
+@mixin increment-1-width{
+    width:  2.5vw;  //8px
+    @include tablet {
+        width:  1.0vw;  //8px
+         }
+    @include desktop {
+        width:  0.6vw; //8px
+    }
+}
+//{input: 16, rem: "1.0", mobileVW: "5.0", tabletVW: "2.1", desktopVW: "1.3"} 16px increment 3
+@mixin increment-2-width{
+    width: 0 5.0vw 0 5.0vw; //16px
+    @include tablet {
+        width: 0 2.1vw 0 2.1vw; //16px
+    }
+    @include desktop {
+        width: 0 1.3vw 0 1.3vw; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-width{
+    width:  6.3vw;  //20px
+    @include tablet {
+   width:  2.6vw;  //20px
+    }
+    @include desktop {
+        width:  1.6vw;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 4
+@mixin increment-3-width{
+    width:  7.5vw;  //24px
+    @include tablet {
+   width:  3.1vw;  //24px
+    }
+    @include desktop {
+        width:  3.1vw;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 5
+@mixin increment-4-width{
+    width:  10.0vw;  //
+    @include tablet {
+   width:  4.2vw;  //
+    }
+    @include desktop {
+        width:  2.5vw;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 6
+@mixin increment-5-width{
+    width:  12.5vw;  //40px
+    @include tablet {
+   width:  5.2vw;  //40px
+    }
+    @include desktop {
+        width:  3.1vw;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 7
+@mixin increment-6-width{
+    width:  15.0vw;  //
+    @include tablet {
+   width:  6.3vw;  //
+    }
+    @include desktop {
+        width:  3.8vw;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 8
+@mixin increment-7-width{
+    width:  17.5vw;  //
+    @include tablet {
+   width:  4.4vw;  //
+    }
+    @include desktop {
+        width:  7.3vw;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 9
+@mixin increment-8-width{
+    width:  20.0vw;  //
+    @include tablet {
+   width:  8.3vw;  //
+    }
+    @include desktop {
+        width:  5.0vw;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-width{
+    width:  22.5vw;  //20px
+    @include tablet {
+   width:  9.4vw;  //20px
+    }
+    @include desktop {
+        width:  5.6vw;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-width{
+    width:  25.0vw;  //
+    @include tablet {
+   width:  10.4vw;  //
+    }
+    @include desktop {
+        width:  6.3vw;  //
+    }
+}
+
+
+/************************************HORIZONTAL *SIZE*INCREMENTS******************************************************/
+
+
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 1
+@mixin increment-0-horizontal{
+    margin: 0 1.3vw;  //4px
+    @include tablet {
+        margin: 0 0.5vw;  //4px
+         }
+    @include desktop {
+        margin: 0 0.3vw; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 2
+@mixin increment-1-horizontal{
+    margin: 0 2.5vw;  //8px
+    @include tablet {
+        margin: 0 1.0vw;  //8px
+         }
+    @include desktop {
+        margin: 0 0.6vw; //8px
+    }
+}
+@mixin increment-2-horizontal{
+    margin: 0 5.0vw; //16px
+    @include tablet {
+        margin: 0 2.1vw ; //16px
+    }
+    @include desktop {
+        margin: 0 1.3vw; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-horizontal{
+    margin: 0 6.3vw;  //20px
+    @include tablet {
+   margin: 0 2.6vw;  //20px
+    }
+    @include desktop {
+        margin: 0 1.6vw;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 4
+@mixin increment-3-horizontal{
+    margin: 0 7.5vw;  //24px
+    @include tablet {
+   margin: 0  3.1vw;  //24px
+    }
+    @include desktop {
+        margin: 0 1.9vw;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 5
+@mixin increment-4-horizontal{
+    margin: 0 10.0vw;  //
+    @include tablet {
+   margin: 0 4.2vw;  //
+    }
+    @include desktop {
+        margin: 0 2.5vw;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 6
+@mixin increment-5-horizontal{
+    margin: 0 2.5vw;  //40px
+    @include tablet {
+   margin: 0 5.2vw;  //40px
+    }
+    @include desktop {
+        margin: 0 3.1vw;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 7
+@mixin increment-6-horizontal{
+    margin: 0 15.0vw;  //
+    @include tablet {
+   margin: 0 6.3vw;  //
+    }
+    @include desktop {
+        margin: 0 3.8vw;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 8
+@mixin increment-7-horizontal{
+    margin: 0 17.5vw;  //
+    @include tablet {
+   margin: 0 7.3vw;  //
+    }
+    @include desktop {
+        margin: 0 4.4vw;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 9
+@mixin increment-8-horizontal{
+    margin: 0 20.0vw;  //
+    @include tablet {
+   margin: 0 8.3vw;  //
+    }
+    @include desktop {
+        margin: 0 5.0vw;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-horizontal{
+    margin: 0 22.5vw;  //20px
+    @include tablet {
+   margin: 0 9.4vw;  //20px
+    }
+    @include desktop {
+        margin: 0 5.6vw;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-horizontal{
+    margin: 0 25.0vw;  //
+    @include tablet {
+   margin: 0 10.4vw;  //
+    }
+    @include desktop {
+        margin: 0 6.3vw;  //
+    }
+}
+/************************************VERTICAL *SIZE*INCREMENTS******************************************************/
+
+
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 1
+@mixin increment-0-vertical{
+    margin: 1.3vw 0;  //4px
+    @include tablet {
+        margin: 0.5vw 0;  //4px
+         }
+    @include desktop {
+        margin: 0.3vw 0; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 2
+@mixin increment-1-vertical{
+    margin: 2.5vw 0;  //8px
+    @include tablet {
+        margin: 1.0vw 0;  //8px
+         }
+    @include desktop {
+        margin: 0.6vw 0; //8px
+    }
+}
+@mixin increment-2-vertical{
+    margin: 5.0vw 0; //16px
+    @include tablet {
+        margin: 2.1vw 0 ; //16px
+    }
+    @include desktop {
+        margin: 1.3vw 0; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-vertical{
+    margin: 6.3vw 0;  //20px
+    @include tablet {
+   margin: 2.6vw 0;  //20px
+    }
+    @include desktop {
+        margin: 1.6vw 0;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 4
+@mixin increment-3-vertical{
+    margin: 7.5vw 0;  //24px
+    @include tablet {
+   margin:  3.1vw 0;  //24px
+    }
+    @include desktop {
+        margin: 1.9vw 0;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 5
+@mixin increment-4-vertical{
+    margin: 10.0vw 0;  //
+    @include tablet {
+   margin: 4.2vw 0;  //
+    }
+    @include desktop {
+        margin: 2.5vw 0;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 6
+@mixin increment-5-vertical{
+    margin: 2.5vw 0;  //40px
+    @include tablet {
+   margin: 5.2vw 0;  //40px
+    }
+    @include desktop {
+        margin: 3.1vw 0;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 7
+@mixin increment-6-vertical{
+    margin: 15.0vw 0;  //
+    @include tablet {
+   margin: 6.3vw 0;  //
+    }
+    @include desktop {
+        margin: 3.8vw 0;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 8
+@mixin increment-7-vertical{
+    margin: 17.5vw 0;  //
+    @include tablet {
+   margin: 7.3vw 0;  //
+    }
+    @include desktop {
+        margin: 4.4vw 0;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 9
+@mixin increment-8-vertical{
+    margin: 20.0vw 0;  //
+    @include tablet {
+   margin: 8.3vw 0;  //
+    }
+    @include desktop {
+        margin: 5.0vw 0;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-vertical{
+    margin: 22.5vw 0;  //20px
+    @include tablet {
+   margin: 9.4vw 0;  //20px
+    }
+    @include desktop {
+        margin: 5.6vw 0;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-vertical{
+    margin: 25.0vw 0;  //
+    @include tablet {
+   margin: 10.4vw 0;  //
+    }
+    @include desktop {
+        margin: 6.3vw 0;  //
+    }
+}
+/*******************************************************INCREMENT MARGIN TOP******************************************/
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 1
+@mixin increment-0-top{
+    margin-top: 1.3vw;  //4px
+    @include tablet {
+        margin-top:  0.5vw;  //4px
+         }
+    @include desktop {
+        margin-top:  0.3vw; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 2
+@mixin increment-1-top{
+    margin-top:  2.5vw;  //8px
+    @include tablet {
+        margin-top:  1.0vw;  //8px
+         }
+    @include desktop {
+        margin-top:  0.6vw; //8px
+    }
+}
+//{input: 16, rem: "1.0", mobileVW: "5.0", tabletVW: "2.1", desktopVW: "1.3"} 16px increment 3
+@mixin increment-2-top{
+    margin-top: 5.0vw; //16px
+    @include tablet {
+        margin-top: 2.1vw; //16px
+    }
+    @include desktop {
+        margin-top: 1.3vw; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-top{
+    margin-top:  6.3vw;  //20px
+    @include tablet {
+   margin-top:  2.6vw;  //20px
+    }
+    @include desktop {
+        margin-top:  1.6vw;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 4
+@mixin increment-3-top{
+    margin-top:  7.5vw;  //24px
+    @include tablet {
+   margin-top:  3.1vw;  //24px
+    }
+    @include desktop {
+        margin-top:  1.9vw;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 5
+@mixin increment-4-top{
+    margin-top:  10.0vw;  //
+    @include tablet {
+   margin-top:  4.2vw;  //
+    }
+    @include desktop {
+        margin-top:  2.5vw;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 6
+@mixin increment-5-top{
+    margin-top:  12.5vw;  //40px
+    @include tablet {
+   margin-top:  5.2vw;  //40px
+    }
+    @include desktop {
+        margin-top:  3.1vw;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 7
+@mixin increment-6-top{
+    margin-top:  15.0vw;  //
+    @include tablet {
+   margin-top:  6.3vw;  //
+    }
+    @include desktop {
+        margin-top:  3.8vw;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 8
+@mixin increment-7-top{
+    margin-top:  17.5vw;  //
+    @include tablet {
+   margin-top:  4.4vw;  //
+    }
+    @include desktop {
+        margin-top:  7.3vw;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 9
+@mixin increment-8-top{
+    margin-top:  20.0vw;  //
+    @include tablet {
+   margin-top:  8.3vw;  //
+    }
+    @include desktop {
+        margin-top:  5.0vw;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-top{
+    margin-top:  22.5vw;  //20px
+    @include tablet {
+   margin-top:  9.4vw;  //20px
+    }
+    @include desktop {
+        margin-top:  5.6vw;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-top{
+    margin-top:  25.0vw;  //
+    @include tablet {
+   margin-top:  10.4vw;  //
+    }
+    @include desktop {
+        margin-top:  6.3vw;  //
+    }
+}
+/*******************************************************INCREMENT MARGIN BOTTOM******************************************/
+//{input: 4, rem: "0.3", mobileVW: "1.3", tabletVW: "0.5", desktopVW: "0.3"} 4px padding 1
+@mixin increment-0-bottom{
+    margin-bottom: 1.3vw;  //4px
+    @include tablet {
+        margin-bottom:  0.5vw;  //4px
+         }
+    @include desktop {
+        margin-bottom:  0.3vw; //4px
+    }
+}
+//{input: 8, rem: "0.5", mobileVW: "2.5", tabletVW: "1.0", desktopVW: "0.6"} 8px increment 2
+@mixin increment-1-bottom{
+    margin-bottom:  2.5vw;  //8px
+    @include tablet {
+        margin-bottom:  1.0vw;  //8px
+         }
+    @include desktop {
+        margin-bottom:  0.6vw; //8px
+    }
+}
+//{input: 16, rem: "1.0", mobileVW: "5.0", tabletVW: "2.1", desktopVW: "1.3"} 16px increment 3
+@mixin increment-2-bottom{
+    margin-bottom: 5.0vw; //16px
+    @include tablet {
+        margin-bottom: 2.1vw; //16px
+    }
+    @include desktop {
+        margin-bottom: 1.3vw; //16px
+    }
+}
+
+//{input: 20, rem: "1.3", mobileVW: "6.3", tabletVW: "2.6", desktopVW: "1.6"} 20px padding 3.5
+
+@mixin increment-2-and-a-half-bottom{
+    margin-bottom:  6.3vw;  //20px
+    @include tablet {
+   margin-bottom:  2.6vw;  //20px
+    }
+    @include desktop {
+        margin-bottom:  1.6vw;  //20px
+    }
+}
+
+//{input: 24, rem: "1.5", mobileVW: "7.5", tabletVW: "3.1", desktopVW: "1.9"} 24px increment 4
+@mixin increment-3-bottom{
+    margin-bottom:  7.5vw;  //24px
+    @include tablet {
+   margin-bottom:  3.1vw;  //24px
+    }
+    @include desktop {
+        margin-bottom:  1.9vw;  //24px
+    }
+}
+
+
+//{input: 32, rem: "2.0", mobileVW: "10.0", tabletVW: "4.2", desktopVW: "2.5"} 32px increment 5
+@mixin increment-4-bottom{
+    margin-bottom:  10.0vw;  //
+    @include tablet {
+   margin-bottom:  4.2vw;  //
+    }
+    @include desktop {
+        margin-bottom:  2.5vw;  //
+    }
+}
+
+// {input: 40, rem: "2.5", mobileVW: "12.5", tabletVW: "5.2", desktopVW: "3.1"} 40px increment 6
+@mixin increment-5-bottom{
+    margin-bottom:  12.5vw;  //40px
+    @include tablet {
+   margin-bottom:  5.2vw;  //40px
+    }
+    @include desktop {
+        margin-bottom:  3.1vw;  //40px
+    }
+}
+
+
+//{input: 48, rem: "3.0", mobileVW: "15.0", tabletVW: "6.3", desktopVW: "3.8"} 48px increment 7
+@mixin increment-6-bottom{
+    margin-bottom:  15.0vw;  //
+    @include tablet {
+   margin-bottom:  6.3vw;  //
+    }
+    @include desktop {
+        margin-bottom:  3.8vw;  //
+    }
+}
+
+//{input: 56, rem: "3.5", mobileVW: "17.5", tabletVW: "7.3", desktopVW: "4.4"} 56px increment 8
+@mixin increment-7-bottom{
+    margin-bottom:  17.5vw;  //
+    @include tablet {
+   margin-bottom:  4.4vw;  //
+    }
+    @include desktop {
+        margin-bottom:  7.3vw;  //
+    }
+}
+
+//{input: 64, rem: "4.0", mobileVW: "20.0", tabletVW: "8.3", desktopVW: "5.0"} 64px increment 9
+@mixin increment-8-bottom{
+    margin-bottom:  20.0vw;  //
+    @include tablet {
+   margin-bottom:  8.3vw;  //
+    }
+    @include desktop {
+        margin-bottom:  5.0vw;  //
+    }
+}
+//{input: 72, rem: "4.5", mobileVW: "22.5", tabletVW: "9.4", desktopVW: "5.6"}  72px increment 9.5
+
+@mixin increment-9-bottom{
+    margin-bottom:  22.5vw;  //20px
+    @include tablet {
+   margin-bottom:  9.4vw;  //20px
+    }
+    @include desktop {
+        margin-bottom:  5.6vw;  //20px
+    }
+}
+//{input: 80, rem: "5.0", mobileVW: "25.0", tabletVW: "10.4", desktopVW: "6.3"} 80px increment 10
+@mixin increment-10-bottom{
+    margin-bottom:  25.0vw;  //
+    @include tablet {
+   margin-bottom:  10.4vw;  //
+    }
+    @include desktop {
+        margin-bottom:  6.3vw;  //
+    }
+}
