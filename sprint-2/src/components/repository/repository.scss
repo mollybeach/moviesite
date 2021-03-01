@@ -1,0 +1,94 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+
+/************************************COMMENTS FEED SECTION************************************/
+
+.repository {
+	@include standard-padding-left;
+	width: 100%;
+	background-color: $white;
+	&__wrap {
+		@include tablet {
+			justify-content: left;
+		}
+	}
+	&__binding {
+		padding: 0 0 0 0rem; //32px
+	}
+	&__bind {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 1px 0rem 1rem 0;
+		@include tablet {
+			margin: 0 0 0 0;
+		}
+	}
+	&__empty-container {
+		@include width-100-percent-minus-standard-padding-right;
+		padding: 0rem 0rem 0;
+	}
+	&__top-container {
+		display: flex;
+		padding-bottom: 1rem;
+	}
+	&__top-right-container {
+		width: 62.50vw; //62.50vw 200px
+		padding: 0 0 0rem 0;
+	}
+	&__top-right-left-container {
+		display: flex;
+	}
+	&__border {
+		@include divider-form;
+	}
+	&__avi {
+		margin: 0 16px 0 0; //16px
+		height: 3rem; // 48px
+		width: 3rem; //48px
+		border-radius: 33.33px; //circle
+		@include tablet {
+			margin: 0 1.3rem 0 0; //20px
+		}
+	}
+	&__name {
+		width: 140px;
+		@include h4-paragraphs-and-comments-bold;
+		@include tablet {
+			line-height: none;
+			height: 1rem;
+		}
+	}
+	&__time {
+		height: 1rem; //16px
+		width: 88px;
+		@include h4-list-contact-information;
+		@include tablet {
+			width: 88px; //132
+		}
+	}
+	&__comment {
+		@include h4-list-contact-information;
+		min-width: 62.50vw; //62.50vw 200px
+		max-width: 62.50vw; //62.50vw 200px
+		@include tablet {
+			min-width: 624px; // 624px
+			max-width: 90%;
+		}
+		@include desktop {
+			min-width: 624px; // 624px
+			max-width: 90%;
+		}
+	}
+	&__button {
+		@include button;
+		@include tablet {
+			align-items: center;
+		}
+	}
+	&__divider {
+		@include divider-form;
+		@include width-100-percent-at-standard-padding;
+	}
+}

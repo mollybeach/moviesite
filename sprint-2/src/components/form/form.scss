@@ -1,0 +1,139 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+/************************************COMMENTS FEED SECTION************************************/
+
+.form {
+    @include standard-padding-left;
+    background-color: $white;
+    @include tablet {
+      width:720px;
+    }
+    @include desktop {
+        width:712px;
+      }
+  
+    &__header {
+        @include h3-subheader;
+        display: inline-flex;
+        margin: 3.0rem 0 2.0rem 0; //40px 0 32px 0
+        @include tablet {
+            margin: 2.5rem 0rem 2rem 0; //40px 0 32px 0
+        }
+     
+   
+    }
+    &__wrap {
+        @include tablet {
+           margin: 0;
+        }
+    
+    }
+    &__binding {
+        padding: 0 0 0 0; //32px
+        @include tablet {
+            padding: 0 0 0 0; //32px
+        }
+    }
+    &__feed {
+        display: flex;
+        justify-content: space-between;
+       width: 100%;
+        @include tablet {
+            padding: 0 0 1rem; //bottom
+            justify-content: left;
+        }
+    }
+    &__avi {
+        width: 3.0rem; // 48px 
+        height: 3.0rem; // 48px 
+        border-radius: 33.3px; //circle
+        margin: 0 16px 0 0; //16px
+        position: relative;
+        @include tablet {
+            margin: 2rem 1.3vw 0 0;
+        }
+    }
+    &__boxes {
+        padding: 0 0px 0 0px;
+        @include tablet{
+            display:flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+    input:focus,
+    select:focus,
+    area:focus,
+    button:focus {
+        outline: $brainflix-dark-blue-hover;
+        border-width: 0.2rem;
+    }
+    &__tag {
+        width: 65vw;
+        display:inline;
+        box-sizing: border-box;
+        @include h5-labels;
+        @include tablet{
+            align-items:center;
+            width: 180px;
+            height:2rem; 
+     }
+    }
+   
+&_partition-note-field-button{
+    @include tablet{
+       display:flex;
+       align-content:flex-end;
+      
+       // flex-direction: row;
+       // align-items: left;
+        
+    }
+}
+    &__note-field {
+        background-color: $alabaster;
+        @include h5-labels;
+        box-sizing: border-box;
+        border-radius: 0.25rem; //4px
+        width: 70.0vw; // 224px 
+        height: 20.0vw; // 64px 
+        margin: 1rem 0 1rem 0; //spaces in between the boxes 16px 
+        resize: none;
+        padding: 1px 0 0 10px; //center placeholder
+        &:active {
+            border-color: $brainflix-blue;
+        }
+        &:hover {
+            border-color: $brainflix-blue;
+        }
+        @include tablet {
+            padding:0;
+            margin: 0;
+            width: 440px; //436px
+            height: 48px; //48px
+            align-self:center;
+
+        }
+        
+    }
+    textarea::placeholder{
+            padding: 4px 0 0 4px;  
+    }
+    &__form-button-partition {
+         width: 160px;
+    }
+    &__button {
+        @include button;
+        @include tablet{
+    align-content: center;
+           padding:0;
+          margin: 0 0 0 16px;
+          position:absolute;
+          //  margin: 0 0 0 16px;
+          
+        }
+    }
+}
+

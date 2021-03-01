@@ -1,0 +1,143 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+
+/************************************HERO CONTAINER****************************/
+
+.herovideo {
+	&__background {
+		display: flex;
+		position: relative;
+		justify-content: center;
+		object-fit: cover;
+		width: 100%;
+		height: auto;
+		@include tablet {
+			display: flex;
+			background-color: $black;
+			justify-content: center;
+		}
+	}
+	&__media {
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0;
+		height: 183px;
+		@include tablet {
+			min-width: 700px;
+			max-width: 54.68%;
+			height: 400px;
+			align-items: center;
+			display: flex;
+			background-color: rgb(0.0, 0.0, 0.0);
+		}
+		@include desktop {
+			margin: 0;
+			min-width: 944px;
+			max-width: 73.75%;
+			height: 540px; //540/1280 42.18%
+		}
+	}
+	&__panel {
+		display: flex;
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+		@include tablet {
+			width: 700px;
+			bottom: 16px;
+		}
+		@include desktop {
+			width: 944px;
+			padding: 0 16px;
+			bottom: 16px;
+		}
+	}
+	&__panel-box {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	&__partition-play-icon {
+		display: flex;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		border-radius: 4px;
+		background-color: $black;
+		@include tablet {
+			justify-content: center;
+			margin: 0 0 0 8px;
+		}
+		@include desktop {
+			margin: 0 0 0 16px;
+		}
+	}
+	&__play-icon {
+		width: 20px;
+		height: 20px;
+		border-radius: 0.25rem; //4px
+		padding: 0.5rem 0 0 0; //8px
+	}
+	&__scrubber {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $black;
+		flex: auto;
+		margin: 0 8px;
+		height: 36px;
+		border-radius: 4px;
+		@include tablet {
+			margin: 0 16px;
+			padding: 0 0px 0 16px;
+			justify-content: space-between;
+		}
+	}
+	&__scrubber-progress {
+		height: 3px;
+		width: 80%;
+		padding: 0 0 0 16px;
+		background-color: $brainflix-blue;
+		border-radius: 4px;
+		align-self: center;
+	}
+	&__scrubber-time {
+		display: none;
+		@include tablet {
+			@include h5-labels;
+			display: flex;
+			color: $white;
+			width: auto;
+			background-color: $black;
+			margin-right: 16px;
+		}
+	}
+	&__switch-icons {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		background-color: $black;
+		width: 80px;
+		height: 36px;
+		border-radius: 4px;
+		margin: 0 8px 0 0;
+	}
+	&__screen-icon {
+		width: 20px;
+		height: 20px;
+		align-self: center;
+		margin: 0 8px 0 0;
+		background-color: $black;
+		@include tablet {
+			margin: 0 8px 0 0;
+		}
+	}
+	&__sound-icon {
+		width: 20px;
+		height: 20px;
+		align-self: center;
+		background-color: $black;
+	}
+}

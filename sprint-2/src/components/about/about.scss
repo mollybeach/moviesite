@@ -1,0 +1,109 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+
+/************************************ABOUT SECTION************************************/
+
+.about {
+	background-color: $white;
+	color: $black;
+	display: flex;
+	flex-direction: column;
+	@include standard-padding-left;
+	&__title {
+		margin: 32px 0 16px 0; //16px bottom
+		@include h1-main-header-black-bold;
+		@include tablet {
+			margin: 48px 0 24px 0; //16px bottom
+		}
+	}
+	&__wrap {
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&__info-partition {
+		display: flex;
+		margin: 0 0 24px 0; //24px
+		height: 24px;
+		@include tablet {
+			flex-direction: row;
+		}
+	}
+	&__name {
+		display: flex;
+		align-self: center;
+		@include h3-subheader;
+		margin: 0 8px 0 0;
+		@include tablet {
+			@include h3-subheader;
+		}
+	}
+	&__date {
+		margin: 0 0 0 0;
+		align-self: center;
+		@include h5-labels;
+		@include tablet {}
+	}
+	&__likes-count {
+		@include h5-labels;
+		margin: 0 0 0 0;
+		align-self: center;
+		@include desktop {
+			@include h5-labels;
+		}
+	}
+	&__views-count {
+		@include h5-labels;
+		align-self: center;
+		margin: 0 0 0 0;
+		@include tablet {
+			margin: 0; //168 left 32 bottom
+		}
+	}
+	&__views-icon {
+		height: 20px; //just looks right
+		width: 20px;
+		align-self: center;
+		margin: 0 8px 0 0px;
+	}
+	&__likes-icon {
+		height: 16px;
+		width: 16px;
+		align-self: center;
+		margin: 0 8px 0 24px;
+	}
+	&__status-partition {
+		display: flex;
+		margin: 0 0 24px 0; //24px
+		height: 24px;
+		align-content: center;
+		@include desktop {
+			margin: 0 32px 0 0;
+		}
+	}
+	&__partition-text {
+		@include p-paragraph;
+		@include tablet {
+			display: flex;
+		}
+	}
+	&__text {
+		margin: 24px 0 1.5rem 0; //bottom mobile 24px
+		@include tablet {
+			margin: 40px 0 0 0; //24px right 
+			min-width: 540px; //348px 
+			max-width: 540px; //420px 
+		}
+		@include desktop {
+			margin: 40px 0 0 0; //24px right 
+			min-width: 540px;
+			max-width: 50%;
+		}
+	}
+	&__border {
+		@include divider;
+	}
+}
