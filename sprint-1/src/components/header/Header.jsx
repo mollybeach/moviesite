@@ -4,6 +4,7 @@ import "./header.scss";
 import Logo from '../../assets/logo/Logo-brainflix.svg';
 import Img from '../../assets/images/Mohan-muruge.jpg';
 
+/*******************************************HEADER***************************************/
 class Header extends React.Component {
     render() {
         return (
