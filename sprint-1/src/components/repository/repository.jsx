@@ -1,7 +1,7 @@
 import React from "react";
 import "./repository.scss";
 
-/******************RANDOM PHOTO GENERATOR*******************/
+/***********************RANDOM PHOTO GENERATOR*********************/
 
 function randomPhotoGenerator(variant) {
   let apiRandomImageURL = `https://randomuser.me/api/portraits/thumb/`;
