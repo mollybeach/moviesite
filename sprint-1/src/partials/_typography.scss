@@ -1,294 +1,296 @@
 /************************************FONTS******************************************/
 
 @font-face {
-    font-family: "AvenirNextLTProRegular";
-    src: url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
-    font-weight: 400;
+	font-family: "AvenirNextLTProRegular";
+	src: url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
+	font-weight: 400;
 }
 
 @font-face {
-    font-family: "AvenirNextLTProDemi";
-    src: url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2");
-    font-weight: 600;
+	font-family: "AvenirNextLTProDemi";
+	src: url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2");
+	font-weight: 600;
 }
 
 @font-face {
-    font-family: "AvenirNextLTProBold";
-    src: url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
-    font-weight: 700;
+	font-family: "AvenirNextLTProBold";
+	src: url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
+	font-weight: 700;
 }
 
 
 /*************************************H1 HERO HEADING************************************/
 
 @mixin h1-hero-heading {
-    font-family: AvenirNextLTProBold;
-    color: $white;
-    font-size: 3.8rem; //60px 
-    line-height: 4.3rem; //68px
-    @include tablet {
-        font-size: 3.8rem; //60px
-        line-height: 4.3rem; //68px
-    }
-    @include desktop {
-        font-size: 3.8rem; //60px 
-        line-height: 4.3rem; //68px
-    }
+	font-family: AvenirNextLTProBold;
+	color: $white;
+	font-size: 3.8rem; //60px 
+	line-height: 4.3rem; //68px
+	@include tablet {
+		font-size: 3.8rem; //60px
+		line-height: 4.3rem; //68px
+	}
+	@include desktop {
+		font-size: 3.8rem; //60px 
+		line-height: 4.3rem; //68px
+	}
 }
 
 
 /*****************************************H1-Main-heading****************************/
 
 @mixin h1-main-header {
-    font-family: AvenirNextLTProBold;
-    font-size: 1.5rem; //24px 
-    line-height: 2.0rem; //32px
-    color: $white;
-    @include tablet {
-        font-size: 2.3rem; //36px 2.25rem 
-        line-height: 2.8rem; //44px
-    }
-    @include desktop {
-        font-size: 2.3rem; //36px 2.25rem 
-        line-height: 2.8rem; //44px
-    }
+	font-family: AvenirNextLTProBold;
+	font-size: 1.5rem; //24px 
+	line-height: 2.0rem; //32px
+	color: $white;
+	@include tablet {
+		font-size: 2.3rem; //36px 2.25rem 
+		line-height: 2.8rem; //44px
+	}
+	@include desktop {
+		font-size: 2.3rem; //36px 2.25rem 
+		line-height: 2.8rem; //44px
+	}
 }
 
 @mixin h1-main-header-regular {
-    @include h1-main-header;
-    font-family: AvenirNextLTProRegular;
+	@include h1-main-header;
+	font-family: AvenirNextLTProRegular;
 }
 
 @mixin h1-main-header-black {
-    @include h1-main-header;
-    color: $black;
+	@include h1-main-header;
+	color: $black;
 }
+
 @mixin h1-main-header-black-bold {
-    @include h1-main-header;
-    color: $black;
-    font-family: AvenirNextLTProBold;
+	@include h1-main-header;
+	color: $black;
+	font-family: AvenirNextLTProBold;
 }
+
 @mixin h1-desktop-size-that-should-be-available-on-mobile {
-    color: $white;
-    font-family: AvenirNextLTProBold;
-    font-size: 8.0vw;
-    line-height: 10.8vw;
+	color: $white;
+	font-family: AvenirNextLTProBold;
+	font-size: 8.0vw;
+	line-height: 10.8vw;
 }
 
 
 /*********************H2 - Header subheader for mobile*********************/
 
 @mixin h2-header {
-    font-size: 0.9rem; //14px 
-    line-height: 1.4rem; //22px 
-    font-family: AvenirNextLTProDemi;
-    color: $black;
-    @include tablet {
-        font-size: 1.5rem; //24px 1.5rem 
-        line-height: 2.0; //32px 2rem
-        font-family: AvenirNextLTProBold;
-    }
-    @include desktop {
-        font-size: 1.5rem; //24px 1.5rem 
-        line-height: 2.0rem; //32px 2rem 
-    }
+	font-size: 0.9rem; //14px 
+	line-height: 1.4rem; //22px 
+	font-family: AvenirNextLTProDemi;
+	color: $black;
+	@include tablet {
+		font-size: 1.5rem; //24px 1.5rem 
+		line-height: 2.0; //32px 2rem
+		font-family: AvenirNextLTProBold;
+	}
+	@include desktop {
+		font-size: 1.5rem; //24px 1.5rem 
+		line-height: 2.0rem; //32px 2rem 
+	}
 }
 
 @mixin h2-header-white {
-    @include h2-header;
-    color: $white;
+	@include h2-header;
+	color: $white;
 }
 
 @mixin h2-header-responsive-white {
-    @include h2-header-responsive;
-    color: $white;
+	@include h2-header-responsive;
+	color: $white;
 }
 
 @mixin h2-desktop-size-that-should-be-available-on-mobile {
-    color: $white;
-    font-size: 1.5rem; //24px 1.5rem 
-    line-height: 2.0; //32px 2rem
-    font-family: AvenirNextLTProBold;
+	color: $white;
+	font-size: 1.5rem; //24px 1.5rem 
+	line-height: 2.0; //32px 2rem
+	font-family: AvenirNextLTProBold;
 }
 
 
 /*******************************H3 - Subheader for Tablet and Desktop*************/
 
 @mixin h3-subheader {
-    font-size: 1.0rem; //16px 
-    line-height: 1.5rem; // 24px
-    font-family: AvenirNextLTProDemi;
-    color: $black;
-    @include tablet {
-        font-size: 1.0rem; //16px 
-        line-height: 1.5rem; // 24px
-    }
-    @include desktop {
-        font-size: 1.0rem; //16px 
-        line-height: 1.5rem; // 24px
-    }
+	font-size: 1.0rem; //16px 
+	line-height: 1.5rem; // 24px
+	font-family: AvenirNextLTProDemi;
+	color: $black;
+	@include tablet {
+		font-size: 1.0rem; //16px 
+		line-height: 1.5rem; // 24px
+	}
+	@include desktop {
+		font-size: 1.0rem; //16px 
+		line-height: 1.5rem; // 24px
+	}
 }
 
 @mixin h3-subheader-white {
-    @include h3-subheader;
-    color: $white;
+	@include h3-subheader;
+	color: $white;
 }
 
 @mixin h3-subheader-bold {
-    @include h3-subheader;
-    font-family: AvenirNextLTProBold;
+	@include h3-subheader;
+	font-family: AvenirNextLTProBold;
 }
 
 @mixin h3-subheader-white-bold {
-    @include h3-subheader;
-    font-family: AvenirNextLTProBold;
-    color: $white;
+	@include h3-subheader;
+	font-family: AvenirNextLTProBold;
+	color: $white;
 }
 
 
 /********************H4 Paragraph & Comments*******************************/
 
 @mixin h4-paragraphs-and-comments {
-    font-family: AvenirNextLTProRegular;
-    color: $black;
-    font-size: 0.8rem; // 13px
-    line-height: 1.1rem; //18px
-    @include tablet {
-        font-size: 0.9rem; // 14px
-        line-height: 1.4rem; //22px
-    }
-    @include desktop {
-        font-size: 0.9rem; // 14px
-        line-height: 1.4rem; // 22px 
-    }
+	font-family: AvenirNextLTProRegular;
+	color: $black;
+	font-size: 0.8rem; // 13px
+	line-height: 1.1rem; //18px
+	@include tablet {
+		font-size: 0.9rem; // 14px
+		line-height: 1.4rem; //22px
+	}
+	@include desktop {
+		font-size: 0.9rem; // 14px
+		line-height: 1.4rem; // 22px 
+	}
 }
 
 @mixin h4-paragraphs-and-comments-bold {
-    @include h4-paragraphs-and-comments;
-    font-family: AvenirNextLTProBold;
+	@include h4-paragraphs-and-comments;
+	font-family: AvenirNextLTProBold;
 }
 
 @mixin h4-paragraphs-and-comments-white {
-    @include h4-paragraphs-and-comments;
-    color: $white;
+	@include h4-paragraphs-and-comments;
+	color: $white;
 }
 
 @mixin h4-paragraphs-and-comments-white-bold {
-    @include h4-paragraphs-and-comments-bold;
-    color: $white;
+	@include h4-paragraphs-and-comments-bold;
+	color: $white;
 }
 
 @mixin h4-paragraphs-and-comments-white-demi {
-    @include h4-paragraphs-and-comments-white;
-    font-family: AvenirNextLTProDemi;
-    color: $white;
+	@include h4-paragraphs-and-comments-white;
+	font-family: AvenirNextLTProDemi;
+	color: $white;
 }
 
 
 /********************************h4-lists-and-contacts-information**************/
 
 @mixin h4-list-contact-information {
-    color: $black;
-    font-family: AvenirNextLTProRegular;
-    font-size: 0.8rem; //13px 
-    line-height: 1.1rem; //18px 
-    @include tablet {
-        font-size: 0.9rem; //14px 
-        line-height: 1.3rem; //20px
-    }
-    @include desktop {
-        font-size: 0.9rem; //14px 
-        line-height: 1.3rem; //20px 
-    }
+	color: $black;
+	font-family: AvenirNextLTProRegular;
+	font-size: 0.8rem; //13px 
+	line-height: 1.1rem; //18px 
+	@include tablet {
+		font-size: 0.9rem; //14px 
+		line-height: 1.3rem; //20px
+	}
+	@include desktop {
+		font-size: 0.9rem; //14px 
+		line-height: 1.3rem; //20px 
+	}
 }
 
 @mixin h4-list-contact-information-bold {
-    @include h4-list-contact-information;
-    font-family: AvenirNextLTProBold;
+	@include h4-list-contact-information;
+	font-family: AvenirNextLTProBold;
 }
 
 @mixin h4-list-contact-information-demi {
-    @include h4-list-contact-information;
-    font-family: AvenirNextLTProDemi;
+	@include h4-list-contact-information;
+	font-family: AvenirNextLTProDemi;
 }
 
 @mixin h4-list-contact-information-white {
-    @include h4-list-contact-information;
-    color: $white;
+	@include h4-list-contact-information;
+	color: $white;
 }
 
 @mixin h4-list-contact-information-white-demi {
-    @include h4-list-contact-information;
-    font-family: AvenirNextLTProDemi;
-    color: $white;
+	@include h4-list-contact-information;
+	font-family: AvenirNextLTProDemi;
+	color: $white;
 }
 
 @mixin h4-list-contact-information-white-bold {
-    @include h4-list-contact-information;
-    font-family: AvenirNextLTProBold;
-    color: $white;
+	@include h4-list-contact-information;
+	font-family: AvenirNextLTProBold;
+	color: $white;
 }
 
 
 /********************************P-Paragraph****************************/
 
 @mixin p-paragraph {
-    font-family: AvenirNextLTProRegular;
-    color: $black;
-    font-size: 0.8rem; //13px
-    line-height: 1.1rem; //18px
-    @include tablet {
-        font-size: 0.9rem; //13px 
-        line-height: 1.3rem; //18px 
-        display: inline-block;
-    }
-    @include desktop {
-        font-size: 0.9rem; //13px 
-        line-height: 1.3rem; //18px
-        display: inline-block;
-    }
+	font-family: AvenirNextLTProRegular;
+	color: $black;
+	font-size: 0.8rem; //13px
+	line-height: 1.1rem; //18px
+	@include tablet {
+		font-size: 0.9rem; //13px 
+		line-height: 1.3rem; //18px 
+		display: inline-block;
+	}
+	@include desktop {
+		font-size: 0.9rem; //13px 
+		line-height: 1.3rem; //18px
+		display: inline-block;
+	}
 }
 
 @mixin p-paragraph-bold {
-    @include p-paragraph;
-    font-family: AvenirNextLTProBold;
+	@include p-paragraph;
+	font-family: AvenirNextLTProBold;
 }
 
 @mixin p-paragraph-white {
-    @include p-paragraph;
-    color: white;
+	@include p-paragraph;
+	color: white;
 }
 
 @mixin p-paragraph-white-bold {
-    @include p-paragraph-bold;
-    color: white;
+	@include p-paragraph-bold;
+	color: white;
 }
 
 
 /*******************************************H5-Labels***********************/
 
 @mixin h5-labels {
-    font-size: 0.8rem; //12px
-    line-height: 1.3rem; //20px 
-    font-family: AvenirNextLTProRegular;
-    color: $silver; //labels
-    @include tablet {
-        font-size: 0.8rem; //12px
-        line-height: 1.3rem; // 20px
-        font-family: AvenirNextLTProDemi;
-    }
-    @include desktop {
-        font-size: 0.8rem; //12px
-        line-height: 1.8rem; // 20px
-    }
+	font-size: 0.8rem; //12px
+	line-height: 1.3rem; //20px 
+	font-family: AvenirNextLTProRegular;
+	color: $silver; //labels
+	@include tablet {
+		font-size: 0.8rem; //12px
+		line-height: 1.3rem; // 20px
+		font-family: AvenirNextLTProDemi;
+	}
+	@include desktop {
+		font-size: 0.8rem; //12px
+		line-height: 1.8rem; // 20px
+	}
 }
 
 @mixin h5-labels-demi {
-    @include h5-labels;
-    font-family: AvenirNextLTProDemi;
+	@include h5-labels;
+	font-family: AvenirNextLTProDemi;
 }
 
 @mixin h5-labels-bold {
-    @include h5-labels;
-    font-family: AvenirNextLTProBold;
+	@include h5-labels;
+	font-family: AvenirNextLTProBold;
 }
