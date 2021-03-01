@@ -102,12 +102,19 @@
         margin: 1rem 0 1rem 0; //spaces in between the boxes 16px 
         resize: none;
         padding: 1px 0 0 10px; //center placeholder
+        &:active {
+            border-color: $brainflix-blue;
+        }
+        &:hover {
+            border-color: $brainflix-blue;
+        }
         @include tablet {
             padding:0;
             margin: 0;
             width: 440px; //436px
             height: 48px; //48px
             align-self:center;
+
         }
         
     }

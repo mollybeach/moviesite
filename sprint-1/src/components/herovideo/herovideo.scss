@@ -9,13 +9,13 @@
         display: flex;
         position: relative;
         justify-content:center;
+        object-fit: cover;
       width: 100%;
         height:auto;
     @include tablet {
             display:flex;  
             background-color:$black;
-            justify-content: center;
-           
+           justify-content: center;     
     }
     }
     
@@ -30,8 +30,7 @@
         height: 400px;
           align-items:center;
         display: flex;
-        background-color:$black;
-            //height: 400px;
+        background-color:rgb(0.0,0.0,0.0);
         }
         @include desktop {
             margin: 0;
@@ -43,7 +42,6 @@
     &__panel {
         display: flex;    
         position: absolute;
-        //background-color:$black;
         bottom: 8px;
        width:100%;
         @include tablet {
@@ -75,9 +73,7 @@
         }
         @include desktop {
             margin: 0 0 0 16px;
-         
-       
-            //margin: 0 248px;
+
         }
     }
 
@@ -108,27 +104,18 @@
         height: 3px;
         width: 80%;
         padding: 0 0 0 16px;
-        background-color: $silver;
+        background-color: $brainflix-blue;
         border-radius: 4px;
         align-self: center;    
     }
     &__scrubber-time {
-        display: none;
-        
+        display: none; 
         @include tablet {
             @include h5-labels;
             display: flex;
-            
             color: $white;
             width: auto;
             background-color:$black;
-            margin-right: 16px;
-        }
-       @include desktop {
-        @include h5-labels;
-            display: flex;
-            color: $white;
-            width: auto;
             margin-right: 16px;
         }
     }

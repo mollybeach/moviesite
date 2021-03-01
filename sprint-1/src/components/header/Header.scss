@@ -61,12 +61,10 @@
             }
             @include desktop {
             min-width: 180px;
-            max-width: 15%;
+            max-width: 20%;
       
          }
       
-            
-         
         }
         &__partition-button-photo {
            width:288px;
@@ -87,9 +85,9 @@
         &__button {
             background-image: url("../../assets/Icons/Icon-upload.svg");
             background-size: 1rem 1rem;
-           background-position-y: center;
-           background-position-x: 25%;
-           background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 25%;
+            background-repeat: no-repeat;
            @include button;
             background-color: $brainflix-blue;
             border: 0;
@@ -102,7 +100,7 @@
             }
 
             @include tablet {
-                background-position-x: 1rem;
+                background-position-x: 2rem;
                 padding:0 0 0  1.5rem;
                 height: 2.5rem;
             }

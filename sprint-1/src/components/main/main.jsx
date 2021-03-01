@@ -1,60 +1,59 @@
 
 import React from 'react';
-import Header from '../header/Header';
+import Header from '../header/header';
 import HeroVideo from '../herovideo/herovideo';
 import About from '../about/about';
 import Form from '../form/form';
 import Repository from '../repository/repository';
 import SubVideo from '../subvideo/subvideo';
-
 import data from "../data/video-details.json";
-import commentData from "../data/comments.json";
-//import subVideoData from "../data/subVideoData.json";
-//import heroVideoData from "../data/heroVideoData.json";
-//import data from "../data/subVideoData.json";
-//import videoData from "../data/video-details.json";
-
-//import {heroVideoData, subVideoData, CommentData} from '../data/data';
 import './main.scss';
-console.log(commentData);
-
-
 
 class Main extends React.Component {
-    
-   state = {
-      topVideoData : data[0],
-      bottomVideoData : data,
-  }
+//define state
+  state = {
+    topList: data[0],
+    bottomList: data
+   
+}
 
- 
-
-  handleClick = event => {
-    event.preventDefault();
-    console.log(event.target.comment.value);
-   // this.setState({ topVideoData: [...this.state.topVideoData.unshift(this.pop())]});
-    //document.querySelector(".form-container__form").reset();
-  };
-    render() {
+  render() {
       return (
         <div className="main"> 
         <Header/>
-        <HeroVideo topVideoData={this.state.topVideoData}/>
+        <HeroVideo heroData={this.state.topList}/>
         <div className="main__design">
             <div className="main__partition">
-                <About  topVideoData={this.state.topVideoData}/>
-                <Form  topVideoData={this.state.topVideoData} />
-                <Repository  topVideoData={this.state.topVideoData}/>
+                <About  aboutData={this.state.topList}/>
+                <Form/>
+                <Repository  repositoryData={this.state.topList}/>
             </div>
-            <SubVideo  topVideoData={this.state.topVideoData}  onSubmit={this.handleClick} bottomVideoData={this.state.bottomVideoData}/>
+            <SubVideo subData={this.state.bottomList}   clicked={this.clickHandler} />
         </div>
-        
+       
     </div> 
       );
-    }
+      }
+        
+ clickHandler = (identifier) => {
+
+  let duplicate= [...this.state.bottomList];
+  let position = duplicate.findIndex(subData => {
+    return subData.id ===  identifier
+  })
+   
+    let newList = duplicate.filter(bottomVideos => {
+      return bottomVideos.id !== identifier
+    })
+    let selected = duplicate[position]
+    newList.unshift(selected);
+    this.setState({
+     topList: data[position],  bottomList:newList
+    })
   }
-    
   
-  export default Main;
-  
+}
+
+export default Main;
+
 

@@ -107,6 +107,11 @@
             min-width: 540px; //348px 
             max-width: 540px; //420px 
         }
+        @include desktop {
+            margin: 40px 0 0 0; //24px right 
+            min-width: 540px; //348px 
+            max-width: 42.1%; //420px 
+        }
 
     }
 

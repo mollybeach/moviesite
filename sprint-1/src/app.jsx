@@ -1,12 +1,10 @@
 
 
 import React from 'react';
-import Main from '../main/main'
+import Main from './components/main/main'
 import './app.scss';
 
-
 class App extends React.Component {
-
 
   render() {
     return (
@@ -16,5 +14,4 @@ class App extends React.Component {
   }
 }
   
-
 export default App;
