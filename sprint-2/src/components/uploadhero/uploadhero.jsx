@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 //import { Link } from "react-router-dom";
 import "./uploadhero.scss";
-import App from "../../app";
+//import App from "../../app";
 import Header from "../header/header";
 import preview from "../../assets/images/uploadvideo.jpg";
 let newArray = [];
@@ -39,7 +39,7 @@ class UploadPageHero extends React.Component {
             <div className="wrap-inside">
               <div className="uploadhero__border"> </div>
               <div className="uploadhero__header">Upload Video</div>
-              <div className="uploadhero__border"> </div>\
+              <div className="uploadhero__border"> </div>
               <div className="uploadhero__partition">
                 <div className="uploadhero__hero">
                   <VideoPreview />
@@ -69,10 +69,12 @@ function VideoForm(props) {
   let submitHandler = (event) => {
     let id = this.props.mainVideoData.id;
     event.preventDefault();
-   // let id = this.getRandomId(newArray);
+  // let id = this.getRandomId(newArray);
     let newTitle = event.target.enteredtitle;
     let newDescription = event.target.entereddescription;
     let newImage= this.getRandomVideo(newArray);
+    this.getRandomVideo(newArray);
+    console.log(newImage);
     axios.post(
       `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`,
       {

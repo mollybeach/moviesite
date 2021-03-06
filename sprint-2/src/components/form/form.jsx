@@ -14,7 +14,7 @@ class Form extends React.Component {
         let newLastName = nameList.name.last;
         let fullName = (`${newFirstName} ${newLastName}`);
         return(newArray.unshift(fullName));
-         
+       
         })
         .catch(error => {
             console.log('something went wrong', error);

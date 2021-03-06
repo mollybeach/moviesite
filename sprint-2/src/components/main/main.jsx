@@ -40,7 +40,7 @@ componentDidUpdate = () => {
 }
 
 postComment = (id, comment) => {
-  axios.post('https://project-2-api.herokuapp.com/videos?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89', comment)
+  axios.post(`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`, comment)
   .then (result => {
       this.getMainVideoData(id)
   })
@@ -48,15 +48,7 @@ postComment = (id, comment) => {
       console.log(error)
   })
 }
-postVideo = (id, title) => {
-  axios.post(`https://project-2-api.herokuapp.com/videos/${id}/?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`, title)
-  .then (result => {
-      console.log('Post successful')
-  })
-  .catch (error => {
-      console.log('Main video post didnt work')
-  })
-}
+
   render() {
     return (
       <div className="main">
