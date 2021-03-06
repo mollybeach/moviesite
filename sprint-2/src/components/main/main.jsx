@@ -6,7 +6,6 @@ import About from "../about/about";
 import Form from "../form/form";
 import Repository from "../repository/repository";
 import SubVideo from "../subvideo/subvideo";
-//import Xxx from "../xxx/xxx";
 import "./main.scss";
 
 
@@ -41,7 +40,7 @@ componentDidUpdate = () => {
 }
 
 postComment = (id, comment) => {
-  axios.post(`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`, comment)
+  axios.post('https://project-2-api.herokuapp.com/videos?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89', comment)
   .then (result => {
       this.getMainVideoData(id)
   })

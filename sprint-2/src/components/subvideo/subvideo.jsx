@@ -4,7 +4,6 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 class SubVideo extends React.Component {
-
     state = {
         subVideoData : []
     }
