@@ -12,7 +12,7 @@ let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
 class UploadPageHero extends React.Component {
   getRandomId = (length) => {
     var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
     for ( var i = 0; i < length; i++ ) {
        result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -67,16 +67,22 @@ function VideoPreview() {
 function VideoForm(props) {
   let brainFlixHome = "/";
   let submitHandler = (event) => {
+    let id = this.props.mainVideoData.id;
     event.preventDefault();
+   // let id = this.getRandomId(newArray);
     let newTitle = event.target.enteredtitle;
     let newDescription = event.target.entereddescription;
+    let newImage= this.getRandomVideo(newArray);
     axios.post(
-      "'https://project-2-api.herokuapp.com/videos?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89'",
+      `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`,
       {
-        title: newTitle.value, //body of request
+        id: id,
+        title: newTitle.value, 
         description: newDescription.value,
+        image: newImage
       }
     );
+   
     return (window.location.href = brainFlixHome);
   };
   let Previous = (event) => {
@@ -92,7 +98,7 @@ function VideoForm(props) {
       <div className="uploadhero__partition-response">
         <div className=" uploadhero__border-response"></div>
 
-        <div className="  uploadhero__title">TITLE YOUR VIDEO</div>
+        <div className=" uploadhero__title">TITLE YOUR VIDEO</div>
 
         <input
           type="text"
