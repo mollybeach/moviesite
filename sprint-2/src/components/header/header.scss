@@ -6,8 +6,9 @@
 /************************************MAIN NAV************************************/
 
 .header {
-	@include width-100-percent-at-standard-padding;
-	@include standard-padding-left;
+	@include width-100-percent-minus-standard-padding-horizontal;
+	@include standard-padding-horizontal;
+	@include increment-2-bottom;
 	background-color: $white;
 	display: flex;
 	flex-direction: column;
@@ -15,97 +16,95 @@
 	align-items: center;
 	color: $silver;
 	height: 169px;
-	margin: 0 0 0 1rem;
 	@include tablet {
 		flex-direction: row;
 		align-items: left;
-		height: 5.0rem;
+		height: $increment10-rem;
 		margin: 0;
 	}
+	&__link{
+		img{	
+			height: $increment6-px;
+			width: 124px;
+		}
+		text-decoration: none;
+	}
 	&__logo {
-		height: 3rem; //48px
-		width: 50%;
-		align-self: center;
-		@include tablet {
-			height: 1.5rem;
-			width: 16%; //124px
-			margin-right: 169px; //169
+		@include tablet { 
+		width: calc(124px + 22% + 6.2%); //width of img + margin left+ standard-padding
 		}
 		@include desktop {
-			height: 2rem;
-			margin-right: 509px;
+		width: calc(124px + 39.76% + 12.6%); //width of img + margin left+ standard-padding
 		}
 	}
-	&__input {
+	&__search-input {
 		background-image: url("../../assets/Icons/Icon-search.svg");
 		background-repeat: no-repeat;
-		background-size: 1.5rem 1.5rem;
+		background-size: $increment20px-rem;
 		background-position-y: center;
-		background-position-x: 1rem;
-		padding: 0 0 0 2.5rem;
-		height: 2.5rem;
-		border-radius: 0.25rem; //4px
+		background-position-x: $increment2-rem;
+		padding-left: $increment5-rem;
+		height: $increment5-rem;
+		border-radius: $increment0-rem;
 		border: solid 1px $mercury;
 		background-color: $alabaster;
-		width: 244px;
+		width: 66.25vw; //252-40= 212/320=66.25vw
+		height: $increment6-rem;
+		justify-content: right;
 		&:active {
 			border-color: $brainflix-blue;
 		}
 		&:hover {
 			border-color: $brainflix-blue;
 		}
-		@include tablet {
-			width: 180px;
-			height: 2.5rem;
+		@include tablet{
+			width: 212px;
 		}
-		@include desktop {
-			min-width: 180px;
-			max-width: 20%;
-		}
+	
 	}
 	&__partition-button-photo {
-		width: 288px;
-		height: 3rem;
+		width: $increment36-px; //288px
+		height: $increment6-rem;
 		display: flex;
 		align-self: center;
 		@include tablet {
 			width: 25%;
-			margin: 0 0 0 0;
+			margin-right: $increment3-rem;
 		}
 		@include desktop {
-			width: 20%;
+			width: 15%;
 			justify-content: flex-end;
 		}
 	}
 	&__button {
 		background-image: url("../../assets/Icons/Icon-upload.svg");
-		background-size: 1rem 1rem;
+		background-size: $increment1-rem $increment1-rem;;
 		background-position-y: center;
 		background-position-x: 25%;
 		background-repeat: no-repeat;
 		@include button;
 		background-color: $brainflix-blue;
 		border: 0;
-		border-radius: 0.25rem; //4px
+		border-radius: $increment0-px;
 		color: $white;
-		width: 80vw;
 		&:hover {
 			background-color: $brainflix-dark-blue-hover;
 		}
 		@include tablet {
-			background-position-x: 2rem;
-			padding: 0 0 0 1.5rem;
-			height: 2.5rem;
+			background-position-x: 15%;
+			padding-left: $increment3-rem;
+			width: $increment13-px;
 		}
 		@include desktop {
-			height: 3rem;
+			height: $increment6-rem;
+			width: $increment13-px;
 		}
 	}
 	&__photo {
-		width: 3rem;
+		width: $increment6-rem;
 		border-radius: 50%;
 		height: 100%;
 		align-self: left;
-		margin: 0 0 0 1rem;
+		margin-left: $increment2-rem;
 	}
 }

@@ -27,36 +27,34 @@
     &__wrap {
         @include tablet {
            margin: 0;
+        
         }
     
     }
     &__binding {
-        padding: 0 0 0 0; //32px
-        @include tablet {
-            padding: 0 0 0 0; //32px
-        }
+        padding: 0 ;
     }
     &__feed {
         display: flex;
         justify-content: space-between;
        width: 100%;
         @include tablet {
-            padding: 0 0 1rem; //bottom
+            padding-bottom: $increment2-px;
             justify-content: left;
         }
     }
     &__avi {
-        width: 3.0rem; // 48px 
-        height: 3.0rem; // 48px 
+        width:  $increment6-px;
+        height:  $increment6-px;
         border-radius: 33.3px; //circle
-        margin: 0 16px 0 0; //16px
+        margin-right: $increment2-px;
         position: relative;
         @include tablet {
-            margin: 2rem 1.3vw 0 0;
+            margin: $increment4-px 1.3vw 0 0;
         }
     }
     &__boxes {
-        padding: 0 0px 0 0px;
+        padding: 0;
         @include tablet{
             display:flex;
             flex-direction: column;
@@ -78,7 +76,7 @@
         @include tablet{
             align-items:center;
             width: 180px;
-            height:2rem; 
+            height: $increment4-px; 
      }
     }
    
@@ -86,22 +84,19 @@
     @include tablet{
        display:flex;
        align-content:flex-end;
-      
-       // flex-direction: row;
-       // align-items: left;
-        
     }
 }
     &__note-field {
         background-color: $alabaster;
         @include h5-labels;
         box-sizing: border-box;
-        border-radius: 0.25rem; //4px
+        border-radius:$increment0-px; 
         width: 70.0vw; // 224px 
-        height: 20.0vw; // 64px 
-        margin: 1rem 0 1rem 0; //spaces in between the boxes 16px 
+        height: $increment8-px; // 64px 
+        margin: $increment2-px 0; //spaces in between the boxes 
         resize: none;
-        padding: 1px 0 0 10px; //center placeholder
+        padding-top: $increment0-px; 
+        padding-left: $increment0-px; 
         &:active {
             border-color: $brainflix-blue;
         }
@@ -109,29 +104,30 @@
             border-color: $brainflix-blue;
         }
         @include tablet {
-            padding:0;
+            padding-top: $increment0-px; 
+            padding-left: $increment0-px; 
             margin: 0;
             width: 440px; //436px
-            height: 48px; //48px
+            height: $increment6-px;
             align-self:center;
 
         }
         
     }
     textarea::placeholder{
-            padding: 4px 0 0 4px;  
+        padding-top: $increment0-px; 
+        padding-left: $increment0-px; 
     }
     &__form-button-partition {
-         width: 160px;
+         width: $increment20-px; //160px 
     }
     &__button {
         @include button;
         @include tablet{
-    align-content: center;
+          align-content: center;
            padding:0;
-          margin: 0 0 0 16px;
+          margin-left: $increment2-px; 
           position:absolute;
-          //  margin: 0 0 0 16px;
           
         }
     }

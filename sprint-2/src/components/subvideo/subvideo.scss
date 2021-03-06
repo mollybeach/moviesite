@@ -7,17 +7,20 @@
 
 .subvideo {
 	background-color: $white;
-	@include standard-padding-left-right;
+	@include standard-padding-horizontal;
 	@include desktop {
 		padding: unset; //remove standard padding
 	}
+	&__link{
+		text-decoration: none;
+	}
 	&__title {
 		@include h5-labels;
-		margin: 2.5rem 0 2.5rem 0; //40px 0 40px 0
+		margin: $increment5-px 0;
 	}
 	&__partition {
 		display: flex;
-		margin: 0 0 1.5rem 0; //24px
+		margin-bottom: $increment3-px;
 		@include tablet {
 			width: 56%;
 		}
@@ -33,10 +36,13 @@
 	&__partition-note {
 		@include h4-list-contact-information;
 		width: 50%;
-		margin: 0 0 0 16px;
+		margin-left: $increment2-px; 
 	}
 	&__partition-title {
 		@include h4-list-contact-information-bold;
+		&:hover {
+			letter-spacing: 0.1px;
+		}
 	}
 	&__partition-channel {
 		@include h4-list-contact-information;
