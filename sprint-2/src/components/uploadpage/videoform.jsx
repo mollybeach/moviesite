@@ -1,11 +1,10 @@
 import React from "react";
-
 import "./uploadpage.scss";
-
-
+//import axios from 'axios';
+import Popup from './popup';
 let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
-
     class VideoForm extends React.Component {
+      /**********POP UP STATE***********/
       constructor(props){
         super(props);
         this.state = { showPopup: false };
@@ -13,10 +12,16 @@ let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
       
         togglePopup() {
          this.setState({
-           showPopup: !this.state.showPopup
+           showPopup: !this.state.showPopup,
+           videoData : this.state.video,
          });
        }
-  /******GET RANDOM VIDEO*****/ 
+
+  state = {
+    videoData: {},
+    //videoData: []
+  };
+  /******GET RANDOM ID*****/ 
   getRandomId = () => {
     let result = '';
     let characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -27,34 +32,49 @@ let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
     return result;
    
   }
-  previous = (event) => {
-    let brainFlixHome = "/";
-    window.location.href = brainFlixHome;
-  };
+
 /******GET RANDOM VIDEO*****/ 
  getRandomVideo() {
   let apiRandomImage = apiRandomVideoUrl;
     console.log(apiRandomImage);
   return apiRandomImage;
 }
+
 /*********CLICK EVENT ADD VIDEO**************/
 addVideo = (event) => {
   event.preventDefault();
   let id = this.getRandomId();
   let newImage= this.getRandomVideo();
   let video = {
-
+    id: id,
     title: `${event.target.enteredtitle.value}`,
     channel: "new channel",
     description: `${event.target.entereddescription.value}`,
     image: newImage,
   }
-  this.props.postVideo(id, video)  
+  //this.props.postVideo(id, video)  
   console.log(video);
   console.log(id);
+  return video;
+ /* this.setState({
+    videoData: video,
+})  
+  axios.get(video).then (response => {
+      this.setState({
+        videoData: video,
+      })  
+  })
+ */ 
+
 }
-  
-   render (props) {
+
+  /************PREVIOUS CLICK EVENT**********/
+  previous = (event) => {
+    let brainFlixHome = "/";
+    window.location.href = brainFlixHome;
+  };
+/***************RENDER FORM*******************/
+   render () {
     return (
       <form
       onSubmit={this.addVideo}
@@ -86,6 +106,7 @@ addVideo = (event) => {
             className="uploadpage__button-publish"
             id="publish"
             type="submit"
+            onClick={this.togglePopup.bind(this)}
           >
             {" "}
             PUBLISH
@@ -93,6 +114,12 @@ addVideo = (event) => {
           <button className="uploadpage__button-cancel" type="reset" id="cancel">
             CANCEL
           </button>
+          {this.state.showPopup ?
+         <Popup videoData= {this.state.videoData} 
+          closePopup={this.togglePopup.bind(this)}
+         />
+         : null
+       }
         </div>
       </form>
     );

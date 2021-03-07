@@ -8,8 +8,6 @@ export default function VideoPreview() {
          <div className="uploadpage__hero">
         <label className="uploadpage__tag">VIDEO THUMBNAIL</label>
         <video className="uploadpage__video" poster={preview}>
-          {" "}
-          alt="preview"{" "}
         </video>
         </div>
       </>

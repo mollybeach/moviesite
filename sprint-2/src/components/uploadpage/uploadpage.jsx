@@ -2,12 +2,8 @@ import React from "react";
 import "./uploadpage.scss";
 import axios from 'axios';
 import Header from "../header/header";
-//import getRandomId from "./getRandomId";
-//import getRandomVideo from "./getRandomVideo";
 import VideoForm from "./videoform";
 import VideoPreview from "./videopreview"
-//getRandomId={getRandomId}
-//getRandomVideo={getRandomVideo}
 class UploadPage extends React.Component {
 
 postVideo = (id, video) => {
@@ -19,7 +15,6 @@ postVideo = (id, video) => {
       console.log(error)
   })
 }
- 
   render(props) {
     return (
       <>
