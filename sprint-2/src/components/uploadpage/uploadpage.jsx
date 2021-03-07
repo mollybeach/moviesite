@@ -32,7 +32,7 @@ postVideo = (id, video) => {
               <div className="uploadpage__border"> </div>
               <div className="uploadpage__partition">
                 <VideoPreview />
-                <VideoForm  addVideo={this.props}   commentData={this.state.commentData} mainVideoData={this.state.mainVideoData} postVideo={this.postVideo}   heroData={this.state.mainVideoData}  match={this.props.match}/>
+                <VideoForm  addVideo={this.props}   postVideo={this.postVideo}   match={this.props.match}/>
               </div>
             </div>
           </div>
