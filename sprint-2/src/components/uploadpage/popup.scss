@@ -24,13 +24,18 @@
     margin: auto;
     border-radius: 20px;
     background: $white;
- 
     justify-content: center;
     &__header{
-        padding-top: $increment8-px;
-        padding-left: 22%;
+        padding-top: $increment1-px;
+        padding-left: 0%;
         width: 100%;
-        @include h2-header;
+        @include h5-labels;
+        color: $black;
+        @include tablet{
+            padding-top: $increment4-px;
+            padding-left: 22%;
+            @include h2-header;
+         }
         @include desktop{
        @include h1-main-header-black
     }
@@ -38,17 +43,16 @@
     }
     &__button-partition{
         height: $increment6-rem;
-          bottom: 10%;
            display:flex;
            justify-content: center;
-           @include desktop{ margin-top: 40%;}
+           @include desktop{ margin-top: 10%;}
           
     }
     &__button-delete{
         @include h2-header;
         background-color: $white;
 		width: 40%;
-		height:  $increment3-rem;
+		height:  $increment5-rem;
 		border: 1px solid $white;
         color:red;
         margin-top:$increment0-rem;
@@ -62,6 +66,7 @@
         @include h2-header;
         margin-top: $increment0-rem;
         background-color: $white;
+        height:  $increment5-rem;
 		width: 40%;
 		border: 1px solid $white;
 		color: $brainflix-blue;
@@ -71,23 +76,31 @@
     
     }
     &__tag {
+        display:none;
+        @include desktop {
 		@include h5-labels;
-		margin-top: $increment3-rem;
-        margin-bottom: $increment1-rem 0;
+		margin-top: $increment0-rem;
+        margin-bottom: $increment0-rem 0;
         margin-left:  $increment3-rem;
-	@include desktop {
 		margin-top: $increment5-rem;
-			display:flex;
-		}	}
+		display:flex;
+		}
+    	
+    }
 	&__video {
-        margin-left:  $increment3-rem;
-		width: 288px;
-	    height: 153px;
+        margin-left: $increment0-rem;
+		width:  $increment17-px;
+	    height: $increment9-px;
 		border-radius:  $increment0-px;
 		@include tablet {
-			width: 344px;
-			height: 183px;
+        margin-left: $increment3-rem;
+		width: $increment21-px;
+		height: $increment11-px;
         }
+        @include desktop {
+            width: 344px;
+            height: 183px;
+            }
 	}
     &__hero {
         display:flex;
@@ -98,27 +111,27 @@
         }
     }  
     &__title {
+      display:none;
+        @include desktop {
         @include h5-labels;
         margin-left:  $increment3-rem;
-        margin-bottom: $increment1-rem;
-        @include tablet {
-        margin-top: $increment1-rem;
+        margin-bottom: $increment0-rem;
         }
     
     }  
 
-
-
-
     &__content {
+        display:none;
+        @include desktop {
         @include h5-labels;
         color: $black;
-        height: 7%;
+        height: 2%;
         margin-left:  $increment6-rem;
         margin-bottom: $increment1-rem;
         @include tablet {
         margin-top: $increment1-rem;
         }
+    }
     
     } 
 }
