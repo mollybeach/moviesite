@@ -7,25 +7,25 @@ import Form from "../form/form";
 import Repository from "../repository/repository";
 import SubVideo from "../subvideo/subvideo";
 import "./main.scss";
-
+//import UploadPage from "../uploadpage/uploadpage";
 
 class Main extends React.Component {
 
   state = {
-    mainVideoData: {},
-    CommentData: []
+    allData: {},
+    commentData: []
   };
 
   componentDidMount = () => {
-    this.getMainVideoData('1af0jruup5gu');
+    this.getallData('1af0jruup5gu');
   }
 
-getMainVideoData = (id) => {
+getallData = (id) => {
     axios.get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`)
     .then (response => {
         this.setState({
-            mainVideoData: response.data,
-            CommentData: response.data.comments
+            allData: response.data,
+            commentData: response.data.comments
         })  
     })
     .catch (error => {
@@ -34,15 +34,15 @@ getMainVideoData = (id) => {
 }
 
 componentDidUpdate = () => {
-    if (this.state.mainVideoData.id !== this.props.match.params.id && this.props.match.params.id) {
-            this.getMainVideoData(this.props.match.params.id);
+    if (this.state.allData.id !== this.props.match.params.id && this.props.match.params.id) {
+            this.getallData(this.props.match.params.id);
     }
 }
 
 postComment = (id, comment) => {
   axios.post(`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`, comment)
   .then (result => {
-      this.getMainVideoData(id)
+      this.getallData(id)
   })
   .catch (error => {
       console.log(error)
@@ -53,15 +53,15 @@ postComment = (id, comment) => {
     return (
       <div className="main">
         <Header />
-        <HeroVideo heroData={this.state.mainVideoData} /> 
+        <HeroVideo heroData={this.state.allData} /> 
         <div className="main__design">
           <div className="main__partition">
-            <About aboutData={this.state.mainVideoData} />
-            <Form CommentData={this.state.CommentData} mainVideoData={this.state.mainVideoData} postComment={this.postComment}/>
-            <Repository repositoryData={this.state.CommentData} />
+            <About aboutData={this.state.allData} />
+            <Form commentData={this.state.commentData} allData={this.state.allData} postComment={this.postComment}/>
+            <Repository repositoryData={this.state.commentData} />
           </div>
           <SubVideo
-            heroData={this.state.mainVideoData}
+            heroData={this.state.allData}
              match={this.props.match}
           />
            
@@ -75,23 +75,3 @@ postComment = (id, comment) => {
 
 export default Main;
 
-/*
- <Xxx  mainVideoData={this.state.mainVideoData}  postVideo={this.postVideo}  CommentData={this.state.CommentData} />
-addComment={this.addComment}
-  clickHandler = (identifier) => {
-    let duplicate = [...this.state.bottomList];
-    let position = duplicate.findIndex((subData) => {
-      return subData.id === identifier;
-    });
-
-    let newList = duplicate.filter((bottomVideos) => {
-      return bottomVideos.id !== identifier;
-    });
-    let selected = duplicate[position];
-    newList.unshift(selected);
-    this.setState({
-      topList: data[position],
-      bottomList: newList,
-    });
-  };
-*/

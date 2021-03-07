@@ -21,13 +21,11 @@ class Form extends React.Component {
         })
   }
 
-  
-  
   addComment = (event) => {
       event.preventDefault();
      // console.log(this.state)
      // console.log(this.props.match.params.id)
-      let id = this.props.mainVideoData.id;
+      let id = this.props.allData.id;
       this.getRandomName(newArray);
       let comment = {
         "name": newArray[0],
@@ -38,7 +36,7 @@ class Form extends React.Component {
   render() {
     return (
       <section className="form">
-        <div className="form__header">{this.props.CommentData.length} Comments</div>
+        <div className="form__header">{this.props.commentData.length} Comments</div>
         <div className="form__wrap">
           <div className="form__binding">
             <form className="form__feed" id="feed" value="feed" onSubmit={this.addComment}>
