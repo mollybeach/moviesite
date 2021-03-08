@@ -31,10 +31,10 @@
 	}
 	&__logo {
 		@include tablet { 
-		width: calc(124px + 22% + 6.2%); //width of img + margin left+ standard-padding
+		width: calc(124px + 22% + 6.2%); 
 		}
 		@include desktop {
-		width: calc(124px + 39.76% + 12.6%); //width of img + margin left+ standard-padding
+		width: calc(124px + 39.76% + 12.6%);
 		}
 	}
 	&__search-input {

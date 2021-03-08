@@ -3,7 +3,6 @@ import axios from 'axios';
 let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
 
-
 /******************RANDOM NAME GENERATOR*************/
 
 let getRandomName = () => {

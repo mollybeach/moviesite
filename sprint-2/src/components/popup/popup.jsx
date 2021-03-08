@@ -29,8 +29,6 @@ class Popup extends React.Component {
         <div className=" popup__content"></div>
         <div className=" popup__title"> IDENTIFICATION NUMBER:</div>
         <div className=" popup__content"></div>
-
-
           <div className="popup__button-partition">
         <button  className="popup__button-delete" onClick={this.props.closePopup}>Delete</button>
         <button  className="popup__button-close" onClick={this.props.viewPopupButton}>View</button>
