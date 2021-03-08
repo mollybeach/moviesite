@@ -156,23 +156,22 @@
         justify-content: center;
 		width: 100%;
 		height:  $increment6-rem;
-        padding-top: $increment1-px;
 		border: 1px solid $white;
 		color: $brainflix-blue;
+		border-radius: $increment0-px;
 		margin-top:  $increment3-px;
 		margin-bottom:  $increment1-px;
         &:hover {
             color: $brainflix-dark-blue-hover;
           }
 		@include tablet {
-			display: flex;
 			width: 160px;
-			margin-top:  $increment5-px;
-			justify-content: center;
-		}
+		    margin-top:  $increment5-px;
+	}
 	}
 	&__button-publish {
 		background-color: $brainflix-blue;
+		justify-content: center;
 		width: 100%;
 		height: $increment6-px;
 		border-radius: $increment0-px;

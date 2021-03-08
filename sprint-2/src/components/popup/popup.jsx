@@ -32,7 +32,7 @@ class Popup extends React.Component {
 
           <div className="popup__button-partition">
         <button  className="popup__button-delete" onClick={this.props.closePopup}>Delete</button>
-        <button  className="popup__button-close" onClick={this.props.closePopup}>View</button>
+        <button  className="popup__button-close" onClick={this.props.viewPopupButton}>View</button>
         </div>
         </div>
       </div>

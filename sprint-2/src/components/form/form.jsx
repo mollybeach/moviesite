@@ -2,6 +2,9 @@ import React from "react";
 import Image from "../../assets/images/Mohan-muruge.jpg";
 import axios from 'axios';
 import "./form.scss";
+import Repository from '../repository/repository';
+//import repository from "../repository/repository";
+import "../repository/repository.scss";
 /************************************FORM*********************************/
 let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
@@ -20,11 +23,9 @@ class Form extends React.Component {
             console.log('something went wrong', error);
         })
   }
-
+/****************ADD COMMENT**********/
   addComment = (event) => {
       event.preventDefault();
-     // console.log(this.state)
-     // console.log(this.props.match.params.id)
       let id = this.props.allData.id;
       this.getRandomName(newArray);
       let comment = {
@@ -33,7 +34,27 @@ class Form extends React.Component {
       }
       this.props.postComment(id, comment)  
   }
+  /****************DELETE COMMENT*******
+  deleteComment = (id) => {
+    axios.delete(`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`)
+      .then(response => {
+        this.props.renderComments();
+      })
+      .catch(error => {
+          console.log(error);
+      })
+  }
+  ***/
+  
   render() {
+
+ let repositoryData = this.props.commentData;
+ console.log(repositoryData);
+ let repositorySection = repositoryData.map((comment) =>{
+   return(
+  <Repository deleteComment={this.deleteComment} key={comment.id} comment={comment} videoId={repositoryData.id}/>)
+ });
+
     return (
       <section className="form">
         <div className="form__header">{this.props.commentData.length} Comments</div>
@@ -51,7 +72,10 @@ class Form extends React.Component {
             </form>
           </div>
         </div>
+        {repositorySection}
+        <div className="repository__divider"> </div>
       </section>
+      
     );
   }
 }

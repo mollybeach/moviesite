@@ -7,15 +7,13 @@ import "./app.scss";
 
 class App extends React.Component {
 
-
-
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Main}  />
+          <Route path="/" exact  render={() => <Main currentId="1af0jruup5gu"/>} />
           <Route path="/upload" component={UploadPage} />
-          <Route path="/videos/:id" component={Main}  />
+          <Route path="/videos/:id" render={(routerProps) => <Main currentId={routerProps.match.params.id}/>}  />
         </Switch>
       </BrowserRouter>
     );
@@ -23,5 +21,3 @@ class App extends React.Component {
 }
 
 export default App;
-// <Redirect from="/home" to="/" />
-//Anything that does goes on all pages goes outside of the Switch but inside the Router
