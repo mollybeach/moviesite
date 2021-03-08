@@ -59,12 +59,14 @@
 		}
 		@include tablet{
 			width: 212px;
+			
 		}
 	
 	}
 	&__partition-button-photo {
 		width: $increment36-px; //288px
 		height: $increment6-rem;
+		margin-left: $increment2-px;
 		display: flex;
 		align-self: center;
 		@include tablet {
