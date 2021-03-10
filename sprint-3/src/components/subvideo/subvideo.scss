@@ -1,0 +1,50 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+
+/************************************VIDEO GALLERY SECTION************************************/
+
+.subvideo {
+	background-color: $white;
+	@include standard-padding-horizontal;
+	@include desktop {
+		padding: unset; //remove standard padding
+	}
+	&__link{
+		text-decoration: none;
+	}
+	&__title {
+		@include h5-labels;
+		margin: $increment5-px 0;
+	}
+	&__partition {
+		display: flex;
+		margin-bottom: $increment3-px;
+		@include tablet {
+			width: 56%;
+		}
+		@include desktop {
+			width: 90%; //words on right lines
+		}
+	}
+	&__partition-film {
+		width: 120px; //120px
+		object-fit: cover;
+		height: 70px; // 70px
+	}
+	&__partition-note {
+		@include h4-list-contact-information;
+		width: 50%;
+		margin-left: $increment2-px; 
+	}
+	&__partition-title {
+		@include h4-list-contact-information-bold;
+		&:hover {
+			letter-spacing: 0.1px;
+		}
+	}
+	&__partition-channel {
+		@include h4-list-contact-information;
+	}
+}

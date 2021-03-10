@@ -1,0 +1,137 @@
+
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+
+.popup-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color:$opacity;
+  }
+  .popup {
+    position: absolute;
+    left: 22%;
+    right: 22%;
+    top: 22%;
+    bottom: 22%;
+    margin: auto;
+    border-radius: 20px;
+    background: $white;
+    justify-content: center;
+    &__header{
+        padding-top: $increment1-px;
+        padding-left: 15%;
+        width: 100%;
+        @include h5-labels;
+        color: $black;
+        @include tablet{
+            padding-top: $increment4-px;
+            padding-left: 25%;
+            @include h2-header;
+         }
+        @include desktop{
+       @include h1-main-header-black
+    }
+    
+    }
+    &__button-partition{
+        height: $increment6-rem;
+           display:flex;
+           justify-content: center;
+           margin-top: 20%;
+           @include tablet{ margin-top: 12%;}
+           @include desktop{ margin-top: 10%;}
+          
+    }
+    &__button-delete{
+        @include h2-header;
+        background-color: $white;
+		width: 40%;
+		height:  $increment5-rem;
+		border: 1px solid $white;
+        color: $red-cancel;
+        margin-top:$increment0-rem;
+        &:hover {
+            color: $purple-hover;
+          }
+    
+    }
+  
+    &__button-close{
+        @include h2-header;
+        margin-top: $increment0-rem;
+        background-color: $white;
+        height:  $increment5-rem;
+		width: 40%;
+		border: 1px solid $white;
+		color: $brainflix-blue;
+        &:hover {
+            color: $brainflix-dark-blue-hover;
+          }
+    
+    }
+    &__tag {
+        display:none;
+        @include desktop {
+		@include h5-labels;
+		margin-top: $increment0-rem;
+        margin-bottom: $increment0-rem 0;
+        margin-left:  $increment3-rem;
+		margin-top: $increment5-rem;
+		//display:flex;
+		}
+    	
+    }
+	&__video {
+        margin-top: 5%;
+        margin-left: 15%;
+		width:  $increment17-px;
+	    height: $increment9-px;
+		border-radius:  $increment0-px;
+		@include tablet {
+         margin-left: 25%;
+		width: $increment21-px;
+		height: $increment11-px;
+        }
+        @include desktop {
+            width: 344px;
+            height: 183px;
+            }
+	}
+    &__hero {
+        display:flex;
+         flex-direction: column;
+    }  
+    &__title {
+      display:none;
+        @include desktop {
+        @include h5-labels;
+        margin-left:  $increment3-rem;
+        margin-bottom: $increment0-rem;
+        }
+    
+    }  
+
+    &__content {
+        display:none;
+        @include desktop {
+        @include h5-labels;
+        color: $black;
+        height: 2%;
+        margin-left:  $increment6-rem;
+        margin-bottom: $increment1-rem;
+        @include tablet {
+        margin-top: $increment1-rem;
+        }
+    }
+    
+    } 
+}
+  

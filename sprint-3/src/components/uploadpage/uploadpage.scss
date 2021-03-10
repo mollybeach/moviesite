@@ -1,0 +1,189 @@
+@import "../../partials/typography";
+@import "../../partials/mixins";
+@import "../../partials/breakpoints";
+@import "../../partials/variables";
+.uploadpage {
+   justify-content: center;
+ @include standard-padding-horizontal;
+    &__header {
+       @include h1-main-header-black;
+       margin-top: $increment3-rem;
+       @include tablet {
+        @include h1-hero-heading;
+        color: $black;
+        margin-bottom: $increment4-rem;
+        margin-top: $increment6-rem;
+    }
+      }
+	&__border {
+        margin-top: $increment4-rem;
+		
+		@include divider;
+		color: $mercury;
+		@include desktop {
+			display: flex;
+			
+		}
+	}
+	&__border-response {
+        margin-top:  $increment4-rem;
+		@include desktop {
+			display: none;
+		}
+	}
+	&__hero {
+		display:flex;
+            flex-direction: column;
+		@include tablet {
+			//padding-top:  $increment5-px;
+
+		}
+        @include desktop{
+            flex-direction: row;
+			display: unset;
+            
+		}
+	}
+    &__wrap{
+        flex-direction: row;
+        display:flex;
+        @include desktop{
+            flex-direction: row;
+        }
+    }
+    &__wrap-inside{
+        flex-direction: column;
+        @include desktop{
+            flex-direction: row;
+            align-items: baseline;
+        }
+    }
+
+
+	&__tag {
+		@include h5-labels;
+		margin-top: $increment3-rem;
+        margin-bottom: $increment1-rem 0;
+	@include desktop {
+		margin-top: $increment5-rem;
+			display:flex;
+		}	}
+	&__video {
+		width: 288px;
+	    height: 153px;
+		border-radius:  $increment0-px;
+		@include tablet {
+			width: 344px;
+			height: 183px;
+		}
+	
+	}
+
+	&__partition {
+		@include desktop {
+			width: 100%;
+		   display:flex;
+		}
+	}
+	&__partition-response {
+		@include desktop {
+			width: auto;
+			justify-content: right;
+            align-content: right;
+			margin-left: $increment3-rem;
+	
+		}
+	}
+	&__form{
+		width: 100%;
+	}
+	&__title {
+		@include h5-labels;
+		margin-top: $increment3-rem;
+		margin-bottom: $increment1-rem;
+		@include tablet {
+	    margin-top: $increment5-rem;
+		}
+	
+	}
+
+	input:focus,
+	select:focus,
+	area:focus,
+	button:focus {
+		outline: $brainflix-dark-blue-hover;
+		border-width: $increment0-px;
+	}
+	&__alias-field {
+		@include h5-labels;
+		width: 100%;
+		border: 1px solid $mercury;
+		border-radius:  $increment0-rem;
+		height:  $increment5-rem;
+		padding-left:  $increment1-rem;
+		box-sizing: border-box;
+	}
+	&__note-field {
+		width: 100%;
+		border: 1px solid $mercury;
+		border-radius:  $increment0-rem;
+		height: 143px;
+		padding-top:  $increment1-rem;
+		padding-left:  $increment1-rem;
+		box-sizing: border-box;
+		margin-bottom:  $increment4-rem;
+        resize: none;
+		display:flex;
+		@include h5-labels;
+		@include tablet {
+			margin-bottom: $increment5-rem;
+		}
+		@include desktop {
+			height: 94px;
+		}
+	}
+	&__buttons {
+        justify-content: center;
+		@include tablet {
+            flex-direction: row-reverse;
+			display: flex;
+			justify-content: right;
+            align-content: right;
+		}
+	}
+	&__button-cancel {
+		background-color: $white;
+        justify-content: center;
+		width: 100%;
+		height:  $increment6-rem;
+		border: 1px solid $white;
+		color: $brainflix-blue;
+		border-radius: $increment0-px;
+		margin-top:  $increment3-px;
+		margin-bottom:  $increment1-px;
+        &:hover {
+            color: $brainflix-dark-blue-hover;
+          }
+		@include tablet {
+			width: 160px;
+		    margin-top:  $increment5-px;
+	}
+	}
+	&__button-publish {
+		background-color: $brainflix-blue;
+		justify-content: center;
+		width: 100%;
+		height: $increment6-px;
+		border-radius: $increment0-px;
+		border: 1px solid $brainflix-blue;
+		color: $white;
+        &:hover {
+            color: $brainflix-dark-blue-hover;
+          }
+		@include tablet {
+			margin-top:$increment5-px;
+			width: 160px;
+		}
+	}
+
+}
