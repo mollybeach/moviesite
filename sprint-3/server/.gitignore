@@ -1,0 +1,22 @@
+**/node_modules
+/.pnp
+.pnp.js
+
+
+/coverage
+
+/build
+
+
+
+#env files need to be ignored 
+**env
+.env.local
+.DS_Store
+.env.development.local
+.env.production.local
+.env.test.local
+
+yarn-debug.log*
+npm-debug.log*
+yarn-error.log*

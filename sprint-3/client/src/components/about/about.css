@@ -1,0 +1,281 @@
+/************************************FONTS******************************************/
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "AvenirNextLTProBold";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+/*************************************H1 HERO HEADING************************************/
+/*****************************************H1-Main-heading****************************/
+/*********************H2 - Header subheader for mobile*********************/
+/*******************************H3 - Subheader for Tablet and Desktop*************/
+/********************H4 Paragraph & Comments*******************************/
+/********************************h4-lists-and-contacts-information**************/
+/********************************P-Paragraph****************************/
+/*******************************************H5-Labels***********************/
+/***************************************PADDING**************************************************/
+/**********************************************DIVIDERS******************************************************/
+/********************************* FOR TABLETS**********************************************************/
+/********************************* FOR DESKTOP*************************************/
+/************************************VARIABLES******************************************/
+/************************************ABOUT SECTION************************************/
+.about {
+  background-color: #FFFF;
+  color: #323232;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5vw 0 5vw;
+}
+@media (min-width: 768px) {
+  .about {
+    padding: 0 3.1vw 0 3.1vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about {
+    padding: 0 6.3vw 0 6.3vw;
+  }
+}
+.about__title {
+  margin: 2rem 0;
+  font-family: AvenirNextLTProBold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #FFFF;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .about__title {
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__title {
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .about__title {
+    margin: 3rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .about__content {
+    padding: 0 0 0 13.4vw;
+  }
+}
+.about__img {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0 1.5rem;
+  width: 90vw;
+  height: 45vw;
+  max-width: 90vw;
+  max-height: 45vw;
+}
+@media (min-width: 768px) {
+  .about__img {
+    min-width: 720px;
+    min-height: 362px;
+    max-width: 116.7vw;
+    max-height: 58.6vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about__img {
+    min-width: 896px;
+    min-height: 450px;
+    max-width: 70vw;
+    max-height: 35.2vw;
+  }
+}
+.about__img--scale {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__quote {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  font-family: AvenirNextLTProDemi;
+  color: #323232;
+  margin: 0 0 2rem 0;
+  min-width: 90vw;
+  max-width: 90vw;
+}
+@media (min-width: 768px) {
+  .about__quote {
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: AvenirNextLTProBold;
+  }
+}
+@media (min-width: 1280px) {
+  .about__quote {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .about__quote {
+    margin: 3rem 0 2.5rem 0rem;
+    min-width: 720px;
+    max-width: 116.7vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about__quote {
+    margin: 3rem 0 2.5rem 0;
+    min-width: 780px;
+    max-width: 60.9vw;
+  }
+}
+.about__name {
+  font-family: AvenirNextLTProRegular;
+  color: #323232;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  margin: 0 0 2.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: AvenirNextLTProDemi;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .about__name {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__name {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .about__name {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__name {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .about__name {
+    margin: 0 0 2.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .about__name {
+    margin: 0 0 2.5rem 0;
+  }
+}
+.about__names {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  font-family: AvenirNextLTProDemi;
+  color: #323232;
+  margin: 0 0 1.5rem 0;
+}
+@media (min-width: 768px) {
+  .about__names {
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: AvenirNextLTProBold;
+  }
+}
+@media (min-width: 1280px) {
+  .about__names {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .about__names {
+    margin: 0 0 2.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .about__names {
+    margin: 0 0 2.5rem 0;
+  }
+}
+.about__text {
+  font-family: AvenirNextLTProRegular;
+  color: #323232;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  display: inline-block;
+  margin: 0 0 2.5rem;
+}
+@media (min-width: 768px) {
+  .about__text {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    display: inline-block;
+  }
+}
+@media (min-width: 1280px) {
+  .about__text {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    display: inline-block;
+  }
+}
+@media (min-width: 768px) {
+  .about__text {
+    display: flex;
+  }
+}
+@media (min-width: 1280px) {
+  .about__text {
+    margin: 0 0 2.5rem 0;
+  }
+}
+.about__top {
+  margin: 0 0 1.5rem 0;
+}
+@media (min-width: 768px) {
+  .about__top {
+    margin: 0 3.1vw 0 0;
+    min-width: 348px;
+    max-width: 45.8vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about__top {
+    margin: 0 1.9vw 0 0;
+    min-width: 420px;
+    max-width: 29.1vw;
+  }
+}
+@media (min-width: 768px) {
+  .about__bottom {
+    min-width: 348px;
+    max-width: 45.8vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about__bottom {
+    min-width: 420px;
+    max-width: 29.1vw;
+    margin: 0 0 0 0;
+  }
+}/*# sourceMappingURL=about.css.map */
