@@ -4,7 +4,7 @@ import './subvideo.scss';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-
+//const API_URL = process.env.REACT_APP_API_URL;
 class SubVideo extends React.Component {
     state = {
         subVideoData : []
@@ -15,7 +15,8 @@ class SubVideo extends React.Component {
     }
 
     getSubVideoData = () => {
-        axios.get('https://project-2-api.herokuapp.com/videos?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89')
+        axios.get (`http://localhost:8080/videos`)
+        //(`${API_URL}/videos`)
         .then (response => {
             this.setState({
                 subVideoData: response.data

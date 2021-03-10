@@ -4,10 +4,12 @@ import Header from "../header/header";
 import HeroVideo from "../herovideo/herovideo";
 import About from "../about/about";
 import Form from "../form/form";
-import SubVideo from "../subvideo/subvideo";
-
 import "./main.scss";
+import SubVideo from "../subvideo/subvideo";
+//import from "../subvideo/subvideo";
 
+//const API_URL = process.env.REACT_APP_API_URL;
+//   .get(`${API_URL}/all-recipes/api/?i=cheesecake&q=raspberry`)
 class Main extends React.Component {
   state = {
     allData: {},
@@ -15,10 +17,16 @@ class Main extends React.Component {
   };
   componentIsMounted = false;
 
+  // In CRA .env files need to be namespaced by REACT_APP 
+  /*    .get(
+        `https://project-2-api.herokuapp.com/videos/${id}?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`
+      )*/
+
   getAllData = (id) => {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`
+       // `${API_URL}/videos/${id}
+        `http://localhost:8080/videos/${id}`
       )
       .then((response) => {
         this.setState({
@@ -45,7 +53,9 @@ class Main extends React.Component {
   postComment = (id, comment) => {
     axios
       .post(
-        `https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`,
+       // method: 'post',
+      // `${API_URL}/videos/${id}/comments`,
+      (`http://localhost:8080/videos/${id}/comments`, comment),
         comment
       )
       .then((result) => {
