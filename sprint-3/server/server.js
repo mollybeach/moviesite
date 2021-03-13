@@ -1,162 +1,151 @@
-// initialize Express in project
-const express = require('express');
-const videosRoute = require('./routes/videos');
-const cors = require('cors');
+const express = require("express");
 const app = express();
+const cors = require("cors");
+
+const bigData = require("./data/video-details.json");
+
+const today = new Date();
+const date = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+const dateTime = `${date} ${time}`;
+const API_URL = "http://localhost:8080";
+
 
 const port = process.env.PORT || 8080;
+let newArray = [];
 
 app.use(cors());
-
 app.use(express.json());
-app.use('/videos', videosRoute)
-// NEW CODE
-// when the server receives a GET request to '/'
-app.get('/', (req, res) => {
-    // send some text back as a response
-    res.send('Express is running!');
+app.use(express.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+  console.log(`Incoming request from ${req.path} @ ${dateTime}`);
+  next();
 });
-// END OF NEW CODE
-// start Express on port 8080
+
+app.get("/videos", (req, res) => {
+  let videoArray = [];
+  bigData.map((data) => {
+    videoArray.push({
+      id: data.id,
+      title: data.title,
+      channel: data.channel,
+      image: data.image,
+    });
+  });
+  res.send(videoArray);
+});
+
+app.get("/videos/1af0jruup5gu", (req, res) => {
+  let topVideo = [];
+  bigData.map((data) => {
+    topVideo.push({
+      id: data.id,
+      title: data.title,
+      channel: data.channel,
+      image: data.image,
+      description: data.description,
+      views: data.views,
+      likes: data.likes,
+      duration: data.duration,
+      video: data.video,
+      timestamp: data.timestamp,
+      comments: data.comments,
+    });
+  });
+  res.send(topVideo[0]);
+});
+
+app.get("/videos/:id", (req, res) => {
+  let newVideo = bigData.filter(
+    (data, index) => data.id === req.params.id
+  );
+  res.send(newVideo.pop());
+
+});
+
+app.post("/videos", (req, res) => {
+
+  bigData.push({
+    id: req.body.id,
+    title: req.body.title,
+    channel: req.body.channel,
+    image: req.body.image,
+    description: req.body.description,
+    views: "100",
+    likes: "100",
+    duration: "5:00",
+    video: "https://project-2-api.herokuapp.com/stream",
+    timestamp: Date.now(),
+    comments: [
+      {
+          "name": "Micheal Lyons",
+          "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
+          "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
+          "likes": 0,
+          "timestamp": 1545162149000
+      },
+      {
+          "name": "Gary Wong",
+          "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
+          "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
+          "likes": 0,
+          "timestamp": 1544595784046
+      },
+      {
+          "name": "Theodore Duncan",
+          "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+          "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+          "likes": 0,
+          "timestamp": 1542262984046
+      }
+  ]
+  });
+  res.json(bigData);
+ 
+});
+
+app.post('/:id/comments', (request,response)=>{
+  const newComment = {
+      "name": request.body.name,
+      "comment": request.body.comment,
+      "id": 1223232324, // nanoid(),
+      "likes": 0,
+      "timestamp": new Date().getTime()
+  }
+  const id = request.params.id;
+  const mainVid = bigData.find( item => item.id === id);
+  mainVid.comments.unshift(newComment);
+});
+
+
+app.delete('/:id/comments/:commentId', (request, response) => {
+  const id = request.params.id;
+  let mainVid = bigData.find(item => item.id === id);
+  const newComments = mainVid.comments.filter( item => item.id !== request.params.commentId);
+  mainVid.comments = newComments;
+  response.send();
+});
+
+app.put('/:id/likes', (request, response) => {
+const id = request.params.id;
+let mainVid = bigData.find(item => item.id === id);
+let likes = parseFloat( mainVid.likes.replace(/,/g, ''));
+console.log(likes);
+likes++;
+mainVid.likes = likes.toLocaleString();
+response.send();
+});
+
 app.listen(port, () => {
-    console.log(`Server Started on ${port}`);
-    console.log('Press CTRL + C to stop server');
+  console.log(
+    `Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`
+  );
+  console.log(`Server Started on ${port}`);
+  console.log('Press CTRL + C to stop server');
 });
 
 
-/*
-USE WHATEVER PORT IS DEFINED IN  evniroment variable or use 8080
-require('dotenv').config()//we dont refer to dotenv anymore so we don't have to intialize like like const app = dotenv = require('dotenv');  config();
-think of it like a global object and process is one of these global variables  and process.env will add bunch of enviroment variables
-added new file for enviroment variables need to restart your server 
-
-interminal change port 
-PORT=9090 nodemon app
-now server running on 9090 when u deploy your app explicit way to overide eniroment variable
-
-
-proxy is intermediate connection between client and server
-/have api called recipe puppy all it takes is a list of comma sep incredients and search for a query 
-lets say i want to use this api 
-the order of ur middle ware actually matters 
-import axois from 'axios'
-not exactly a proxy yet...
-const REACT_APP_API_URL =process.env.REACT_APP_API_URL
-
-aggregaging all that information
-concept of proxy single server 
-
-
-
-**********THIS is .env IN SERVER****************
-
-PORT = 8080
-BACKEND_URL="http://localhost"
-
-*******************************************
-
-**********THIS is .env IN CLIENT****************
-
-
-REACT_APP_API_URL = http://http://localhost:8080/;
-
-*******************************************
-
-
-*********THIS IS APP.JS ******************
-
-
-
-class App extends Component{
-
-component didMount(){
-axisos(`${API_URL}/all-recipes.com/api?/i=cheescake&q=raspberry`)
-then(recipeResults => {
-console.log(recipeResults.data);
-});
-}
-render(){
-    return <h1>some recipes<h1 >
-}
-
-export default App;
-***************************************************
-
-
-//THIS IS SERVER.JS
-
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const proxy = rquire('express-http-proxy');
-
-
-const port = process.env.PORT || 8080;
-
-require('dotenv').config()
-
-app.use(cors()); //this need to be above 
-
-//fancy proxy
-
-app.use('/app-recipes'), proxy('http://www.recipe.proxy.com')
-
-//naive proxy 
-
-app.get(/recipes', (_req, res) => {
-  axois.get (htt://www.recipepuppy.com/)
-then(recipeResults => {
-res.json(respiceResults.data) 
-  res.json(recipeResults.data);
-}
-
-}
-
-**************************************************
-
-app.listen(port, () => {
-     console.log(`Server Started on ${port}`);
-    console.log('Press CTRL + C to stop server');
-})
-
-
-
-
-problem CORS policy errpr coming from my own local host problem is placement of my middle ware 
-in needs to be in order a function that if middle ware passes through next funtion past through 
-here setting up an endpooint insdtead where fetching info from 3rd party api that doesnt let us fetch from client  onc ewe get results from api because we  additional step of doing it through client this is just once exmple of a proxy 
-instead of doing it on the client 
-  a proxy create intermeidtate data cant req to recipe puppy cor error can request to my own server and then my own server can req recipe puppy
-
-
-wall of red errors 
-blocked by cors policy stop
- cannot axois control
- app.js client server.js is my express server 
- require axois before request 
-
-
- after danil comes back:
-
- change my end point 
-
-
- relative URLS can be used with proxis since the webbrower by default send requests back to the host that the wepage originate from reducdes need ro configure front-end code for 
- different backend servers
-
-
- build UIs first 
-
- start by mocking up UI in HTML 
- does not need to be stlyed 
-
- breakup mockup static react
-
- identify props needed for component 
- identify stateful componets and mockup stat e
-
- only at that point connect to front end back end 
-*/
 
 
 

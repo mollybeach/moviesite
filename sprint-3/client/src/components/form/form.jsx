@@ -5,10 +5,16 @@ import "./form.scss";
 import Repository from '../repository/repository';
 //import repository from "../repository/repository";
 import "../repository/repository.scss";
+
+
 /************************************FORM*********************************/
 let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
+
+let API_URL = "http://localhost:8080/videos/";
 class Form extends React.Component {
+
+ 
   getRandomName = () => {
     axios.get(apiRandomNameUrl)
         .then(response => {
@@ -23,20 +29,14 @@ class Form extends React.Component {
             console.log('something went wrong', error);
         })
   }
-/****************ADD COMMENT**********/
-  addComment = (event) => {
-      event.preventDefault();
-      let id = this.props.allData.id;
-      this.getRandomName(newArray);
-      let comment = {
-        "name": newArray[0],
-        "comment": `${event.target.comment.value}`,
-      }
-      this.props.postComment(id, comment)  
+
+  state = {
+    comment : '',
+
   }
-  /****************DELETE COMMENT*******
   deleteComment = (id) => {
-    axios.delete(`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=ee030f4d-8579-4ed5-a8c8-5ea475bd8b89`)
+  //  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
+  axios.delete(`http://localhost:8080/videos/${this.props.topVideo.id}/comments/${id}`)
       .then(response => {
         this.props.renderComments();
       })
@@ -44,15 +44,52 @@ class Form extends React.Component {
           console.log(error);
       })
   }
-  ***/
-  
-  render() {
 
+postComment = (event) => {
+  event.preventDefault();
+ let id = this.state.props.topVideo.id;
+ // this.getRandomName(newArray);
+  let comment = {
+   // name: newArray[0],
+      name: 'hello',
+    comment: event.target.comment.value
+  }
+ // axios.post( `${API_URL}/${id}/comments`, comment)
+  axios.post(API_URL + id + '/comments', comment)
+    .then(response => {
+      let array = [response.data[0], ...this.state.props.topVideo.comments]
+      this.setState({
+        topVideo: {
+          ...this.state.props.topVideo,
+          comments: array
+        }
+      })
+this.props.renderComments();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+
+
+updateComment = (event) => {
+  this.setState({
+      [event.target.name] : event.target.value
+  })
+}
+  render() {
+    if(!this.props.topVideo){ 
+      return null
+  }
+ // let {title, description, channel,
+  //  views,likes,timestamp,id} = this.props.descriptionObject;
  let repositoryData = this.props.commentData;
+
  console.log(repositoryData);
  let repositorySection = repositoryData.map((comment) =>{
    return(
-  <Repository deleteComment={this.deleteComment} key={comment.id} comment={comment} videoId={repositoryData.id}/>)
+  <Repository deleteComment={this.deleteComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
  });
 
     return (
@@ -60,12 +97,12 @@ class Form extends React.Component {
         <div className="form__header">{this.props.commentData.length} Comments</div>
         <div className="form__wrap">
           <div className="form__binding">
-            <form className="form__feed" id="feed" value="feed" onSubmit={this.addComment}>
+            <form className="form__feed" onSubmit={this.postComment}>
               <img className="form__avi" src={Image} alt=""></img>
               <div className="form__boxes">
-                <label className="form__tag" for="comment" data-domain="Add a new comment">JOIN THE CONVERSATION</label>
+                <label className="form__tag"  data-domain="Add a new comment">JOIN THE CONVERSATION</label>
                 <div className="form__partition-note-field-button">
-                  <textarea className="form__note-field" id="comment" type="text" name="name" comment="comment" placeholder="Add a new comment"></textarea>
+                  <textarea className="form__note-field"  name="comment" placeholder="Add a new comment" ></textarea>
                   <button className="form__button" type="submit">COMMENT</button>
                 </div>
               </div>

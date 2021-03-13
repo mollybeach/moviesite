@@ -5,6 +5,8 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 //const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:8080/videos/";
+
 class SubVideo extends React.Component {
     state = {
         subVideoData : []
@@ -15,8 +17,7 @@ class SubVideo extends React.Component {
     }
 
     getSubVideoData = () => {
-        axios.get (`http://localhost:8080/videos`)
-        //(`${API_URL}/videos`)
+        axios.get (`${API_URL}`)
         .then (response => {
             this.setState({
                 subVideoData: response.data
@@ -25,13 +26,13 @@ class SubVideo extends React.Component {
     }
 
     render () {
-        let newSubVideoData = this.state.subVideoData.filter((item) => item.id !== this.props.heroData.id);
+        let newSubVideoData = this.state.subVideoData.filter((item) => item.id !== this.props.topData.id);
         return(
             <section className="subvideo">
             <div className="subvideo__title">NEXT VIDEO</div>
                 { newSubVideoData.map( (props) => {
         return (
-                    <Link to={`/videos/${props.id}`} className="subvideo__link subvideo__partition"  key={ props.id} id={props.id}>
+                    <Link to={`/${props.id}`} className="subvideo__link subvideo__partition"  key={ props.id} id={props.id}>
                         <video className="subvideo__partition-film" poster={ props.image} ></video>
                         <div className="subvideo__partition-note">
                         <div className="subvideo__partition-title">{ props.title}</div>
@@ -46,6 +47,4 @@ class SubVideo extends React.Component {
     }
 }
 
-
 export default SubVideo;
-

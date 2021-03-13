@@ -1,7 +1,7 @@
 {
-  "name": "server.js",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Brainflix Sprint3",
+  "description": "BrainflixSprint3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,11 +21,20 @@
   },
   "homepage": "https://github.com/mollybeach/molly-beach-brainflix#readme",
   "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-http-proxy": "^1.6.2",
+    "fs": "0.0.1-security",
+    "http-proxy-middleware": "^1.0.6",
+    "modules": "^0.4.0",
+    "node": "^15.10.0",
+    "react": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "request": "^2.88.0",
-    "uuid": "^3.4.0"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

@@ -9,7 +9,7 @@ import RandomAvi from "../../modules/randomAviGenerator";
 let Repository = (props) => {
   let deleteComment = () => {
     props.deleteComment(props.comment.id);
-  };
+}
   return (
     <section className="repository">
       <div className="repository__wrap">
@@ -50,8 +50,7 @@ let Repository = (props) => {
                         className="repository__delete"
                         onClick={deleteComment}
                       >
-                        {" "}
-                        DELETE{" "}
+                        DELETE
                       </button>
                     </div>
                   </div>
