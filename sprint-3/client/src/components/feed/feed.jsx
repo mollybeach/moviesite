@@ -61,7 +61,6 @@ postComment = (event) => {
  let id = this.props.topVideo.id;
   let comment = {
        id: newId,
-       name: `newArray[0]`,
        comment: event.target.comment.value
   }
   console.log(comment);

@@ -133,11 +133,15 @@ app.post("/videos", (req, res) => {
 });
 
 app.post('/comments/:id', (req,res)=>{
+  console.log(res.data);
+  axios.get(randomImageURL)
+  .then(response => {
+    
   let newComment = {
-      "name": req.body.name,
+      "name": response.data.user.name,
       "comment": req.body.comment,
       "id":req.body.id,
-      "likes": 0,
+      "likes": response.data.likes,
       "timestamp": new Date().getTime()
   }
   let id = req.params.id;
@@ -145,6 +149,9 @@ app.post('/comments/:id', (req,res)=>{
   topVideo.comments.unshift(newComment);
   fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
   res.send(newComment);
+}) .catch(error => {
+  console.log(error);
+})
 });
 
 app.delete('/:id/comments/:commentId', (request, response) => {
