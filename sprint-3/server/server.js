@@ -11,9 +11,7 @@ const dateTime = `${date} ${time}`;
 const API_URL = "http://localhost:8080";
 const dataPath = "./data/input-video.json";
 const bigData = JSON.parse(fs.readFileSync(dataPath));
-
 const port = process.env.PORT || 8080;
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +21,7 @@ app.use((req, res, next) => {
   next();
 });
 
+/******************GET VIDEOS**************/
 app.get("/videos", (req, res) => {
   let videoArray = [];
   bigData.map((data) => {
@@ -43,20 +42,17 @@ app.get("/videos", (req, res) => {
   res.send(videoArray);
 });
 
-
+/******************GET COMMENTS**************/
 app.get("/comments", (req, res) => {
   let commentsArray = [];
   bigData.map((data) => {
     commentsArray.push({
-     // name: data.comments.name,
-      //comment: data.comments.comment
       comments: data.comments
     });
   });
   res.send(commentsArray);
 });
-//.filter(
- // (data, index) => data.id === req.params.id
+/*******************DEFAULT VIDEO**************/
 app.get("/videos/1af0jruup5gu", (req, res) => {
   let topVideo = [];
   bigData.map((data) => {
@@ -76,14 +72,14 @@ app.get("/videos/1af0jruup5gu", (req, res) => {
   });
   res.send(topVideo[0]);
 });
-
+/*******************GET VIDEO BY ID**************/
 app.get("/videos/:id", (req, res) => {
   let newVideo = bigData.filter(
     (data, index) => data.id === req.params.id
   );
   res.send(newVideo.pop());
 });
-
+/*******************POST VIDEO**************/
 app.post("/videos", (req, res) => {
   axios.get(randomImageURL)
   .then(response => {
@@ -131,7 +127,7 @@ app.post("/videos", (req, res) => {
   });
   
 });
-
+/*********************POST COMMENT******************/
 app.post('/comments/:id', (req,res)=>{
   console.log(res.data);
   axios.get(randomImageURL)
@@ -152,15 +148,16 @@ app.post('/comments/:id', (req,res)=>{
   console.log(error);
 })
 });
-
-app.delete('/:id/comments/:commentId', (request, response) => {
-  let id = request.params.id;
+/*********************DELETE COMMENT******************/
+  app.delete('/:id/comments/:commentId', (req, res) => {
+  let id = req.params.id;
   let topVideo = bigData.find(item => item.id === id);
-  let newComments = topVideo.comments.filter( item => item.id !== request.params.commentId);
+  let newComments = topVideo.comments.filter( item => item.id !== req.params.commentId);
   topVideo.comments = newComments;
-  response.send();
+  fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+  res.send();
 });
-
+/*********************ADD LIKES******************/
 app.put('/:id/likes', (request, response) => {
 let id = request.params.id;
 let topVideo = bigData.find(item => item.id === id);

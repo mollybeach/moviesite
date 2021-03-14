@@ -6,40 +6,17 @@ import Repository from '../repository/repository';
 //import repository from "../repository/repository";
 import "../repository/repository.scss";
 
-/************************************FORM*********************************/
-let newArray = [];
-let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
-//let currenttopId = this.props.topVideo.id; 
+/************************************FEED*********************************/
+
+
 let API_URL = "http://localhost:8080/comments";
-//let API_URL_2 = "http://localhost:8080/";
-//let id = this.props.topVideo.id;
+let API_URL_2 = "http://localhost:8080";
+
 class Feed extends React.Component {
   /*********************STATE *******************/
   state = {
     comment : '',
   }
-
-  getRandomName = () => {
-    axios.get(apiRandomNameUrl)
-        .then(response => {
-        let nameList = response.data.results[0];
-        let newFirstName = nameList.name.first;
-        let newLastName = nameList.name.last;
-        let fullName = (`${newFirstName} ${newLastName}`);
-        return(newArray.unshift(fullName));
-       
-        })
-        .catch(error => {
-            console.log('something went wrong', error);
-        })
-  }
-  /*
-updateComment = (event) => {
-  this.setState({
-      [event.target.name] : event.target.value
-  })
-}
-*/
    /**************GET RANDOM ID**************/
    getRandomId = () => {
     let result = "";
@@ -51,7 +28,6 @@ updateComment = (event) => {
     return result;
   };
 
- 
  /********************POST COMMENT**************/
 postComment = (event) => {
   event.preventDefault();
@@ -64,7 +40,7 @@ postComment = (event) => {
   console.log(comment);
   console.log(topId);
   console.log(`${API_URL}/${topId}`);
- axios.post( `${API_URL}/${topId}` , comment)
+ axios.post( `${API_URL_2}/${topId}` , comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
       console.log(this.props.topVideo);
@@ -83,9 +59,9 @@ postComment = (event) => {
 };
  /********************DELETE COMMENT**************/
 deleteComment = (commentId) => {
-  let topId =this.props.videoId
-//  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
-axios.delete(`http://localhost:8080/${topId}/comments/${commentId}`)
+  let topId = this.props.topVideo.id;
+  console.log(topId);
+  axios.delete(`${API_URL_2}/${topId}/comments/${commentId}`)
     .then(response => {
       this.props.renderComments();
     })
@@ -128,5 +104,4 @@ axios.delete(`http://localhost:8080/${topId}/comments/${commentId}`)
     );
   }
 }
-
 export default Feed;
