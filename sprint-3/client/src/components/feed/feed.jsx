@@ -39,7 +39,7 @@ postComment = (event) => {
   }
   //console.log(comment);
  // console.log(topId);
-  console.log(`${API_URL}/${topId}`);
+  //console.log(`${API_URL}/${topId}`);
  axios.post( `${API_URL}/${topId}` , comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
@@ -90,8 +90,9 @@ deleteComment = (commentId) => {
   
  /*************************FORM************************/
  let repositoryData = this.props.commentData;
- //console.log(repositoryData);
- let repositorySection = repositoryData.map((comment) =>{
+ console.log(repositoryData);
+ //let repositorySection = repositoryData.map((comment) =>{
+  let repositorySection = this.props.commentData.comments && this.props.commentData.comments.map((comment) => {
    return(
   <Repository deleteComment={this.deleteComment} likeComment={this.likeComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
  });

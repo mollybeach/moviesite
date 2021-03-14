@@ -190,23 +190,19 @@ app.set('/comments/:id', (req,res)=>{
 });
 
 
-
-
-
 //app.put('/:id/likes', (req, res) => {
+  //let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
+  //topVideo.likes = likes.toLocaleString();
+//fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+//res.set("likes", likes);
 /*********************ADD LIKES*************/
   app.post('/:id/comments/:commentId', (req, res) =>     {
-    axios.get(randomImageURL)
-
-let id = req.params.id;
-let topVideo = bigData.find(item => item.id === id);
-let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
-console.log(likes);
-console.log(topVideo.comments.find(({ name }) => name === id).likes)
-likes++;
-//topVideo.likes = likes.toLocaleString();
-//fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-res.set("likes", likes);
+    let id = req.params.id;
+    let targetComment = bigData.comments.find((comment) => comment.id === id);
+    //targetComment.likes++;
+    console.log(targetComment);
+    fs.writeFileSync(dataPath, JSON.stringify(targetComment.likes++, null, 2));
+    res.send();
 
       });
 

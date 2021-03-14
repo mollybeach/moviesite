@@ -31,8 +31,9 @@ class SubVideo extends React.Component {
             <section className="subvideo">
             <div className="subvideo__title">NEXT VIDEO</div>
                 { newSubVideoData.map( (props) => {
+                    //to={`/video/${video.id}`}
         return (
-                    <Link to={`/${props.id}`} className="subvideo__link subvideo__partition"  key={ props.id} id={props.id}>
+                    <Link to={`/videos/${props.id}`} className="subvideo__link subvideo__partition"  key={ props.id} id={props.id}>
                         <video className="subvideo__partition-film" poster={ props.image} ></video>
                         <div className="subvideo__partition-note">
                         <div className="subvideo__partition-title">{ props.title}</div>
@@ -48,3 +49,4 @@ class SubVideo extends React.Component {
 }
 
 export default SubVideo;
+//to={`/${props.id}`}

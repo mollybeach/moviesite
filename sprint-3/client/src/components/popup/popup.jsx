@@ -14,7 +14,7 @@ class Popup extends React.Component {
 
   popUpViewEvent=(e)=>{
     e.preventDefault();
-    let brainFlixHome = `/`  ;
+    let brainFlixHome = `/videos/`  ;
     let newVideoHome = brainFlixHome + this.props.brandNewId;
     return (window.location.href = newVideoHome)
   }

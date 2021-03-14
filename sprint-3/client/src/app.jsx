@@ -6,6 +6,27 @@ import "./app.scss";
 import Header from "./components/header/header";
 
 
+export default function App() {
+  return (
+    <div className="App">
+      
+ <BrowserRouter>
+ <Header />
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/upload" component={UploadPage} />
+        <Route path="/videos/:id" component={Main} />
+      </Switch>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+
+
+
+
+/*
 
 export default function App() {
   return (
@@ -24,23 +45,10 @@ export default function App() {
 }
 
 //console.log('Client .env ', process.env.REACT_APP_URL,);
-/*
 
-export default function App() {
-  return (
-    <div className="App">
-      
- <BrowserRouter>
- <Header />
-      <Switch>
-        <Route path="/" exact component={Main} />
-        <Route path="/upload" component={UploadPage} />
-        <Route path="/videos/:id" component={Main} />
-      </Switch>
-      </BrowserRouter>
-    </div>
-  );
-}
+*/
+
+/*
 class App extends React.Component {
 
   render() {
