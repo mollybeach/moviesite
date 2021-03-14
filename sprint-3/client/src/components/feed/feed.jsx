@@ -50,17 +50,6 @@ updateComment = (event) => {
   state = {
     comment : '',
   }
-  deleteComment = (id) => {
-    let topVideoId =this.props.videoId
-  //  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
-  axios.delete(`http://localhost:8080/${topVideoId}/comments/${id}`)
-      .then(response => {
-        this.props.renderComments();
-      })
-      .catch(error => {
-          console.log(error);
-      })
-  }
 
 postComment = (event) => {
   event.preventDefault();
@@ -90,7 +79,17 @@ postComment = (event) => {
       console.log(error);
     });
 };
-
+deleteComment = (commentId) => {
+  let topVideoId =this.props.videoId
+//  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
+axios.delete(`http://localhost:8080/${topVideoId}/comments/${commentId}`)
+    .then(response => {
+      this.props.renderComments();
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
   render() {
     if(!this.props.topVideo){ 
       return null

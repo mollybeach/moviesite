@@ -7,14 +7,12 @@ import Feed from "../feed/feed";
 import "./main.scss";
 import SubVideo from "../subvideo/subvideo";
 let API_URL = "http://localhost:8080/videos/";
-
 class Main extends React.Component {
   state = {
     topVideo: [],
     commentData: []
   };
   componentIsMounted = false;
-
 
   getInformation = (id) => {
     console.log( `${API_URL}${id}`);
@@ -31,7 +29,6 @@ class Main extends React.Component {
           });
         
         }
-    
 
   renderComments = () =>{
     this.getInformation(this.props.currentId)
@@ -62,10 +59,9 @@ componentWillUnmount() {
               commentData={this.state.commentData}
               renderComments={this.renderComments}
               topVideo={this.state.topVideo}
-             
             />
           </div>
-          <SubVideo   topData={this.state.topVideo} match={this.props.match}  />
+          <SubVideo topData={this.state.topVideo} match={this.props.match}  />
         </div>
       </div>
     );
