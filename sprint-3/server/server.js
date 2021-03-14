@@ -132,36 +132,36 @@ app.post("/videos", (req, res) => {
   
 });
 
-app.post('/comments/:id', (request,response)=>{
-  const newComment = {
-      "name": request.body.name,
-      "comment": request.body.comment,
-      "id":request.body.id,
+app.post('/comments/:id', (req,res)=>{
+  let newComment = {
+      "name": req.body.name,
+      "comment": req.body.comment,
+      "id":req.body.id,
       "likes": 0,
       "timestamp": new Date().getTime()
   }
-  const id = request.params.id;
-  const mainVid = bigData.find( item => item.id === id);
-  mainVid.comments.unshift(newComment);
+  let id = req.params.id;
+  let topVideo = bigData.find( item => item.id === id);
+  topVideo.comments.unshift(newComment);
   fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-  response.send(newComment);
+  res.send(newComment);
 });
 
 app.delete('/:id/comments/:commentId', (request, response) => {
-  const id = request.params.id;
-  let mainVid = bigData.find(item => item.id === id);
-  const newComments = mainVid.comments.filter( item => item.id !== request.params.commentId);
-  mainVid.comments = newComments;
+  let id = request.params.id;
+  let topVideo = bigData.find(item => item.id === id);
+  let newComments = topVideo.comments.filter( item => item.id !== request.params.commentId);
+  topVideo.comments = newComments;
   response.send();
 });
 
 app.put('/:id/likes', (request, response) => {
-const id = request.params.id;
-let mainVid = bigData.find(item => item.id === id);
-let likes = parseFloat( mainVid.likes.replace(/,/g, ''));
+let id = request.params.id;
+let topVideo = bigData.find(item => item.id === id);
+let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
 console.log(likes);
 likes++;
-mainVid.likes = likes.toLocaleString();
+topVideo.likes = likes.toLocaleString();
 response.send();
 });
 

@@ -57,10 +57,7 @@ class Feed extends React.Component {
 
 postComment = (event) => {
   event.preventDefault();
-  //let brainFlixHome = `/`  ;
-  //let newVideoHome = brainFlixHome + this.props.brandNewId;
   let newId = this.getRandomId();
-  //let newName = this.getRandomName();
  let id = this.props.topVideo.id;
   let comment = {
        id: newId,
@@ -71,8 +68,6 @@ postComment = (event) => {
   console.log(id);
   console.log(`${API_URL}/${id}`);
  axios.post( `${API_URL}/${id}` , comment)
-// console.log(API_URL + id + '/comments');d
-//  axios.post(API_URL + id + '/comments', comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
       console.log(this.props.topVideo);
@@ -98,10 +93,8 @@ updateComment = (event) => {
     if(!this.props.topVideo){ 
       return null
   }
- // let {title, description, channel,
-  //  views,likes,timestamp,id} = this.props.descriptionObject;
- let repositoryData = this.props.commentData;
 
+ let repositoryData = this.props.commentData;
  console.log(repositoryData);
  let repositorySection = repositoryData.map((comment) =>{
    return(
