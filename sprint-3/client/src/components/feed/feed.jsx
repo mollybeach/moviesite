@@ -37,9 +37,6 @@ postComment = (event) => {
        id: newId,
        comment: event.target.comment.value
   }
-  //console.log(comment);
- // console.log(topId);
-  //console.log(`${API_URL}/${topId}`);
  axios.post( `${API_URL}/${topId}` , comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]

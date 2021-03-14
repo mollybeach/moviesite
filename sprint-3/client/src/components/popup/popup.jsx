@@ -5,21 +5,21 @@ import './popup.scss';
 let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
 class Popup extends React.Component {
   
-    /******GET RANDOM VIDEO*****/ 
+/**********************GET RANDOM VIDEO*********/ 
  getRandomVideo() {
     let apiRandomImage = apiRandomVideoUrl;
       console.log(apiRandomImage);
     return apiRandomImage;
   }
-
+  /***********CLICK EVENT POP UP VIEW BUTTON********/ 
   popUpViewEvent=(e)=>{
     e.preventDefault();
     let brainFlixHome = `/videos/`  ;
     let newVideoHome = brainFlixHome + this.props.brandNewId;
     return (window.location.href = newVideoHome)
   }
-  
   newImage= this.getRandomVideo();
+  /***********************RENDER*****************/ 
   render() {
     return (
       <div className='popup-background'>
@@ -45,6 +45,4 @@ class Popup extends React.Component {
     );
   }
 }
-//type="submit" //onClick={(e) => this.popUpViewEvent(e)}
-//onClick={(e) => e.preventDefault()}  
 export default Popup;

@@ -12,7 +12,7 @@ let paramsId;
 class Main extends React.Component {
 /***********************STATE********************/
   state = {
-    topVideo: {},
+    topData: {},
     subData: [],
   };
 /*******************COMPONENT METHODS**************/
@@ -45,8 +45,8 @@ componentWillUnmount() {
         paramsId = this.props.match.params.id;
       axios.get(`${API_URL}${paramsId}`)
         .then((response) => {
-          let topVideo = response.data;
-          this.setState({ topVideo });
+          let topData = response.data;
+          this.setState({ topData });
         })
         .catch((err) => {
           console.log(err);
@@ -58,13 +58,13 @@ componentWillUnmount() {
 updateInformation = () => {
       axios.get(`${API_URL}${this.props.match.params.id}`)
       .then((newVideo) => {
-          let topVideo;
+          let topData;
           if (Array.isArray(newVideo.data)) {
-            topVideo = newVideo.data[0];
+            topData = newVideo.data[0];
           } else {
-            topVideo = newVideo.data;
+            topData = newVideo.data;
           }
-          this.setState({ topVideo });
+          this.setState({ topData });
         })
         .catch((err) => {
           console.log(err);
@@ -78,13 +78,13 @@ renderComments = () =>{
   render() {
     return (
       <div className="main">
-        <HeroVideo heroData={this.state.topVideo}/>
+        <HeroVideo heroData={this.state.topData}/>
         <div className="main__design">
           <div className="main__partition">
-            <About aboutData={this.state.topVideo}/>
-            <Feed commentData={this.state.topVideo} renderComments={this.renderComments} topVideo={this.state.topVideo}/>
+            <About aboutData={this.state.topData}/>
+            <Feed commentData={this.state.topData} renderComments={this.renderComments} topVideo={this.state.topData}/>
           </div>
-          <SubVideo topData={this.state.topVideo} match={this.props.match}  defaultId={this.defaultId}  subData={this.state.subData}  />
+          <SubVideo topData={this.state.topData} match={this.props.match}  subData={this.state.subData}  />
         </div>
       </div>
     );
