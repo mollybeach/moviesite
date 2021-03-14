@@ -170,8 +170,10 @@ app.post('/comments/:id', (req,res)=>{
   res.send();
 });
 /*********************ADD LIKES****************/
-app.put('/:id/likes', (req, res) => {
-  app.post('/:id/comments/:commentId', (req, res) => {
+//app.put('/:id/likes', (req, res) => {
+  app.post('/:id/comments/:commentId', (req, res) =>     {
+    axios.get(randomImageURL)
+
 let id = req.params.id;
 let topVideo = bigData.find(item => item.id === id);
 let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
@@ -180,11 +182,8 @@ likes++;
 //topVideo.likes = likes.toLocaleString();
 //fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
 res.set("likes", likes);
-})
-.catch(error => {
-  console.log(error);
-});
-})
+
+      });
 /***********************LISTEN**********************/
 app.listen(port, () => {
   console.log(
