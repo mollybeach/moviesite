@@ -119,7 +119,7 @@ app.post('/:id/comments', (request,response)=>{
   const newComment = {
       "name": request.body.name,
       "comment": request.body.comment,
-      "id": 1223232324, // nanoid(),
+      "id": nanoid(),
       "likes": 0,
       "timestamp": new Date().getTime()
   }

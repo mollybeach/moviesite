@@ -11,8 +11,8 @@ import "../repository/repository.scss";
 let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
 
-let API_URL = "http://localhost:8080/videos/";
-let API_URL_2 = "http://localhost:8080/";
+let API_URL = "http://localhost:8080/";
+//let API_URL_2 = "http://localhost:8080/";
 class Feed extends React.Component {
 
  
@@ -58,8 +58,8 @@ postComment = (event) => {
   console.log(comment);
   console.log(id);
  // axios.post( `${API_URL}/${id}/comments`, comment)
- console.log(API_URL_2 + id + '/comments');
-  axios.post(API_URL_2 + id + '/comments', comment)
+ console.log(API_URL + id + '/comments');
+  axios.post(API_URL + id + '/comments', comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
       console.log(this.props.topVideo);
