@@ -95,7 +95,7 @@ app.get("/videos/:id", (req, res) => {
 app.post("/videos", (req, res) => {
   axios.get(randomImageURL)
   .then(response => {
-    console.log(response.data);
+   // console.log(response.data);
     bigData.push({
       id: req.body.id,
       title: req.body.title,
@@ -142,6 +142,7 @@ app.post("/videos", (req, res) => {
 /*********************POST COMMENT******************/
 app.post('/comments/:id', (req,res)=>{
   console.log(res.data);
+  //console.log( topVideo.comments.values());
   axios.get(randomImageURL)
   .then(response => {
   let newComment = {
@@ -153,6 +154,7 @@ app.post('/comments/:id', (req,res)=>{
   }
   let id = req.params.id;
   let topVideo = bigData.find( item => item.id === id);
+  console.log( topVideo.comments.values().get);
   topVideo.comments.unshift(newComment);
   fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
   res.send(newComment);
@@ -160,6 +162,23 @@ app.post('/comments/:id', (req,res)=>{
   console.log(error);
 })
 });
+
+
+/*********************POST LIKES*****************
+app.set('/comments/:id', (req,res)=>{
+  console.log(res.data);
+  axios.get(randomImageURL)
+ 
+  .then(response => {
+  let id = req.params.id;
+  let topVideo = bigData.find( item => item.id === id);
+  topVideo.comments.unshift(newComment);
+  fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+  res.send(newComment);
+}) .catch(error => {
+  console.log(error);
+})
+});*./
 /*********************DELETE COMMENT******************/
   app.delete('/:id/comments/:commentId', (req, res) => {
   let id = req.params.id;
@@ -169,8 +188,13 @@ app.post('/comments/:id', (req,res)=>{
   fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
   res.send();
 });
-/*********************ADD LIKES****************/
+
+
+
+
+
 //app.put('/:id/likes', (req, res) => {
+/*********************ADD LIKES*************/
   app.post('/:id/comments/:commentId', (req, res) =>     {
     axios.get(randomImageURL)
 
@@ -178,12 +202,16 @@ let id = req.params.id;
 let topVideo = bigData.find(item => item.id === id);
 let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
 console.log(likes);
+console.log(topVideo.comments.find(({ name }) => name === id).likes)
 likes++;
 //topVideo.likes = likes.toLocaleString();
 //fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
 res.set("likes", likes);
 
       });
+
+
+
 /***********************LISTEN**********************/
 app.listen(port, () => {
   console.log(

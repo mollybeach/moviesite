@@ -37,8 +37,8 @@ postComment = (event) => {
        id: newId,
        comment: event.target.comment.value
   }
-  console.log(comment);
-  console.log(topId);
+  //console.log(comment);
+ // console.log(topId);
   console.log(`${API_URL}/${topId}`);
  axios.post( `${API_URL}/${topId}` , comment)
     .then(response => {
@@ -60,7 +60,7 @@ postComment = (event) => {
  /********************DELETE COMMENT**************/
 deleteComment = (commentId) => {
   let topId = this.props.topVideo.id;
-  console.log(topId);
+ // console.log(topId);
   axios.delete(`${API_URL_2}/${topId}/comments/${commentId}`)
     .then(response => {
       this.props.renderComments();
@@ -73,7 +73,7 @@ deleteComment = (commentId) => {
  //'/:id/likes'
  likeComment = (commentId) => {
   let topId = this.props.topVideo.id;
-  console.log(topId);
+ // console.log(topId);
   //axios.post(`${API_URL_2}/${topId}/likes`)
     axios.post(`${API_URL_2}/${topId}/comments/${commentId}`)
     .then(response => {
@@ -90,7 +90,7 @@ deleteComment = (commentId) => {
   
  /*************************FORM************************/
  let repositoryData = this.props.commentData;
- console.log(repositoryData);
+ //console.log(repositoryData);
  let repositorySection = repositoryData.map((comment) =>{
    return(
   <Repository deleteComment={this.deleteComment} likeComment={this.likeComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
