@@ -16,7 +16,6 @@ class Main extends React.Component {
     subData: [],
   };
 /*******************COMPONENT METHODS**************/
-
 componentDidMount() {
   this.componentIsMounted = true;
   this.getInformation(this.defaultId);
@@ -52,7 +51,6 @@ componentWillUnmount() {
           console.log(err);
         });
     }});
-  
   }
 /***********************UPDATE DATA************************/
 updateInformation = () => {
@@ -71,7 +69,6 @@ updateInformation = () => {
         });
       }
 /*************************RENDER********************/
-
 renderComments = () =>{
   this.getInformation(this.defaultId)
 }
@@ -81,7 +78,7 @@ renderComments = () =>{
         <HeroVideo heroData={this.state.topData}/>
         <div className="main__design">
           <div className="main__partition">
-            <About aboutData={this.state.topData}/>
+            <About aboutData={this.state.topData} renderComments={this.renderComments}/>
             <Feed commentData={this.state.topData} renderComments={this.renderComments} topVideo={this.state.topData}/>
           </div>
           <SubVideo topData={this.state.topData} match={this.props.match}  subData={this.state.subData}  />

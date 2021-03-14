@@ -4,7 +4,6 @@ import './popup.scss';
 
 let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
 class Popup extends React.Component {
-  
 /**********************GET RANDOM VIDEO*********/ 
  getRandomVideo() {
     let apiRandomImage = apiRandomVideoUrl;

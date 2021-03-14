@@ -1,8 +1,8 @@
-/********************IMPORTS*******************/
+/*******************************IMPORTS*******************/
 import React from 'react';
 import './subvideo.scss';
 import {Link} from 'react-router-dom';
-/*******************SUBVIDEO******************/
+/******************************SUBVIDEO******************/
 export default function SubVideo({ subData, topData }) {
     let updatedVideo =  subData.map((sideData) => {
       if (topData.id !== sideData.id) {

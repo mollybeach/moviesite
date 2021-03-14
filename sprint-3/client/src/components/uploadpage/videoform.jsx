@@ -16,14 +16,14 @@ class VideoForm extends React.Component {
       displayPopup: !this.state.displayPopup,
     });
   }
-/**************STATE*************/
+/*******************************STATE*******************/
 state = {
   title: ``,
   channel: ``,
   image: ``,
   description: ``,
 };
-  /******GET RANDOM ID*****/
+  /*************************GET RANDOM ID*****************/
   getRandomId = () => {
     let result = "";
     let characters = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -34,7 +34,7 @@ state = {
     return result;
   };
 
-/************ON SUBMIT EVENT***************/
+/**********************ON SUBMIT EVENT***************/
   onSubmitEvent = (event) => {
     event.preventDefault();
     let newId = this.getRandomId();
@@ -58,14 +58,14 @@ state = {
     this.togglePopup();
   };
 
-  /************PREVIOUS CLICK EVENT**********/
+  /********************PREVIOUS CLICK EVENT******************/
   previous = (event) => {
     event.preventDefault();
     let brainFlixHome = "/";
     window.location.href = brainFlixHome;
   };
 
-  /***************RENDER FORM*******************/
+  /*************************RENDER FORM*******************/
   render(props) {
     return (
       <>

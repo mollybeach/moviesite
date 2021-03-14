@@ -5,7 +5,6 @@ import CalculateTime from "../../modules/calculatetime";
 import RandomAvi from "../../modules/randomAviGenerator";
 
 /******************************MAP COMMENTS *****************************/
-
 let Repository = (props) => {
   let deleteComment = () => {
     props.deleteComment(props.comment.id);

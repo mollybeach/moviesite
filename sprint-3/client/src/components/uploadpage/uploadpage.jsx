@@ -1,4 +1,4 @@
-/****************IMPORTS***************/
+/******************************IMPORTS***************/
 import React from "react";
 import "./uploadpage.scss";
 import VideoForm from "./videoform";
@@ -16,7 +16,7 @@ class UploadPage extends React.Component {
               <div className="uploadpage__border"> </div>
               <div className="uploadpage__partition">
                 <VideoPreview />
-                <VideoForm  addVideo={this.props}  getVideo={this.props}  postVideo={this.postVideo}   match={this.props.match}/>
+                <VideoForm  addVideo={this.props}  getVideo={this.props}  postVideo={this.postVideo} />
               </div>
             </div>
           </div>

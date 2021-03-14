@@ -12,20 +12,6 @@
     "timestamp": 1545162149000,
     "comments": [
       {
-        "name": "Jonathan Sanchez",
-        "comment": "hi",
-        "id": "jxereqh7pkxl",
-        "likes": 46,
-        "timestamp": 1615758647810
-      },
-      {
-        "name": "Jocelyn Morales",
-        "comment": "hi",
-        "id": "04fqzubbnlef",
-        "likes": 74,
-        "timestamp": 1615755426650
-      },
-      {
         "name": "Micheal Lyons",
         "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
         "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
@@ -38,6 +24,13 @@
         "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
         "likes": 0,
         "timestamp": 1544595784046
+      },
+      {
+        "name": "Theodore Duncan",
+        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+        "likes": 0,
+        "timestamp": 1542262984046
       }
     ]
   },
@@ -53,13 +46,6 @@
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1537003624000,
     "comments": [
-      {
-        "name": "Raphael Nast",
-        "comment": "hisdxx",
-        "id": "aorwbvnh7w4h",
-        "likes": 12,
-        "timestamp": 1615755428325
-      },
       {
         "name": "Micheal Lyons",
         "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
@@ -96,11 +82,18 @@
     "timestamp": 1534234842000,
     "comments": [
       {
-        "name": "Dimitry Zub",
+        "name": "BDS.Photo",
         "comment": "hi",
-        "id": "7dkhykp6vrqx",
-        "likes": 50,
-        "timestamp": 1615755373594
+        "id": "go5n5xg13fww",
+        "likes": 38,
+        "timestamp": 1615760220362
+      },
+      {
+        "name": "hanen souhail",
+        "comment": "hi",
+        "id": "t5lhu5c3ybwh",
+        "likes": 67,
+        "timestamp": 1615760214716
       },
       {
         "name": "Micheal Lyons",
@@ -115,6 +108,13 @@
         "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
         "likes": 0,
         "timestamp": 1544595784046
+      },
+      {
+        "name": "Theodore Duncan",
+        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+        "likes": 0,
+        "timestamp": 1542262984046
       }
     ]
   },
@@ -130,6 +130,13 @@
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1536070744000,
     "comments": [
+      {
+        "name": "Hans Eiskonen",
+        "comment": "hi",
+        "id": "wpbqt973d8x3",
+        "likes": 89,
+        "timestamp": 1615761125977
+      },
       {
         "name": "Micheal Lyons",
         "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
@@ -164,7 +171,29 @@
     "duration": "2:59",
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1518625200000,
-    "comments": []
+    "comments": [
+      {
+        "name": "Micheal Lyons",
+        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
+        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
+        "likes": 0,
+        "timestamp": 1545162149000
+      },
+      {
+        "name": "Gary Wong",
+        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
+        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
+        "likes": 0,
+        "timestamp": 1544595784046
+      },
+      {
+        "name": "Theodore Duncan",
+        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+        "likes": 0,
+        "timestamp": 1542262984046
+      }
+    ]
   },
   {
     "id": "1akljruuvhzt",
@@ -179,11 +208,11 @@
     "timestamp": 1545377524000,
     "comments": [
       {
-        "name": "Brigitte Baranyi",
-        "comment": "hi",
-        "id": "gq9jex0t8aol",
-        "likes": 60,
-        "timestamp": 1615755527533
+        "name": "Micheal Lyons",
+        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
+        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
+        "likes": 0,
+        "timestamp": 1545162149000
       },
       {
         "name": "Gary Wong",
@@ -191,6 +220,13 @@
         "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
         "likes": 0,
         "timestamp": 1544595784046
+      },
+      {
+        "name": "Theodore Duncan",
+        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+        "likes": 0,
+        "timestamp": 1542262984046
       }
     ]
   },
@@ -207,11 +243,11 @@
     "timestamp": 1520167535028,
     "comments": [
       {
-        "name": "Anh Henry Nguyen",
-        "comment": "hu",
-        "id": "t2hum8o66kf7",
-        "likes": 51,
-        "timestamp": 1615758173871
+        "name": "Micheal Lyons",
+        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
+        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
+        "likes": 0,
+        "timestamp": 1545162149000
       },
       {
         "name": "Gary Wong",
@@ -219,6 +255,13 @@
         "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
         "likes": 0,
         "timestamp": 1544595784046
+      },
+      {
+        "name": "Theodore Duncan",
+        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+        "likes": 0,
+        "timestamp": 1542262984046
       }
     ]
   },
@@ -247,90 +290,27 @@
         "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
         "likes": 0,
         "timestamp": 1544595784046
+      },
+      {
+        "name": "Theodore Duncan",
+        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
+        "likes": 0,
+        "timestamp": 1542262984046
       }
     ]
   },
   {
-    "id": "gn3brr8ophae",
-    "title": "new project ideas",
-    "channel": "jayson_hinrichsen",
-    "image": "https://images.unsplash.com/photo-1615085459040-781acfdf0582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3MDA0ODk&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "new project",
-    "views": 118378,
-    "likes": 21,
-    "duration": "5:00",
+    "id": "1a8qhruuzky3",
+    "title": "Train Travel On Track For Safety",
+    "channel": "Scotty Cranmer",
+    "image": "https://i.imgur.com/i6S8m7I.jpg",
+    "description": "Traveling by train can be convenient, enjoyable and economical. You can minimize your risk of injury, illness, and theft by taking a few simple precautions. Before you travel, you should pack only the necessities. This will make your luggage easy to carry and store during your travels. You should always assume that the tap water on the train is not potable. Whenever it is possible, stock up on bottles of water to reduce the risk of dehydration. Remember, never accept food or drinks from strangers!",
+    "views": "3,092,284",
+    "likes": "75,985",
+    "duration": "4:20",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615700488890,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      }
-    ]
-  },
-  {
-    "id": "1nsdmws8f665",
-    "title": "cute",
-    "channel": "goodfacesclub",
-    "image": "https://images.unsplash.com/photo-1614119285081-5b5c6663fd3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3MDE4MTI&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "cute",
-    "views": 178429,
-    "likes": 21,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615701812786,
-    "comments": [
-      {
-        "name": "Marek Piwnicki",
-        "comment": "hiii",
-        "id": "7kmaa5lghbun",
-        "likes": 270,
-        "timestamp": 1615755362635
-      },
-      {
-        "name": "Simona Sergi",
-        "comment": "hiii",
-        "id": "p3wmq0vz3hxe",
-        "likes": 10,
-        "timestamp": 1615755362583
-      },
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      }
-    ]
-  },
-  {
-    "id": "d87807rfcnr2",
-    "title": "fvff",
-    "channel": "ethanwalsweer",
-    "image": "https://images.unsplash.com/photo-1613928145590-f6e08381bf8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3MTAzNDE&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "vvv",
-    "views": 145288,
-    "likes": 17,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615710341217,
+    "timestamp": 1531007012000,
     "comments": [
       {
         "name": "Micheal Lyons",
@@ -356,58 +336,16 @@
     ]
   },
   {
-    "id": "6s2n9olhkzrk",
+    "id": "y66piw7d3tpm",
     "title": "hi",
-    "channel": "guybas",
-    "image": "https://images.unsplash.com/photo-1613876564469-b3e506f4f362?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NDkzNzc&ixlib=rb-1.2.1&q=80&w=1080",
+    "channel": "jonathanborba",
+    "image": "https://images.unsplash.com/photo-1613483811215-4b699641532e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NjExMzE&ixlib=rb-1.2.1&q=80&w=1080",
     "description": "hi",
-    "views": 893976,
-    "likes": 52,
+    "views": 199778,
+    "likes": 36,
     "duration": "5:00",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615749376913,
-    "comments": [
-      {
-        "name": "Kajetan Sumila",
-        "comment": "dd",
-        "id": "mlngsqeekd7y",
-        "likes": 36,
-        "timestamp": 1615749581627
-      },
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "egpu2p8n0mli",
-    "title": "hi",
-    "channel": "janikk_fischer",
-    "image": "https://images.unsplash.com/photo-1613594659381-5f075de76669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTA3MzA&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "hi",
-    "views": 184128,
-    "likes": 109,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615750730209,
+    "timestamp": 1615761131401,
     "comments": [
       {
         "name": "Micheal Lyons",
@@ -433,121 +371,16 @@
     ]
   },
   {
-    "id": "fyfj26k1z715",
-    "title": "ddd",
-    "channel": "nubelsondev",
-    "image": "https://images.unsplash.com/photo-1613520761713-762ab9689cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTA4NzM&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "dd",
-    "views": 187266,
-    "likes": 25,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615750873407,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "vpl5cr8m0z86",
-    "title": "ddd",
-    "channel": "ggriffay",
-    "image": "https://images.unsplash.com/photo-1614893075904-1b4be6777116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTA5NDE&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "dd",
-    "views": 100616,
-    "likes": 33,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615750941244,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "rrcg0hs124ju",
-    "title": "ddd",
-    "channel": "ggriffay",
-    "image": "https://images.unsplash.com/photo-1614893075904-1b4be6777116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTA5NDE&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "ddd",
-    "views": 100616,
-    "likes": 33,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615750996260,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "mfvf9771cego",
+    "id": "wxfcwdx7maps",
     "title": "dd",
-    "channel": "tothnorex",
-    "image": "https://images.unsplash.com/photo-1614201444014-ce68d9db0f78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTEwMTA&ixlib=rb-1.2.1&q=80&w=1080",
+    "channel": "brookelark",
+    "image": "https://images.unsplash.com/photo-1615224572756-729e7d1cd942?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NjEzNTQ&ixlib=rb-1.2.1&q=80&w=1080",
     "description": "ddd",
-    "views": 576033,
-    "likes": 52,
+    "views": 103617,
+    "likes": 45,
     "duration": "5:00",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615751010476,
+    "timestamp": 1615761354917,
     "comments": [
       {
         "name": "Micheal Lyons",
@@ -573,247 +406,16 @@
     ]
   },
   {
-    "id": "yaig0xbv0phs",
-    "title": "ttt",
-    "channel": "faruktokluoglu",
-    "image": "https://images.unsplash.com/photo-1613465892991-39d8d5fb2d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTEyMTA&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "tt",
-    "views": 596889,
-    "likes": 80,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615751210333,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "yuix2g67o95c",
+    "id": "ls8pael2v9fh",
     "title": "hi",
-    "channel": "photype",
-    "image": "https://images.unsplash.com/photo-1614357975885-1ac53a78d914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTQxNDU&ixlib=rb-1.2.1&q=80&w=1080",
+    "channel": "shootdelicious",
+    "image": "https://images.unsplash.com/photo-1613453030956-2c433b6b5aaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NjE2NDg&ixlib=rb-1.2.1&q=80&w=1080",
     "description": "hi",
-    "views": 133056,
-    "likes": 67,
+    "views": 148093,
+    "likes": 46,
     "duration": "5:00",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615754145421,
-    "comments": [
-      {
-        "name": "Raphael Nast",
-        "comment": "rrrrrr",
-        "id": "b8w8fgy2bbf5",
-        "likes": 33,
-        "timestamp": 1615754208278
-      },
-      {
-        "name": "Syaoran 7",
-        "comment": "rrr",
-        "id": "do7qcv0qoorv",
-        "likes": 66,
-        "timestamp": 1615754199870
-      },
-      {
-        "name": "Katie Az",
-        "comment": "rrr",
-        "id": "mf1rmn7ow3mi",
-        "likes": 79,
-        "timestamp": 1615754196181
-      },
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "ntolzl490h2j",
-    "title": "gggg",
-    "channel": "apollon",
-    "image": "https://images.unsplash.com/photo-1614542530290-79345e17591b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTQ3OTU&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "gg",
-    "views": 94524,
-    "likes": 33,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615754795201,
-    "comments": [
-      {
-        "name": "Sajad Nori",
-        "comment": "ddd",
-        "id": "2uxbl6yli48b",
-        "likes": 55,
-        "timestamp": 1615755172124
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "34m3pmkrgnod",
-    "title": "hi",
-    "channel": "iohassonmello",
-    "image": "https://images.unsplash.com/photo-1613269181360-6820d113e144?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTU0NjY&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "hi",
-    "views": 390748,
-    "likes": 76,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615755466713,
-    "comments": [
-      {
-        "name": "Tim Mossholder",
-        "comment": "hi",
-        "id": "1nc0yyk6xan5",
-        "likes": 62,
-        "timestamp": 1615755524473
-      },
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "4jd1mu8j36yk",
-    "title": "hiii",
-    "channel": "vonshnauzer",
-    "image": "https://images.unsplash.com/photo-1613893619627-373f890f03c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTYyMTM&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "hii",
-    "views": 156718,
-    "likes": 32,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615756213556,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "2me2ocaw8me1",
-    "title": "hi",
-    "channel": "karljkhedin",
-    "image": "https://images.unsplash.com/photo-1613912963016-ecf86148584f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTg2NTU&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "hi",
-    "views": 119739,
-    "likes": 85,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615758654846,
-    "comments": [
-      {
-        "name": "Micheal Lyons",
-        "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-        "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",
-        "likes": 0,
-        "timestamp": 1545162149000
-      },
-      {
-        "name": "Gary Wong",
-        "comment": "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-        "id": "cc6f173d-9e9d-4501-918d-bc11f15a8e14",
-        "likes": 0,
-        "timestamp": 1544595784046
-      },
-      {
-        "name": "Theodore Duncan",
-        "comment": "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-        "id": "993f950f-df99-48e7-bd1e-d95003cc98f1",
-        "likes": 0,
-        "timestamp": 1542262984046
-      }
-    ]
-  },
-  {
-    "id": "ypzf04z10el0",
-    "title": "hi",
-    "channel": "nzdoug16",
-    "image": "https://images.unsplash.com/photo-1613520641754-c667074e3695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTQ3MjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU3NTg5Mzc&ixlib=rb-1.2.1&q=80&w=1080",
-    "description": "hi",
-    "views": 131589,
-    "likes": 42,
-    "duration": "5:00",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1615758937189,
+    "timestamp": 1615761648558,
     "comments": [
       {
         "name": "Micheal Lyons",

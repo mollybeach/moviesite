@@ -163,12 +163,10 @@ app.post('/comments/:id', (req,res)=>{
 })
 });
 
-
-/*********************POST LIKES*****************
+/*********************POST LIKES******************/
 app.set('/comments/:id', (req,res)=>{
   console.log(res.data);
   axios.get(randomImageURL)
- 
   .then(response => {
   let id = req.params.id;
   let topVideo = bigData.find( item => item.id === id);
@@ -178,7 +176,7 @@ app.set('/comments/:id', (req,res)=>{
 }) .catch(error => {
   console.log(error);
 })
-});*./
+});
 /*********************DELETE COMMENT******************/
   app.delete('/:id/comments/:commentId', (req, res) => {
   let id = req.params.id;
@@ -189,7 +187,15 @@ app.set('/comments/:id', (req,res)=>{
   res.send();
 });
 
-
+app.put('/:id/likes', (request, response) => {
+  let id = request.params.id;
+  let mainVid = data.find(item => item.id === id);
+  let likes = parseFloat( mainVid.likes.replace(/,/g, ''));
+  console.log(likes);
+  likes++;
+  mainVid.likes = likes.toLocaleString();
+  response.send();
+});
 //app.put('/:id/likes', (req, res) => {
   //let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
   //topVideo.likes = likes.toLocaleString();
@@ -205,8 +211,6 @@ app.set('/comments/:id', (req,res)=>{
     res.send();
 
       });
-
-
 
 /***********************LISTEN**********************/
 app.listen(port, () => {
