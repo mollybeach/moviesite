@@ -20,7 +20,7 @@ export default function About({ aboutData }) {
           <div className="about__date"> {time}</div>
         </div>
         <div className="about__status-partition">
-          <img className="about__views-icon" src={ViewsImage} alt="views-icon"></img>
+          <img className="about__views-icon" src={ViewsImage}  alt="views-icon"></img>
           <p className="about__views-count"> {aboutData.views}</p>
           <img src={LikesImage} alt="likes-img" className="about__likes-icon"></img>
           <p className="about__likes-count">{aboutData.likes}</p>

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "../../assets/images/Mohan-muruge.jpg";
 import axios from 'axios';
-import "./form.scss";
+import "./feed.scss";
 import Repository from '../repository/repository';
 //import repository from "../repository/repository";
 import "../repository/repository.scss";
@@ -12,7 +12,8 @@ let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
 
 let API_URL = "http://localhost:8080/videos/";
-class Form extends React.Component {
+let API_URL_2 = "http://localhost:8080/";
+class Feed extends React.Component {
 
  
   getRandomName = () => {
@@ -47,17 +48,22 @@ class Form extends React.Component {
 
 postComment = (event) => {
   event.preventDefault();
- let id = this.state.props.topVideo.id;
+ let id = this.props.topVideo.id;
  // this.getRandomName(newArray);
   let comment = {
    // name: newArray[0],
       name: 'hello',
     comment: event.target.comment.value
   }
+  console.log(comment);
+  console.log(id);
  // axios.post( `${API_URL}/${id}/comments`, comment)
-  axios.post(API_URL + id + '/comments', comment)
+ console.log(API_URL_2 + id + '/comments');
+  axios.post(API_URL_2 + id + '/comments', comment)
     .then(response => {
-      let array = [response.data[0], ...this.state.props.topVideo.comments]
+      let array = [response.data[0], ...this.props.topVideo.comments]
+      console.log(this.props.topVideo);
+      console.log(array);
       this.setState({
         topVideo: {
           ...this.state.props.topVideo,
@@ -93,17 +99,17 @@ updateComment = (event) => {
  });
 
     return (
-      <section className="form">
-        <div className="form__header">{this.props.commentData.length} Comments</div>
-        <div className="form__wrap">
-          <div className="form__binding">
-            <form className="form__feed" onSubmit={this.postComment}>
-              <img className="form__avi" src={Image} alt=""></img>
-              <div className="form__boxes">
-                <label className="form__tag"  data-domain="Add a new comment">JOIN THE CONVERSATION</label>
-                <div className="form__partition-note-field-button">
-                  <textarea className="form__note-field"  name="comment" placeholder="Add a new comment" ></textarea>
-                  <button className="form__button" type="submit">COMMENT</button>
+      <section className="feed">
+        <div className="feed__header">{this.props.commentData.length} Comments</div>
+        <div className="feed__wrap">
+          <div className="feed__binding">
+            <form className="feed__feed" onSubmit={this.postComment}>
+              <img className="feed__avi" src={Image} alt=""></img>
+              <div className="feed__boxes">
+                <label className="feed__tag"  data-domain="Add a new comment">JOIN THE CONVERSATION</label>
+                <div className="feed__partition-note-field-button">
+                  <textarea className="feed__note-field"  name="comment" placeholder="Add a new comment" ></textarea>
+                  <button className="feed__button" type="submit">COMMENT</button>
                 </div>
               </div>
             </form>
@@ -117,4 +123,4 @@ updateComment = (event) => {
   }
 }
 
-export default Form;
+export default Feed;

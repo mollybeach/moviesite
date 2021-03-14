@@ -81,6 +81,7 @@ getRandomName = () => {
   };
       /******GET RANDOM VIDEO*****/ 
  getRandomVideo() {
+   axios.get()
   let apiRandomImage = apiRandomVideoUrl;
     console.log(apiRandomImage);
   return apiRandomImage;
@@ -96,15 +97,17 @@ getRandomName = () => {
 
   onSubmitEvent = (event) => {
     event.preventDefault();
+
    let newId= this.getRandomId();
    this.getRandomName();
   
   //let newChannel = this.state.channel;
-  let channel = 'new channel here';
+ // let channel = 'new channel here';
  // console.log(newChannel);
    let  newImage= this.getRandomVideo();
    let newTitle = event.target.title;
    let  newDescription = event.target.description;
+   /*
    let newObject = {
     "id": newId,
     "channel": channel,
@@ -113,27 +116,28 @@ getRandomName = () => {
     "image": newImage,
     //"comment": `${event.target.comment.value}`,
   }
+  */
 //let newChannel=newArray[0];
 //console.log(newChannel);
-   axios.post(`${API_URL}`, newObject /*{ 
-     /*
+   axios.post(`${API_URL}`, { 
+    
      id: newId,
-     title: newTitle.value
+     title: newTitle.value,
      description: newDescription.value,
      image: newImage,
-     channel: newChannel
+     //channel: 'newChannel'
 
-    }*/
+    }
     ).catch((error) => {
               console.log(error);
            });
 
            newTitle.value = "";
            newDescription.value = "";
-
      this.setState({
      id: newId
      });
+     this.togglePopup();
 
   };
 
@@ -145,22 +149,23 @@ getRandomName = () => {
   /************PREVIOUS CLICK EVENT**********/
   previous = (event) => {
     event.preventDefault();
-   // let brainFlixHome = '/';
-   // window.location.href = brainFlixHome;
+    let brainFlixHome = '/';
+    window.location.href = brainFlixHome;
   };
 
   /***************RENDER FORM*******************/
   render(props) {
 
     return (
+      <>
       <form
       onReset={this.previous}
-    
+      onSubmit={this.onSubmitEvent}
         className="uploadpage__form"
       >
         <div className="uploadpage__partition-response">
           <div className=" uploadpage__border-response"></div>
-          <div className=" uploadpage__title"   >TITLE YOUR VIDEO</div>
+          <div className=" uploadpage__title" >TITLE YOUR VIDEO</div>
           <input
             type="text"
             className="uploadpage__alias-field"
@@ -170,6 +175,7 @@ getRandomName = () => {
           />
           <div className=" uploadpage__title" > ADD A VIDEO DESCRIPTION</div>
           <textarea
+          type="text"
             className="  uploadpage__note-field"
             placeholder="Add a description of your video"
            name="description"
@@ -177,21 +183,21 @@ getRandomName = () => {
           ></textarea>
         </div>
         <div className="uploadpage__buttons">
-          <button
-            className="uploadpage__button-publish" type="submit" onClick={this.togglePopup.bind(this)}>PUBLISH</button>
-          <button className="uploadpage__button-cancel" type="reset" id="cancel">CANCEL</button>
+          <button className="uploadpage__button-publish" type="submit">PUBLISH</button>
+          <button className="uploadpage__button-cancel" type="reset" >CANCEL</button>
         </div>
-        {this.state.displayPopup ? (
+       
+      </form>
+      {this.state.displayPopup ? (
          <Popup
             closePopup={this.togglePopup.bind(this)}
             brandNewId={this.state.id}
           />
         ) : null}
-      </form>
-      
+      </>
     );
   }
-} //    onSubmit={this.onSubmitEvent}
+} //   
 export default VideoForm;
 /*   {this.state.displayPopup ? (
          <Popup

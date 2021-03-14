@@ -12,6 +12,7 @@
 	flex-direction: column;
 		@include standard-padding-left;
 	&__title {
+		
 		margin-top: $increment4-rem;
 		margin-bottom: $increment2-rem;
 		@include h1-main-header-black-bold;

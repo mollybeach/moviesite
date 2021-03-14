@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 import HeroVideo from "../herovideo/herovideo";
 import About from "../about/about";
-import Form from "../form/form";
+import Feed from "../feed/feed";
 import "./main.scss";
 import SubVideo from "../subvideo/subvideo";
 
@@ -22,6 +22,7 @@ class Main extends React.Component {
 
 
   getInformation = (id) => {
+    console.log( `${API_URL}${id}`);
           axios.get(`${API_URL}${id}`)
           .then((response) => {
            // let topVideo = response.data;
@@ -66,7 +67,7 @@ componentWillUnmount() {
         <div className="main__design">
           <div className="main__partition">
             <About aboutData={this.state.topVideo} />
-            <Form
+            <Feed
               commentData={this.state.commentData}
               renderComments={this.renderComments}
               topVideo={this.state.topVideo}

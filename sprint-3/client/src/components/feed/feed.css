@@ -28,32 +28,32 @@
 /********************************* FOR DESKTOP*************************************/
 /************************************VARIABLES******************************************/
 /************************************COMMENTS FEED SECTION************************************/
-.form {
+.feed {
   padding: 0 5vw 0 5vw;
   background-color: #FFFF;
 }
 @media (min-width: 768px) {
-  .form {
+  .feed {
     padding: 0 3.1vw 0 3.1vw;
   }
 }
 @media (min-width: 1280px) {
-  .form {
+  .feed {
     padding: 0 6.3vw 0 6.3vw;
   }
 }
 @media (min-width: 768px) {
-  .form {
+  .feed {
     min-width: 68.8vw;
     max-width: 41.3vw;
   }
 }
 @media (min-width: 1280px) {
-  .form {
+  .feed {
     max-width: 41.3vw;
   }
 }
-.form__header {
+.feed__header {
   font-family: AvenirNextLTProBold;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -65,52 +65,52 @@
   margin: 2rem 0 2.5rem 0;
 }
 @media (min-width: 768px) {
-  .form__header {
+  .feed__header {
     font-size: 2.3rem;
     line-height: 2.8rem;
   }
 }
 @media (min-width: 1280px) {
-  .form__header {
+  .feed__header {
     font-size: 2.3rem;
     line-height: 2.8rem;
   }
 }
 @media (min-width: 768px) {
-  .form__header {
+  .feed__header {
     margin: 3rem 0rem 3.5rem 0;
     padding-right: 0;
   }
 }
 @media (min-width: 768px) {
-  .form__wrap {
+  .feed__wrap {
     margin: 0 13vw 0 13vw;
   }
 }
 @media (min-width: 1280px) {
-  .form__wrap {
+  .feed__wrap {
     margin: 0 196px 0 196px;
   }
 }
-.form__binding {
+.feed__binding {
   padding: 0 0 0rem;
 }
 @media (min-width: 768px) {
-  .form__binding {
+  .feed__binding {
     padding: 0 0 2rem;
   }
 }
-.form__feed {
+.feed__feed {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 @media (min-width: 768px) {
-  .form__feed {
+  .feed__feed {
     padding: 0 0 2rem;
   }
 }
-.form__avi {
+.feed__avi {
   width: 3rem;
   height: 3rem;
   border-radius: 33.3px;
@@ -118,26 +118,26 @@
   position: relative;
 }
 @media (min-width: 768px) {
-  .form__avi {
+  .feed__avi {
     margin: 0 2.1vw 0 0;
   }
 }
 @media (min-width: 1280px) {
-  .form__avi {
+  .feed__avi {
     margin: 0 1.3vw 0 0;
   }
 }
-.form__boxes {
+.feed__boxes {
   padding: 0 0px 0 0px;
 }
-.form input:focus,
-.form select:focus,
-.form textarea:focus,
-.form button:focus {
+.feed input:focus,
+.feed select:focus,
+.feed textarea:focus,
+.feed button:focus {
   outline: #323232;
   border-width: 0.2rem;
 }
-.form__tag {
+.feed__tag {
   box-sizing: border-box;
   font-size: 0.8rem;
   line-height: 1.3rem;
@@ -145,22 +145,22 @@
   color: #AFAFAF;
 }
 @media (min-width: 768px) {
-  .form__tag {
+  .feed__tag {
     font-size: 0.8rem;
     line-height: 1.3rem;
     font-family: AvenirNextLTProDemi;
   }
 }
 @media (min-width: 1280px) {
-  .form__tag {
+  .feed__tag {
     font-size: 0.8rem;
     line-height: 1.8rem;
   }
 }
-.form__tag, .form__alias-field, .form__note-field {
+.feed__tag, .feed__alias-field, .feed__note-field {
   padding: 0 30vw 0 0;
 }
-.form__alias-field {
+.feed__alias-field {
   background-color: #FAFAFA;
   font-size: 0.8rem;
   line-height: 1.3rem;
@@ -175,25 +175,25 @@
   padding: 1px 0 0 10px;
 }
 @media (min-width: 768px) {
-  .form__alias-field {
+  .feed__alias-field {
     font-size: 0.8rem;
     line-height: 1.3rem;
     font-family: AvenirNextLTProDemi;
   }
 }
 @media (min-width: 1280px) {
-  .form__alias-field {
+  .feed__alias-field {
     font-size: 0.8rem;
     line-height: 1.8rem;
   }
 }
 @media (min-width: 768px) {
-  .form__alias-field {
+  .feed__alias-field {
     width: 28.8rem;
     height: 3rem;
   }
 }
-.form__note-field {
+.feed__note-field {
   background-color: #FAFAFA;
   font-size: 0.8rem;
   line-height: 1.3rem;
@@ -208,85 +208,85 @@
   padding: 10px 0 0 10px;
 }
 @media (min-width: 768px) {
-  .form__note-field {
+  .feed__note-field {
     font-size: 0.8rem;
     line-height: 1.3rem;
     font-family: AvenirNextLTProDemi;
   }
 }
 @media (min-width: 1280px) {
-  .form__note-field {
+  .feed__note-field {
     font-size: 0.8rem;
     line-height: 1.8rem;
   }
 }
 @media (min-width: 768px) {
-  .form__note-field {
+  .feed__note-field {
     width: 28.8rem;
     height: 6rem;
   }
 }
-.form__repository {
+.feed__repository {
   display: flex;
   flex-flow: row wrap;
   margin: 1px 0rem 1rem 0;
 }
 @media (min-width: 768px) {
-  .form__repository {
+  .feed__repository {
     margin: 0 124px 1.5rem 0;
   }
 }
 @media (min-width: 1280px) {
-  .form__repository {
+  .feed__repository {
     margin: 40px 264px 0 0;
   }
 }
-.form__empty-container {
+.feed__empty-container {
   width: 100%;
   padding: 1.5rem 0rem 0;
 }
 @media (min-width: 768px) {
-  .form__empty-container {
+  .feed__empty-container {
     width: 528px;
     margin: 0 auto;
     padding: 0rem 1rem 0;
   }
 }
-.form__top-container {
+.feed__top-container {
   display: flex;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  .form__top-container {
+  .feed__top-container {
     margin: 0 0 0 0;
   }
 }
-.form__top-right-container {
+.feed__top-right-container {
   width: 62.5vw;
   padding: 0 0 1.5rem 0;
 }
 @media (min-width: 768px) {
-  .form__top-right-container {
+  .feed__top-right-container {
     width: 27.8rem;
   }
 }
-.form__top-right-left-container {
+.feed__top-right-left-container {
   padding: 1.5rem 0 0.5rem 0;
   display: flex;
   width: 100%;
 }
-.form__border {
+.feed__border {
   background: #AFAFAF;
   width: 100%;
   height: 1px;
 }
-.form__avi {
+.feed__avi {
   margin: 0 1.3rem 0 0;
   height: 3rem;
   width: 3rem;
   border-radius: 33.33px;
 }
-.form__name {
+.feed__name {
   width: 140px;
   font-family: AvenirNextLTProRegular;
   color: #323232;
@@ -295,24 +295,24 @@
   font-family: AvenirNextLTProBold;
 }
 @media (min-width: 768px) {
-  .form__name {
+  .feed__name {
     font-size: 0.9rem;
     line-height: 1.4rem;
   }
 }
 @media (min-width: 1280px) {
-  .form__name {
+  .feed__name {
     font-size: 0.9rem;
     line-height: 1.4rem;
   }
 }
 @media (min-width: 768px) {
-  .form__name {
+  .feed__name {
     line-height: none;
     height: 1rem;
   }
 }
-.form__time {
+.feed__time {
   height: 1rem;
   width: 132px;
   color: #323232;
@@ -321,23 +321,23 @@
   line-height: 1.1rem;
 }
 @media (min-width: 768px) {
-  .form__time {
+  .feed__time {
     font-size: 0.9rem;
     line-height: 1.3rem;
   }
 }
 @media (min-width: 1280px) {
-  .form__time {
+  .feed__time {
     font-size: 0.9rem;
     line-height: 1.3rem;
   }
 }
 @media (min-width: 768px) {
-  .form__time {
+  .feed__time {
     width: 132px;
   }
 }
-.form__comment {
+.feed__comment {
   color: #323232;
   font-family: AvenirNextLTProRegular;
   font-size: 0.8rem;
@@ -345,23 +345,23 @@
   width: 62.5vw;
 }
 @media (min-width: 768px) {
-  .form__comment {
+  .feed__comment {
     font-size: 0.9rem;
     line-height: 1.3rem;
   }
 }
 @media (min-width: 1280px) {
-  .form__comment {
+  .feed__comment {
     font-size: 0.9rem;
     line-height: 1.3rem;
   }
 }
 @media (min-width: 768px) {
-  .form__comment {
+  .feed__comment {
     width: 444px;
   }
 }
-.form__button {
+.feed__button {
   background-color: #323232;
   font-family: AvenirNextLTProRegular;
   color: #323232;
@@ -378,25 +378,25 @@
   margin: 1rem 0 1rem 0px;
 }
 @media (min-width: 768px) {
-  .form__button {
+  .feed__button {
     font-size: 0.9rem;
     line-height: 1.4rem;
   }
 }
 @media (min-width: 1280px) {
-  .form__button {
+  .feed__button {
     font-size: 0.9rem;
     line-height: 1.4rem;
   }
 }
-.form__button:hover {
+.feed__button:hover {
   background: #323232;
 }
-.form__button:focus {
+.feed__button:focus {
   outline: none;
 }
 @media (min-width: 768px) {
-  .form__button {
+  .feed__button {
     min-width: unset;
     max-width: unset;
     min-height: unset;
@@ -407,15 +407,15 @@
   }
 }
 @media (min-width: 1280px) {
-  .form__button {
+  .feed__button {
     padding: 0;
     margin: 1rem 0 1rem 0;
   }
 }
 @media (min-width: 768px) {
-  .form__button {
+  .feed__button {
     float: right;
   }
 }
 
-/*****************************************CARD FEED SECTION***********************************//*# sourceMappingURL=form.css.map */
+/*****************************************CARD FEED SECTION***********************************//*# sourceMappingURL=feed.css.map */

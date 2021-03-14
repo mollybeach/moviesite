@@ -13,8 +13,7 @@
         &__partition {
             @include desktop {
              margin-right: $increment3-desktop-percent;
-             min-width: 816px; //712+80px padding left 24px margin right
-             max-width: 63.75vw;
+            width:63.75vw;
             }
         }
     

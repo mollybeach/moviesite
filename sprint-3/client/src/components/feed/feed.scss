@@ -4,7 +4,7 @@
 @import "../../partials/variables";
 /************************************COMMENTS FEED SECTION************************************/
 
-.form {
+.feed {
     @include standard-padding-left;
     background-color: $white;
     @include tablet {

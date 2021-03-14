@@ -12,18 +12,18 @@ class Popup extends React.Component {
     return apiRandomImage;
   }
 
-  popUpViewEvent=(id)=>{
+  popUpViewEvent=(e)=>{
+    e.preventDefault();
     let brainFlixHome = `/`  ;
-     let newVideoHome = brainFlixHome + id;
-   //return (window.location.href = newVideoHome)
-   //  return (window.location.href = brainFlixHome)
-   }
+    let newVideoHome = brainFlixHome + this.props.brandNewId;
+    return (window.location.href = newVideoHome)
+  }
   
   newImage= this.getRandomVideo();
   render() {
     return (
       <div className='popup-background'>
-        <form className='popup'   onSubmit={this.popUpViewEvent(this.props.brandNewId)} onReset={this.props.closePopup}>
+        <form className='popup'  onReset={this.props.closePopup}>
         <div className="popup__hero">
           <div className="popup__header">Your Video has Uploaded!</div>
           <label className="popup__tag">VIDEO THUMBNAIL</label>
@@ -38,12 +38,13 @@ class Popup extends React.Component {
         <div className=" popup__content"></div>
           <div className="popup__button-partition">
         <button  className="popup__button-delete" type="reset">Delete</button>
-        <button  className="popup__button-close" type="submit">View</button>
+        <button  className="popup__button-close" onClick={this.popUpViewEvent} >View</button>
         </div>
         </form>
       </div>
     );
   }
 }
-
+//type="submit" //onClick={(e) => this.popUpViewEvent(e)}
+//onClick={(e) => e.preventDefault()}  
 export default Popup;
