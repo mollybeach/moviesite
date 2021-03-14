@@ -1,4 +1,4 @@
-
+/****************IMPORTS***************/
 import React from "react";
 import axios from "axios";
 import HeroVideo from "../herovideo/herovideo";
@@ -8,12 +8,13 @@ import "./main.scss";
 import SubVideo from "../subvideo/subvideo";
 let API_URL = "http://localhost:8080/videos/";
 class Main extends React.Component {
+  /****************STATE**************/
   state = {
     topVideo: [],
     commentData: []
   };
   componentIsMounted = false;
-
+/****************GET DATA FROM BACKEND***************/
   getInformation = (id) => {
     console.log( `${API_URL}${id}`);
           axios.get(`${API_URL}${id}`)
@@ -47,7 +48,7 @@ componentDidUpdate() {
 componentWillUnmount() {
     this.componentIsMounted = false;
   }
-
+/*******************RENDER***************/
   render() {
     return (
       <div className="main">

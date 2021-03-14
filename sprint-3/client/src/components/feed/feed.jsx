@@ -9,11 +9,15 @@ import "../repository/repository.scss";
 /************************************FORM*********************************/
 let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
-//let currentTopVideoId = this.props.topVideo.id; 
+//let currenttopId = this.props.topVideo.id; 
 let API_URL = "http://localhost:8080/comments";
 //let API_URL_2 = "http://localhost:8080/";
 //let id = this.props.topVideo.id;
 class Feed extends React.Component {
+  /*********************STATE *******************/
+  state = {
+    comment : '',
+  }
 
   getRandomName = () => {
     axios.get(apiRandomNameUrl)
@@ -36,7 +40,7 @@ updateComment = (event) => {
   })
 }
 */
-   /******GET RANDOM ID*****/
+   /**************GET RANDOM ID**************/
    getRandomId = () => {
     let result = "";
     let characters = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -47,22 +51,20 @@ updateComment = (event) => {
     return result;
   };
 
-  state = {
-    comment : '',
-  }
-
+ 
+ /********************POST COMMENT**************/
 postComment = (event) => {
   event.preventDefault();
   let newId = this.getRandomId();
- let id = this.props.topVideo.id;
+ let topId = this.props.topVideo.id;
   let comment = {
        id: newId,
        comment: event.target.comment.value
   }
   console.log(comment);
-  console.log(id);
-  console.log(`${API_URL}/${id}`);
- axios.post( `${API_URL}/${id}` , comment)
+  console.log(topId);
+  console.log(`${API_URL}/${topId}`);
+ axios.post( `${API_URL}/${topId}` , comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
       console.log(this.props.topVideo);
@@ -79,10 +81,11 @@ postComment = (event) => {
       console.log(error);
     });
 };
+ /********************DELETE COMMENT**************/
 deleteComment = (commentId) => {
-  let topVideoId =this.props.videoId
+  let topId =this.props.videoId
 //  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
-axios.delete(`http://localhost:8080/${topVideoId}/comments/${commentId}`)
+axios.delete(`http://localhost:8080/${topId}/comments/${commentId}`)
     .then(response => {
       this.props.renderComments();
     })
@@ -94,7 +97,7 @@ axios.delete(`http://localhost:8080/${topVideoId}/comments/${commentId}`)
     if(!this.props.topVideo){ 
       return null
   }
-
+ /*************************FORM************************/
  let repositoryData = this.props.commentData;
  console.log(repositoryData);
  let repositorySection = repositoryData.map((comment) =>{

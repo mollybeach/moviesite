@@ -1,3 +1,4 @@
+/****************IMPORTS***************/
 import React from "react";
 import "./uploadpage.scss";
 import Popup from "../popup/popup";
@@ -15,7 +16,13 @@ class VideoForm extends React.Component {
       displayPopup: !this.state.displayPopup,
     });
   }
-
+/**************STATE*************/
+state = {
+  title: ``,
+  channel: ``,
+  image: ``,
+  description: ``,
+};
   /******GET RANDOM ID*****/
   getRandomId = () => {
     let result = "";
@@ -27,13 +34,7 @@ class VideoForm extends React.Component {
     return result;
   };
 
-  state = {
-    title: ``,
-    channel: ``,
-    image: ``,
-    description: ``,
-  };
-
+/************ON SUBMIT EVENT***************/
   onSubmitEvent = (event) => {
     event.preventDefault();
     let newId = this.getRandomId();
