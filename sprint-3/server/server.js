@@ -52,15 +52,15 @@ app.get("/comments", (req, res) => {
   });
   res.send(commentsArray);
 });
-/******************GET COMMENTS**************/
+/******************GET LIKES**************/
 app.get("/likes", (req, res) => {
   let likesArray = [];
   bigData.map((data) => {
     likesArray.push({
-      comments: data.comments
+      likes: data.comments.likes
     });
   });
-  res.send(commentsArray);
+  res.send(likesArray);
 });
 /*******************DEFAULT VIDEO**************/
 app.get("/videos/1af0jruup5gu", (req, res) => {
@@ -83,12 +83,14 @@ app.get("/videos/1af0jruup5gu", (req, res) => {
   res.send(topVideo[0]);
 });
 /*******************GET VIDEO BY ID**************/
+
 app.get("/videos/:id", (req, res) => {
   let newVideo = bigData.filter(
     (data, index) => data.id === req.params.id
   );
   res.send(newVideo.pop());
 });
+
 /*******************POST VIDEO**************/
 app.post("/videos", (req, res) => {
   axios.get(randomImageURL)
@@ -167,18 +169,23 @@ app.post('/comments/:id', (req,res)=>{
   fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
   res.send();
 });
-/*********************ADD LIKES******************/
+/*********************ADD LIKES****************/
 app.put('/:id/likes', (req, res) => {
-let id = request.params.id;
+  app.post('/:id/comments/:commentId', (req, res) => {
+let id = req.params.id;
 let topVideo = bigData.find(item => item.id === id);
 let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
 console.log(likes);
 likes++;
-topVideo.likes = likes.toLocaleString();
-fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-res.send();
+//topVideo.likes = likes.toLocaleString();
+//fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+res.set("likes", likes);
+})
+.catch(error => {
+  console.log(error);
 });
-/***********************LIST*************************/
+})
+/***********************LISTEN**********************/
 app.listen(port, () => {
   console.log(
     `Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`

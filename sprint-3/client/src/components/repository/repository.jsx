@@ -46,9 +46,9 @@ let likeComment = () => {
                         alt="likes-img"
                         className="respository__likes-icon"
                       ></img>
-                      <div className="repository__likes-count" onClick={likeComment}>
+                      <button className="repository__likes-count" onClick={likeComment}>
                         {props.comment.likes}  
-                      </div>
+                      </button>
                       <button
                         className="repository__delete"
                         onClick={deleteComment}
