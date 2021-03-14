@@ -10,6 +10,9 @@ let Repository = (props) => {
   let deleteComment = () => {
     props.deleteComment(props.comment.id);
 }
+let likeComment = () => {
+  props.likeComment(props.comment.id);
+}
   return (
     <section className="repository">
       <div className="repository__wrap">
@@ -43,8 +46,8 @@ let Repository = (props) => {
                         alt="likes-img"
                         className="respository__likes-icon"
                       ></img>
-                      <div className="repository__likes-count">
-                        {props.comment.likes}{" "}
+                      <div className="repository__likes-count" onClick={likeComment}>
+                        {props.comment.likes}  
                       </div>
                       <button
                         className="repository__delete"

@@ -52,6 +52,16 @@ app.get("/comments", (req, res) => {
   });
   res.send(commentsArray);
 });
+/******************GET COMMENTS**************/
+app.get("/likes", (req, res) => {
+  let likesArray = [];
+  bigData.map((data) => {
+    likesArray.push({
+      comments: data.comments
+    });
+  });
+  res.send(commentsArray);
+});
 /*******************DEFAULT VIDEO**************/
 app.get("/videos/1af0jruup5gu", (req, res) => {
   let topVideo = [];
@@ -158,16 +168,17 @@ app.post('/comments/:id', (req,res)=>{
   res.send();
 });
 /*********************ADD LIKES******************/
-app.put('/:id/likes', (request, response) => {
+app.put('/:id/likes', (req, res) => {
 let id = request.params.id;
 let topVideo = bigData.find(item => item.id === id);
 let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
 console.log(likes);
 likes++;
 topVideo.likes = likes.toLocaleString();
-response.send();
+fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+res.send();
 });
-
+/***********************LIST*************************/
 app.listen(port, () => {
   console.log(
     `Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`

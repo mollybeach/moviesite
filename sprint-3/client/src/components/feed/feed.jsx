@@ -40,7 +40,7 @@ postComment = (event) => {
   console.log(comment);
   console.log(topId);
   console.log(`${API_URL}/${topId}`);
- axios.post( `${API_URL_2}/${topId}` , comment)
+ axios.post( `${API_URL}/${topId}` , comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
       console.log(this.props.topVideo);
@@ -69,16 +69,30 @@ deleteComment = (commentId) => {
         console.log(error);
     })
 }
+ /********************LIKE COMMENT**************/
+ //'/:id/likes'
+ likeComment = (commentId) => {
+  let topId = this.props.topVideo.id;
+  console.log(topId);
+  axios.post(`${API_URL_2}/${topId}/likes`)
+    .then(response => {
+      this.props.renderComments();
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
   render() {
     if(!this.props.topVideo){ 
       return null
   }
+  
  /*************************FORM************************/
  let repositoryData = this.props.commentData;
  console.log(repositoryData);
  let repositorySection = repositoryData.map((comment) =>{
    return(
-  <Repository deleteComment={this.deleteComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
+  <Repository deleteComment={this.deleteComment} likeComment={this.likeComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
  });
     return (
       <section className="feed">
