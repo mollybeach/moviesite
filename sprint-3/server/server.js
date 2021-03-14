@@ -136,7 +136,6 @@ app.post('/comments/:id', (req,res)=>{
   console.log(res.data);
   axios.get(randomImageURL)
   .then(response => {
-    
   let newComment = {
       "name": response.data.user.name,
       "comment": req.body.comment,

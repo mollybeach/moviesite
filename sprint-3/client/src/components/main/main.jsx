@@ -6,17 +6,12 @@ import About from "../about/about";
 import Feed from "../feed/feed";
 import "./main.scss";
 import SubVideo from "../subvideo/subvideo";
-
-
-
 let API_URL = "http://localhost:8080/videos/";
 
 class Main extends React.Component {
   state = {
-
     topVideo: [],
     commentData: []
-
   };
   componentIsMounted = false;
 
@@ -25,10 +20,8 @@ class Main extends React.Component {
     console.log( `${API_URL}${id}`);
           axios.get(`${API_URL}${id}`)
           .then((response) => {
-           // let topVideo = response.data;
             this.setState({ 
-            // subVideos: response.data, 
-           topVideo:response.data,
+              topVideo:response.data,
               commentData: response.data.comments
             });
             
@@ -58,9 +51,7 @@ componentWillUnmount() {
     this.componentIsMounted = false;
   }
 
-
   render() {
-
     return (
       <div className="main">
         <HeroVideo heroData={this.state.topVideo} />
@@ -80,7 +71,6 @@ componentWillUnmount() {
     );
   }
 }
-
 export default Main;
 
 

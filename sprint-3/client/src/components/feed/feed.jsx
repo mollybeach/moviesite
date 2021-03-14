@@ -29,6 +29,13 @@ class Feed extends React.Component {
             console.log('something went wrong', error);
         })
   }
+  /*
+updateComment = (event) => {
+  this.setState({
+      [event.target.name] : event.target.value
+  })
+}
+*/
    /******GET RANDOM ID*****/
    getRandomId = () => {
     let result = "";
@@ -44,9 +51,9 @@ class Feed extends React.Component {
     comment : '',
   }
   deleteComment = (id) => {
-    let currentTopVideoId =this.props.videoId
+    let topVideoId =this.props.videoId
   //  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
-  axios.delete(`http://localhost:8080/${currentTopVideoId}/comments/${id}`)
+  axios.delete(`http://localhost:8080/${topVideoId}/comments/${id}`)
       .then(response => {
         this.props.renderComments();
       })
@@ -83,11 +90,7 @@ postComment = (event) => {
       console.log(error);
     });
 };
-updateComment = (event) => {
-  this.setState({
-      [event.target.name] : event.target.value
-  })
-}
+
   render() {
     if(!this.props.topVideo){ 
       return null
