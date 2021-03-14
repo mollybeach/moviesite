@@ -18,11 +18,15 @@ let API_URL = "http://localhost:8080/";
       
 }
   /****************************GET DATE*************************/
-  date = new Date(this.props.aboutData.timestamp);
-   month = this.date.getMonth() + 1;
-  day = this.date.getDate();
-   year = this.date.getFullYear();
-   time = `${this.month}/${this.day}/${this.year}`;
+   correctDate = () =>{
+    let date = new Date(this.props.aboutData.timestamp);
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let time = `${month}/${day}/${year}`
+    return(time)
+    ;
+   }
 
   /****************************RETURN ABOUT DATA*************************/
   render(){
@@ -32,7 +36,7 @@ let API_URL = "http://localhost:8080/";
       <div className=" about__wrap">
         <div className="about__info-partition">
           <div className="about__name"> {this.props.aboutData.channel} </div>
-          <div className="about__date"> {this.time}</div>
+          <div className="about__date"> {this.correctDate()}</div>
         </div>
         <div className="about__status-partition">
           <img className="about__views-icon" src={ViewsImage}  alt="views-icon"></img>
