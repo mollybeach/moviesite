@@ -13,7 +13,6 @@ class VideoForm extends React.Component {
   togglePopup() {
     this.setState({
       displayPopup: !this.state.displayPopup,
-      //videoData: this.state.video,
     });
   }
 
@@ -57,7 +56,6 @@ class VideoForm extends React.Component {
     });
     this.togglePopup();
   };
-
 
   /************PREVIOUS CLICK EVENT**********/
   previous = (event) => {

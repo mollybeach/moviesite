@@ -4,8 +4,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const randomImageURL = "https://api.unsplash.com/photos/random/?client_id=_eEtrf7JRXArmw9NEIjMfL-xEJlhutcH3e--70OrJQo";
-//const bigData = require("./data/video-details.json");
-
 const today = new Date();
 const date = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
 const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
@@ -15,7 +13,6 @@ const dataPath = "./data/input-video.json";
 const bigData = JSON.parse(fs.readFileSync(dataPath));
 
 const port = process.env.PORT || 8080;
-let newArray = [];
 
 app.use(cors());
 app.use(express.json());
@@ -34,11 +31,32 @@ app.get("/videos", (req, res) => {
       title: data.title,
       channel: data.channel,
       image: data.image,
+      description: data.description,
+      views: data.views,
+      likes: data.likes,
+      duration: data.duration,
+      video: data.video,
+      timestamp: data.timestamp,
+      comments: data.comments,
     });
   });
   res.send(videoArray);
 });
 
+
+app.get("/comments", (req, res) => {
+  let commentsArray = [];
+  bigData.map((data) => {
+    commentsArray.push({
+     // name: data.comments.name,
+      //comment: data.comments.comment
+      comments: data.comments
+    });
+  });
+  res.send(commentsArray);
+});
+//.filter(
+ // (data, index) => data.id === req.params.id
 app.get("/videos/1af0jruup5gu", (req, res) => {
   let topVideo = [];
   bigData.map((data) => {
@@ -64,7 +82,6 @@ app.get("/videos/:id", (req, res) => {
     (data, index) => data.id === req.params.id
   );
   res.send(newVideo.pop());
-
 });
 
 app.post("/videos", (req, res) => {
@@ -115,19 +132,20 @@ app.post("/videos", (req, res) => {
   
 });
 
-app.post('/:id/comments', (request,response)=>{
+app.post('/comments/:id', (request,response)=>{
   const newComment = {
       "name": request.body.name,
       "comment": request.body.comment,
-      "id": nanoid(),
+      "id":request.body.id,
       "likes": 0,
       "timestamp": new Date().getTime()
   }
   const id = request.params.id;
   const mainVid = bigData.find( item => item.id === id);
   mainVid.comments.unshift(newComment);
+  fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+  response.send(newComment);
 });
-
 
 app.delete('/:id/comments/:commentId', (request, response) => {
   const id = request.params.id;

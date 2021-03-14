@@ -6,16 +6,15 @@ import Repository from '../repository/repository';
 //import repository from "../repository/repository";
 import "../repository/repository.scss";
 
-
 /************************************FORM*********************************/
 let newArray = [];
 let apiRandomNameUrl = `https://randomuser.me/api/?results=1&inc=name&noinfo`;
-
-let API_URL = "http://localhost:8080/";
+//let currentTopVideoId = this.props.topVideo.id; 
+let API_URL = "http://localhost:8080/comments";
 //let API_URL_2 = "http://localhost:8080/";
+//let id = this.props.topVideo.id;
 class Feed extends React.Component {
 
- 
   getRandomName = () => {
     axios.get(apiRandomNameUrl)
         .then(response => {
@@ -30,14 +29,24 @@ class Feed extends React.Component {
             console.log('something went wrong', error);
         })
   }
+   /******GET RANDOM ID*****/
+   getRandomId = () => {
+    let result = "";
+    let characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+    let charactersLength = characters.length;
+    for (let i = 0; i < 12; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
 
   state = {
     comment : '',
-
   }
   deleteComment = (id) => {
+    let currentTopVideoId =this.props.videoId
   //  axios.delete(`${API_URL}${this.props.topVideo.id}/comments/${id}`)
-  axios.delete(`http://localhost:8080/videos/${this.props.topVideo.id}/comments/${id}`)
+  axios.delete(`http://localhost:8080/${currentTopVideoId}/comments/${id}`)
       .then(response => {
         this.props.renderComments();
       })
@@ -48,37 +57,38 @@ class Feed extends React.Component {
 
 postComment = (event) => {
   event.preventDefault();
+  //let brainFlixHome = `/`  ;
+  //let newVideoHome = brainFlixHome + this.props.brandNewId;
+  let newId = this.getRandomId();
+  //let newName = this.getRandomName();
  let id = this.props.topVideo.id;
- // this.getRandomName(newArray);
   let comment = {
-   // name: newArray[0],
-      name: 'hello',
-    comment: event.target.comment.value
+       id: newId,
+       name: `newArray[0]`,
+       comment: event.target.comment.value
   }
   console.log(comment);
   console.log(id);
- // axios.post( `${API_URL}/${id}/comments`, comment)
- console.log(API_URL + id + '/comments');
-  axios.post(API_URL + id + '/comments', comment)
+  console.log(`${API_URL}/${id}`);
+ axios.post( `${API_URL}/${id}` , comment)
+// console.log(API_URL + id + '/comments');d
+//  axios.post(API_URL + id + '/comments', comment)
     .then(response => {
       let array = [response.data[0], ...this.props.topVideo.comments]
       console.log(this.props.topVideo);
       console.log(array);
       this.setState({
         topVideo: {
-          ...this.state.props.topVideo,
+          ...this.props.topVideo,
           comments: array
-        }
+        } 
       })
-this.props.renderComments();
+      this.props.renderComments();
     })
     .catch((error) => {
       console.log(error);
     });
 };
-
-
-
 updateComment = (event) => {
   this.setState({
       [event.target.name] : event.target.value
@@ -97,7 +107,6 @@ updateComment = (event) => {
    return(
   <Repository deleteComment={this.deleteComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
  });
-
     return (
       <section className="feed">
         <div className="feed__header">{this.props.commentData.length} Comments</div>
