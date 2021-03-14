@@ -14,9 +14,9 @@ let calculateTime = timestamp => {
       //Hours to Days
       let hours = Math.floor(unit % 24);
       let days = Math.floor(unit / 24);
-    
+
       //let timeSinceUtcStart;
-      if (days > 0) {
+      if (days > 0 & days < 365) {
           timestamp = `${days} days ago`;
       } else if (days === 0 & hours === 1) {
         timestamp = `${hours} hour ago`;
@@ -26,12 +26,18 @@ let calculateTime = timestamp => {
         timestamp = `${min} minute ago`;
       } else if (hours === 0 & min > 0) {
         timestamp = `${min} minutes ago`;
-      } else {
+      } else if (hours === 0 & min < 0 ) {
         timestamp = `${seconds} seconds ago`;
+      }
+      else if (hours === 0 & min === 0 & days===0) {
+      timestamp = `${seconds} seconds ago`;
+     }
+      else {
+        let years = Math.floor(days/365);
+        timestamp = `${years} years ago`;
       };
       return timestamp;
     }
-
 export default calculateTime;
 
 

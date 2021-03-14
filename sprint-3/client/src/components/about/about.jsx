@@ -10,23 +10,21 @@ let API_URL = "http://localhost:8080/";
       likeColor : '#323232',
   }
 
- /********************LIKE COMMENT**************/
- //'/:id/likes'
+/********************LIKE COMMENT**************/
   likeVideo = (aboutId) => {
     axios.put(`${API_URL}${aboutId}/likes`)
     this.props.renderComments();
       
-}
-  /****************************GET DATE*************************/
-   correctDate = () =>{
+  }
+/****************************GET DATE*************************/
+ correctDate = () =>{
     let date = new Date(this.props.aboutData.timestamp);
     let month = date.getMonth() + 1;
     let day = date.getDate();
     let year = date.getFullYear();
     let time = `${month}/${day}/${year}`
-    return(time)
-    ;
-   }
+    return(time);
+    }
 
   /****************************RETURN ABOUT DATA*************************/
   render(){

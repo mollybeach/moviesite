@@ -139,6 +139,7 @@ app.post("/videos", (req, res) => {
   });
   
 });
+
 /*********************POST COMMENT******************/
 app.post('/comments/:id', (req,res)=>{
   console.log(res.data);
@@ -163,7 +164,41 @@ app.post('/comments/:id', (req,res)=>{
 })
 });
 
-/*********************POST LIKES******************/
+
+/*********************DELETE COMMENT******************/
+  app.delete('/:id/comments/:commentId', (req, res) => {
+  let id = req.params.id;
+  let topVideo = bigData.find(item => item.id === id);
+  let newComments = topVideo.comments.filter( item => item.id !== req.params.commentId);
+  topVideo.comments = newComments;
+  fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+  res.send();
+});
+
+
+/****************LIKES ON TOP VIDEO**************/
+app.put('/:id/likes', (req, res) => {
+  let id = req.params.id;
+  let topVideo= data.find(item => item.id === id);
+  let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
+  console.log(likes);
+  likes++;
+  topVideo.likes = likes.toLocaleString();
+  res.send();
+});
+
+
+/*********************COMMENT LIKES*************/
+ // app.post('/:id/comments/:commentId', (req, res) =>     {
+  app.put('/:id/comments/commentId/likes', (req,res)=>{
+    let id = req.params.id;
+    let targetComment = bigData.comments.find((comment) => comment.id === id);
+    console.log(targetComment);
+    fs.writeFileSync(dataPath, JSON.stringify(targetComment.likes++, null, 2));
+    res.send();
+
+      });
+/*********************COMMENT LIKES**************
 app.set('/comments/:id', (req,res)=>{
   console.log(res.data);
   axios.get(randomImageURL)
@@ -177,41 +212,7 @@ app.set('/comments/:id', (req,res)=>{
   console.log(error);
 })
 });
-/*********************DELETE COMMENT******************/
-  app.delete('/:id/comments/:commentId', (req, res) => {
-  let id = req.params.id;
-  let topVideo = bigData.find(item => item.id === id);
-  let newComments = topVideo.comments.filter( item => item.id !== req.params.commentId);
-  topVideo.comments = newComments;
-  fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-  res.send();
-});
-
-app.put('/:id/likes', (request, response) => {
-  let id = request.params.id;
-  let mainVid = data.find(item => item.id === id);
-  let likes = parseFloat( mainVid.likes.replace(/,/g, ''));
-  console.log(likes);
-  likes++;
-  mainVid.likes = likes.toLocaleString();
-  response.send();
-});
-//app.put('/:id/likes', (req, res) => {
-  //let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
-  //topVideo.likes = likes.toLocaleString();
-//fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-//res.set("likes", likes);
-/*********************ADD LIKES*************/
-  app.post('/:id/comments/:commentId', (req, res) =>     {
-    let id = req.params.id;
-    let targetComment = bigData.comments.find((comment) => comment.id === id);
-    //targetComment.likes++;
-    console.log(targetComment);
-    fs.writeFileSync(dataPath, JSON.stringify(targetComment.likes++, null, 2));
-    res.send();
-
-      });
-
+****/
 /***********************LISTEN**********************/
 app.listen(port, () => {
   console.log(
@@ -222,6 +223,10 @@ app.listen(port, () => {
 });
 
 
-
+//app.put('/:id/likes', (req, res) => {
+  //let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
+  //topVideo.likes = likes.toLocaleString();
+//fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
+//res.set("likes", likes);
 
 

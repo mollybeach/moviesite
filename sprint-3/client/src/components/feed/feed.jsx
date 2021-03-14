@@ -65,7 +65,7 @@ deleteComment = (commentId) => {
  //'/:id/likes'
  likeComment = (commentId) => {
   let topId = this.props.topVideo.id;
-    axios.put(`${API_URL_2}/${topId}/${commentId}`)
+    axios.put(`${API_URL_2}/${topId}/comments/${commentId}/likes`)
     .then(response => {
       this.props.renderComments();
     })
