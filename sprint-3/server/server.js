@@ -14,11 +14,11 @@ const port = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use((req, res, next) => {
-  console.log(`Incoming request from ${req.path} @ ${dateTime}`);
+  console.log(`New request from ${req.path} @ ${dateTime}`);
   next();
 });
+
 /******************GET VIDEOS**************/
 app.get("/videos", (req, res) => {
   let videoArray = [];
@@ -147,7 +147,7 @@ app.post('/comments/:id', (req,res)=>{
   let newComment = {
       "name": response.data.user.name,
       "comment": req.body.comment,
-      "id": req.body.id,
+      "id":req.body.id,
       "likes": response.data.likes,
       "timestamp": new Date().getTime()
   }
@@ -196,21 +196,7 @@ app.put('/:id/likes', (req, res) => {
     res.send();
 
       });
-/*********************COMMENT LIKES**************
-app.set('/comments/:id', (req,res)=>{
-  console.log(res.data);
-  axios.get(randomImageURL)
-  .then(response => {
-  let id = req.params.id;
-  let topVideo = bigData.find( item => item.id === id);
-  topVideo.comments.unshift(newComment);
-  fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-  res.send(newComment);
-}) .catch(error => {
-  console.log(error);
-})
-});
-****/
+
 /***********************LISTEN**********************/
 app.listen(port, () => {
   console.log(
@@ -221,10 +207,5 @@ app.listen(port, () => {
 });
 
 
-//app.put('/:id/likes', (req, res) => {
-  //let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
-  //topVideo.likes = likes.toLocaleString();
-//fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
-//res.set("likes", likes);
 
 

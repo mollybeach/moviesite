@@ -2,26 +2,25 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const axios = require("axios");
-const app = express();
 const cors = require("cors");
 const randomImageURL = "https://api.unsplash.com/photos/random/?client_id=_eEtrf7JRXArmw9NEIjMfL-xEJlhutcH3e--70OrJQo";
 const today = new Date();
 const date = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
 const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 const dateTime = `${date} ${time}`;
-const dataPath = "./data/input-video.json";
+const dataPath = "../data/input-video.json";  
 const bigData = JSON.parse(fs.readFileSync(dataPath));
 const port = process.env.PORT || 8080;
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//router.use(cors());
+//router.use(express.json());
+//router.use(express.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
-  console.log(`Incoming request from ${req.path} @ ${dateTime}`);
-  next();
-});
+//r//outer.use((req, res, next) => {
+ // console.log(`Incoming request from ${req.path} @ ${dateTime}`);
+ // next();
+//});
 /******************GET VIDEOS**************/
-app.get("/videos", (req, res) => {
+router.get("/videos", (req, res) => {
   let videoArray = [];
   bigData.map((data) => {
     videoArray.push({
@@ -42,7 +41,7 @@ app.get("/videos", (req, res) => {
 });
 
 /******************GET COMMENTS**************/
-app.get("/comments", (req, res) => {
+router.get("/comments", (req, res) => {
   let commentsArray = [];
   bigData.map((data) => {
     commentsArray.push({
@@ -52,7 +51,7 @@ app.get("/comments", (req, res) => {
   res.send(commentsArray);
 });
 /******************GET LIKES**************/
-app.get("/likes", (req, res) => {
+router.get("/likes", (req, res) => {
   let likesArray = [];
   bigData.map((data) => {
     likesArray.push({
@@ -62,7 +61,7 @@ app.get("/likes", (req, res) => {
   res.send(likesArray);
 });
 /*******************DEFAULT VIDEO**************/
-app.get("/videos/1af0jruup5gu", (req, res) => {
+router.get("/videos/1af0jruup5gu", (req, res) => {
   let topVideo = [];
   bigData.map((data) => {
     topVideo.push({
@@ -83,7 +82,7 @@ app.get("/videos/1af0jruup5gu", (req, res) => {
 });
 /*******************GET VIDEO BY ID**************/
 
-app.get("/videos/:id", (req, res) => {
+router.get("/videos/:id", (req, res) => {
   let newVideo = bigData.filter(
     (data, index) => data.id === req.params.id
   );
@@ -91,7 +90,7 @@ app.get("/videos/:id", (req, res) => {
 });
 
 /*******************POST VIDEO**************/
-app.post("/videos", (req, res) => {
+router.post("/videos", (req, res) => {
   axios.get(randomImageURL)
   .then(response => {
    // console.log(response.data);
@@ -104,7 +103,7 @@ app.post("/videos", (req, res) => {
       views: response.data.views,
       likes: response.data.likes,
       duration: "5:00",
-      video: "https://project-2-api.herokuapp.com/stream",
+      video: "https://project-2-api.herokurouter.com/stream",
       timestamp: Date.now(),
       comments: [
         {
@@ -140,7 +139,7 @@ app.post("/videos", (req, res) => {
 });
 
 /*********************POST COMMENT******************/
-app.post('/comments/:id', (req,res)=>{
+router.post('/comments/:id', (req,res)=>{
   console.log(res.data);
   //console.log( topVideo.comments.values());
   axios.get(randomImageURL)
@@ -165,7 +164,7 @@ app.post('/comments/:id', (req,res)=>{
 
 
 /*********************DELETE COMMENT******************/
-  app.delete('/:id/comments/:commentId', (req, res) => {
+  router.delete('/:id/comments/:commentId', (req, res) => {
   let id = req.params.id;
   let topVideo = bigData.find(item => item.id === id);
   let newComments = topVideo.comments.filter( item => item.id !== req.params.commentId);
@@ -176,7 +175,7 @@ app.post('/comments/:id', (req,res)=>{
 
 
 /****************LIKES ON TOP VIDEO**************/
-app.put('/:id/likes', (req, res) => {
+router.put('/:id/likes', (req, res) => {
   let id = req.params.id;
   let topVideo= data.find(item => item.id === id);
   let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
@@ -188,8 +187,8 @@ app.put('/:id/likes', (req, res) => {
 
 
 /*********************COMMENT LIKES*************/
- // app.post('/:id/comments/:commentId', (req, res) =>     {
-  app.put('/:id/comments/:commentId/likes', (req,res)=>{
+ // router.post('/:id/comments/:commentId', (req, res) =>     {
+  router.put('/:id/comments/:commentId/likes', (req,res)=>{
     let id = req.params.id;
     let targetComment = bigData.comments.find((comment) => comment.id === id);
     console.log(targetComment);
@@ -198,7 +197,7 @@ app.put('/:id/likes', (req, res) => {
 
       });
 /*********************COMMENT LIKES**************
-app.set('/comments/:id', (req,res)=>{
+router.set('/comments/:id', (req,res)=>{
   console.log(res.data);
   axios.get(randomImageURL)
   .then(response => {
@@ -212,17 +211,10 @@ app.set('/comments/:id', (req,res)=>{
 })
 });
 ****/
-/***********************LISTEN**********************/
-app.listen(port, () => {
-  console.log(
-    `Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`
-  );
-  console.log(`Server Started on ${port}`);
-  console.log('Press CTRL + C to stop server');
-});
 
 
-//app.put('/:id/likes', (req, res) => {
+
+//router.put('/:id/likes', (req, res) => {
   //let likes = parseFloat( topVideo.likes.replace(/,/g, ''));
   //topVideo.likes = likes.toLocaleString();
 //fs.writeFileSync(dataPath, JSON.stringify(bigData, null, 2));
