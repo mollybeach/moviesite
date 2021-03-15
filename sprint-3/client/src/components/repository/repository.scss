@@ -6,7 +6,6 @@
 /************************************COMMENTS FEED SECTION************************************/
 
 .repository {
-	//@include standard-padding-left;
 	width: 100%;
 	background-color: $white;
 	
@@ -127,18 +126,12 @@
 		}
 	}
 	&__likes-icon {
-		//margin-right: $increment0-px;
-		//margin-left: $increment2-px;
-		//background-image: url("../../assets/Icons/Icon-likes.svg");
 		width: $increment20px-px;
 		height: $increment20px-px;	
 		&:hover {
 			transform: scale(1.5);
 			background-color: red;
 			}
-	
-	
-		
         @include tablet {
      	@include increment-2-width;
 	    @include increment-2-height;
@@ -152,20 +145,6 @@
 			@include h5-labels;
 		}
 	}
-	&__delete-icon {
-		margin-right: $increment5-px;
-		margin-left: $increment3-px;
-		width: $increment20px-px;
-		height: $increment20px-px;
-		align-items: center;
-      //  @include tablet {
-     	//@include increment-2-width;
-	   // @include increment-2-height;
-  // }
-	@include tablet{
-		margin-left: $increment6-px;
-	}
-	} 
 	&__button {
 		@include button;
 		@include tablet {

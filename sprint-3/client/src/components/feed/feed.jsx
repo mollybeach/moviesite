@@ -83,7 +83,7 @@ deleteComment = (commentId) => {
  });
     return (
       <section className="feed">
-        <div className="feed__header">{this.props.commentData.length} Comments</div>
+        <div className="feed__header">3 Comments</div>
         <div className="feed__wrap">
           <div className="feed__binding">
             <form className="feed__feed" onSubmit={this.postComment}>
