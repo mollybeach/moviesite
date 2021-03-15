@@ -3,7 +3,7 @@ import React from "react";
 import "./uploadpage.scss";
 import Popup from "../popup/popup";
 import axios from "axios";
-const API_URL = "http://localhost:8080/videos/";
+let API_URL = "http://localhost:8080/videos/";
 class VideoForm extends React.Component {
   /**********POP UP STATE***********/
   constructor(props) {

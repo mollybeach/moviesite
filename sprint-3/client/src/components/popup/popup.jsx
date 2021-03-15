@@ -2,15 +2,8 @@
 import React from 'react';
 import './popup.scss';
 import UploadImage from "../../assets/Icons/upload-complete.png";
-let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
 
 class Popup extends React.Component {
-/**********************GET RANDOM VIDEO*********/ 
- getRandomVideo() {
-    let apiRandomImage = apiRandomVideoUrl;
-      console.log(apiRandomImage);
-    return apiRandomImage;
-  }
   /***********CLICK EVENT POP UP VIEW BUTTON********/ 
   popUpViewEvent=(e)=>{
     e.preventDefault();
@@ -18,7 +11,7 @@ class Popup extends React.Component {
     let newVideoHome = brainFlixHome + this.props.brandNewId;
     return (window.location.href = newVideoHome)
   }
-  newImage= this.getRandomVideo();
+
   /***********************RENDER*****************/ 
   render() {
     return (

@@ -34,9 +34,7 @@ postComment = (event) => {
   }
  axios.post( `${API_URL}/${topId}` , comment)
     .then(response => {
-      let array = [response.data[0], ...this.props.topVideo.comments]
-      console.log(this.props.topVideo);
-      console.log(array);
+      let array = [response.data[0], ...this.props.topVideo.comments];
       this.setState({
         topVideo: {
           ...this.props.topVideo,
