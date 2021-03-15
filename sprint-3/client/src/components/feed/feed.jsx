@@ -47,7 +47,7 @@ postComment = (event) => {
       console.log(error);
     });
 };
- /********************DELETE COMMENT**************/
+ /**********************DELETE COMMENT**************/
 deleteComment = (commentId) => {
   let topId = this.props.topVideo.id;
   axios.delete(`${API_URL_2}/${topId}/comments/${commentId}`)
