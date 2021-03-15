@@ -64,6 +64,16 @@
 		margin: 0;
 	
 	}
+	&__delete-icon {
+		align-self: left;
+		color: $white;
+		background-image: url('../../assets/Icons/Icon-delete.png');
+		background-repeat: no-repeat;
+		&:hover {
+			transform: scale(1.5);
+			}
+		
+	}
 	&__views-icon {
 		align-self: center;
 		margin-right: $increment1-px;
@@ -73,6 +83,7 @@
      	@include increment-2-width;
 	    @include increment-2-height;
 }
+
 	}
 	&__likes-icon {
 		align-self: center;

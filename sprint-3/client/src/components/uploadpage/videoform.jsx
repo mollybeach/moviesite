@@ -16,13 +16,13 @@ class VideoForm extends React.Component {
       displayPopup: !this.state.displayPopup,
     });
   }
-/*******************************STATE*******************/
-state = {
-  title: ``,
-  channel: ``,
-  image: ``,
-  description: ``,
-};
+  /*******************************STATE*******************/
+  state = {
+    title: ``,
+    channel: ``,
+    image: ``,
+    description: ``,
+  };
   /*************************GET RANDOM ID*****************/
   getRandomId = () => {
     let result = "";
@@ -33,8 +33,7 @@ state = {
     }
     return result;
   };
-
-/**********************ON SUBMIT EVENT***************/
+  /**********************ON SUBMIT EVENT***************/
   onSubmitEvent = (event) => {
     event.preventDefault();
     let newId = this.getRandomId();
@@ -45,7 +44,6 @@ state = {
         id: newId,
         title: newTitle.value,
         description: newDescription.value,
-    
       })
       .catch((error) => {
         console.log(error);
@@ -57,14 +55,12 @@ state = {
     });
     this.togglePopup();
   };
-
   /********************PREVIOUS CLICK EVENT******************/
   previous = (event) => {
     event.preventDefault();
     let brainFlixHome = "/";
     window.location.href = brainFlixHome;
   };
-
   /*************************RENDER FORM*******************/
   render(props) {
     return (
@@ -72,32 +68,17 @@ state = {
         <form
           onReset={this.previous}
           onSubmit={this.onSubmitEvent}
-          className="uploadpage__form"
-        >
-          <div className="uploadpage__partition-response">
-            <div className=" uploadpage__border-response"></div>
-            <div className=" uploadpage__title">TITLE YOUR VIDEO</div>
-            <input
-              type="text"
-              className="uploadpage__alias-field"
-              placeholder="Add a title to your video"
-              name="title"
-            />
-            <div className=" uploadpage__title"> ADD A VIDEO DESCRIPTION</div>
-            <textarea
-              type="text"
-              className="  uploadpage__note-field"
-              placeholder="Add a description of your video"
-              name="description"
-            ></textarea>
+          className='uploadpage__form'>
+          <div className='uploadpage__partition-response'>
+            <div className=' uploadpage__border-response'></div>
+            <div className=' uploadpage__title'>TITLE YOUR VIDEO</div>
+            <input type='text' className='uploadpage__alias-field' placeholder='Add a title to your video' name='title'/>
+            <div className=' uploadpage__title'> ADD A VIDEO DESCRIPTION</div>
+            <textarea type='text' className='  uploadpage__note-field' placeholder='Add a description of your video' name='description'></textarea>
           </div>
-          <div className="uploadpage__buttons">
-            <button className="uploadpage__button-publish" type="submit">
-              PUBLISH
-            </button>
-            <button className="uploadpage__button-cancel" type="reset">
-              CANCEL
-            </button>
+          <div className='uploadpage__buttons'>
+            <button className='uploadpage__button-publish' type='submit'> PUBLISH </button>
+            <button className='uploadpage__button-cancel' type='reset'>CANCEL</button>
           </div>
         </form>
         {this.state.displayPopup ? (
@@ -111,4 +92,3 @@ state = {
   }
 } //
 export default VideoForm;
-

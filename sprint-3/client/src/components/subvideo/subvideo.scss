@@ -27,8 +27,12 @@
 		@include desktop {
 			width: 90%; //words on right lines
 		}
+		&:hover {
+			transform: scale(1.03);
+			}
 	}
 	&__partition-film {
+	
 		width: 120px; //120px
 		object-fit: cover;
 		height: 70px; // 70px
@@ -40,9 +44,7 @@
 	}
 	&__partition-title {
 		@include h4-list-contact-information-bold;
-		&:hover {
-			letter-spacing: 0.1px;
-		}
+	
 	}
 	&__partition-channel {
 		@include h4-list-contact-information;

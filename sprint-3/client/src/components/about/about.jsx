@@ -5,9 +5,8 @@ import ViewsImage from "../../assets/Icons/Icon-views.svg";
 import LikesImage from "../../assets/Icons/Icon-likes.svg";
 let API_URL = "http://localhost:8080/";
   class About extends React.Component {
-
     state={
-      likeColor : '#323232',
+      likeColor : '#FF0000',
   }
 
 /********************LIKE COMMENT**************/
@@ -37,13 +36,13 @@ let API_URL = "http://localhost:8080/";
           <div className="about__date"> {this.correctDate()}</div>
         </div>
         <div className="about__status-partition">
+          <div className="about__delete-icon">............</div>
           <img className="about__views-icon" src={ViewsImage}  alt="views-icon"></img>
           <p className="about__views-count"> {this.props.aboutData.views}</p>
           <img  onClick={()=>{this.likeVideo(this.props.aboutData.id)}} src={LikesImage} alt="likes-img" className="about__likes-icon"></img>
           <p className="about__likes-count">{this.props.aboutData.likes}</p>
         </div>
       </div>
-
       <div className="about__border"></div>
       <div className="about__partition-text">
         <div className="about__text">{this.props.aboutData.description}</div>
