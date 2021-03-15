@@ -16,7 +16,7 @@ class UploadPage extends React.Component {
               <div className="uploadpage__border"> </div>
               <div className="uploadpage__partition">
                 <VideoPreview />
-                <VideoForm  addVideo={this.props}  getVideo={this.props}  postVideo={this.postVideo} />
+                <VideoForm/>
               </div>
             </div>
           </div>

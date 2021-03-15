@@ -8,7 +8,6 @@ const today = new Date();
 const date = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
 const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 const dateTime = `${date} ${time}`;
-const API_URL = "http://localhost:8080";
 const dataPath = "./data/input-video.json";
 const bigData = JSON.parse(fs.readFileSync(dataPath));
 const port = process.env.PORT || 8080;
@@ -20,7 +19,6 @@ app.use((req, res, next) => {
   console.log(`Incoming request from ${req.path} @ ${dateTime}`);
   next();
 });
-
 /******************GET VIDEOS**************/
 app.get("/videos", (req, res) => {
   let videoArray = [];
@@ -149,7 +147,7 @@ app.post('/comments/:id', (req,res)=>{
   let newComment = {
       "name": response.data.user.name,
       "comment": req.body.comment,
-      "id":req.body.id,
+      "id": req.body.id,
       "likes": response.data.likes,
       "timestamp": new Date().getTime()
   }
@@ -190,7 +188,7 @@ app.put('/:id/likes', (req, res) => {
 
 /*********************COMMENT LIKES*************/
  // app.post('/:id/comments/:commentId', (req, res) =>     {
-  app.put('/:id/comments/commentId/likes', (req,res)=>{
+  app.put('/:id/comments/:commentId/likes', (req,res)=>{
     let id = req.params.id;
     let targetComment = bigData.comments.find((comment) => comment.id === id);
     console.log(targetComment);

@@ -3,7 +3,6 @@ import Image from "../../assets/images/Mohan-muruge.jpg";
 import axios from 'axios';
 import "./feed.scss";
 import Repository from '../repository/repository';
-//import repository from "../repository/repository";
 import "../repository/repository.scss";
 
 /************************************FEED*********************************/

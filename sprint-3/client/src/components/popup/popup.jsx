@@ -1,8 +1,9 @@
 
 import React from 'react';
 import './popup.scss';
-
+import UploadImage from "../../assets/Icons/upload-complete.png";
 let apiRandomVideoUrl = `https://source.unsplash.com/user/erondu/1600x900`;
+
 class Popup extends React.Component {
 /**********************GET RANDOM VIDEO*********/ 
  getRandomVideo() {
@@ -26,7 +27,7 @@ class Popup extends React.Component {
         <div className="popup__hero">
           <div className="popup__header">Your Video has Uploaded!</div>
           <label className="popup__tag">VIDEO THUMBNAIL</label>
-        <video className="popup__video" poster={this.newImage}>
+        <video className="popup__video" poster={UploadImage}>
         </video>
         </div>
         <div className="popup__title">TITLE:</div>

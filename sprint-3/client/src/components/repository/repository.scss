@@ -104,19 +104,22 @@
 	}
 	&__delete {
 		@include h5-labels;
-		background-color: $brainflix-blue;
-		color: $brainflix-blue;
+	
+		background-image: url('../../assets/Icons/Icon-delete.png');
+		background-repeat: no-repeat;
+		color: $white;
 		margin-left: $increment4-px;
 		  &:focus {
 			outline: none;
 		  }
+		align-content: center;
 		border-radius: $increment0-px; 
 		border-color: $white;
 		text-shadow:$increment0-px;
 		border-style: none;
 		background-color: $white;
 		&:hover {
-			letter-spacing: 0.5px;
+		transform: scale(1.5);
 		}
 		align-self: center;
 
@@ -125,12 +128,19 @@
 		}
 	}
 	&__likes-icon {
-		margin-right: $increment1-px;
-		margin-left: $increment3-px;
+		//margin-right: $increment0-px;
+		//margin-left: $increment2-px;
+		//background-image: url("../../assets/Icons/Icon-likes.svg");
 		width: $increment20px-px;
-		height: $increment20px-px;
-        @include tablet {
+		height: $increment20px-px;	
+		&:hover {
+			transform: scale(1.5);
+			background-color: red;
+			}
 	
+	
+		
+        @include tablet {
      	@include increment-2-width;
 	    @include increment-2-height;
     }
@@ -143,6 +153,20 @@
 			@include h5-labels;
 		}
 	}
+	&__delete-icon {
+		margin-right: $increment5-px;
+		margin-left: $increment3-px;
+		width: $increment20px-px;
+		height: $increment20px-px;
+		align-items: center;
+      //  @include tablet {
+     	//@include increment-2-width;
+	   // @include increment-2-height;
+  // }
+	@include tablet{
+		margin-left: $increment6-px;
+	}
+	} 
 	&__button {
 		@include button;
 		@include tablet {

@@ -17,23 +17,24 @@
   }
   .popup {
     position: absolute;
-    left: 22%;
-    right: 22%;
-    top: 22%;
-    bottom: 22%;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: 10%;
     margin: auto;
     border-radius: 20px;
     background: $white;
     justify-content: center;
     &__header{
-        padding-top: $increment1-px;
-        padding-left: 15%;
+        padding-top: 10%;
+        padding-left: 25%;
+        padding-bottom: 5%;
         width: 100%;
-        @include h5-labels;
+        @include h5-labels-bold;
         color: $black;
         @include tablet{
-            padding-top: $increment4-px;
-            padding-left: 25%;
+            padding-top: 10%;
+            padding-left: 35%;
             @include h2-header;
          }
         @include desktop{
@@ -63,7 +64,6 @@
           }
     
     }
-  
     &__button-close{
         @include h2-header;
         margin-top: $increment0-rem;
@@ -75,7 +75,6 @@
         &:hover {
             color: $brainflix-dark-blue-hover;
           }
-    
     }
     &__tag {
         display:none;
@@ -85,20 +84,19 @@
         margin-bottom: $increment0-rem 0;
         margin-left:  $increment3-rem;
 		margin-top: $increment5-rem;
-		//display:flex;
 		}
     	
     }
 	&__video {
-        margin-top: 5%;
-        margin-left: 15%;
+        margin-top: 7%;
+        margin-left: 30%;
 		width:  $increment17-px;
 	    height: $increment9-px;
 		border-radius:  $increment0-px;
 		@include tablet {
-         margin-left: 25%;
-		width: $increment21-px;
-		height: $increment11-px;
+         margin-left: 40%;
+		width: $increment26-px;
+		height: $increment15-px;
         }
         @include desktop {
             width: 344px;
@@ -111,6 +109,7 @@
     }  
     &__title {
       display:none;
+      
         @include desktop {
         @include h5-labels;
         margin-left:  $increment3-rem;
