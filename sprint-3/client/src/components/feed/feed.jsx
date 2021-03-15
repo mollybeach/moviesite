@@ -77,7 +77,7 @@ deleteComment = (commentId) => {
       return null
   }
  /*************************FORM************************/
-  let repositorySection = this.props.commentData.comments && this.props.commentData.comments.map((comment) => {
+  let repositorySection = this.props.topVideo.comments && this.props.topVideo.comments.map((comment) => {
    return(
   <Repository deleteComment={this.deleteComment} likeComment={this.likeComment} key={comment.id} comment={comment} videoId={this.props.currentId}/>)
  });
