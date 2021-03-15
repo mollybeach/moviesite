@@ -14,6 +14,7 @@ class Main extends React.Component {
   state = {
     topData: {},
     subData: [],
+    commentData:[]
   };
 /*******************COMPONENT METHODS**************/
 componentDidMount() {
@@ -45,7 +46,8 @@ componentWillUnmount() {
       axios.get(`${API_URL}${paramsId}`)
         .then((response) => {
           let topData = response.data;
-          this.setState({ topData });
+          let commentData = response.data.comments;
+          this.setState({ topData, commentData});
         })
         .catch((err) => {
           console.log(err);
@@ -79,7 +81,7 @@ renderComments = () =>{
         <div className="main__design">
           <div className="main__partition">
             <About aboutData={this.state.topData} renderComments={this.renderComments}/>
-            <Feed commentData={this.state.topData} renderComments={this.renderComments} topVideo={this.state.topData}/>
+            <Feed commentData={this.state.commentData} renderComments={this.renderComments} topVideo={this.state.topData}/>
           </div>
           <SubVideo topData={this.state.topData} match={this.props.match}  subData={this.state.subData}  />
         </div>
